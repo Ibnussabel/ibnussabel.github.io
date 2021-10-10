@@ -1,0 +1,28 @@
+body {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px; 
+    line-height: 50px;
+    letter-spacing: 1px;
+}
+
+.row {
+    margin-top: -5px;
+}
+
+#main {
+    padding: 0 50px;
+}
+
+.card-img-top {
+    width: 90px;
+}
+
+.cover {
+    min-height: 156px; 
+    margin: 0 auto;
+}
