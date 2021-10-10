@@ -34,6 +34,7 @@ const libros = [
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1346463354l/15953611.jpg", titulo:"El año de la liebre", anyo:1975, autor:"Arto Paasilinna ", gender:"male", pais:"FI"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390513196l/20623749.jpg", titulo:"Las tres bodas de Manolita", anyo:2013, autor:"Almudena Grandes", gender:"female", pais:"ES"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432229875l/25576397.jpg", titulo:"Tres abuelas y un cocinero muerto", anyo:2013, autor:"Minna Lindgren", gender:"female", pais:"FI"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1603910684l/20426394.jpg", titulo:"El paciente", anyo:2014, autor:"Juan Gomez-Jurado", gender:"male", pais:"ES"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388187650l/493456.jpg", titulo:"Extras", anyo:2006, autor:"Scott Westerfeld", gender:"male", pais:"US"}
 ];
 const columnas = 12;
