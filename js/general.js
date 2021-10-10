@@ -35,158 +35,156 @@ const libros = [
     {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390513196l/20623749.jpg", titulo:"Las tres bodas de Manolita", anyo:2013, autor:"Almudena Grandes", gender:"female", pais:"ES"},
     {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432229875l/25576397.jpg", titulo:"Tres abuelas y un cocinero muerto", anyo:2013, autor:"Minna Lindgren", gender:"female", pais:"FI"},
     {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388187650l/493456.jpg", titulo:"Extras", anyo:2006, autor:"Scott Westerfeld", gender:"male", pais:"US"}
-    ];
-    const columnas = 12;
-    const filterCountry = countryCode => { 
-        let numBooks = 0;
-        for(let i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            if (libro.pais === countryCode) {
-                numBooks++;
-            }
-        }
-        console.log('Country: '+countryCode+' | '+numBooks+' books');
-    }
-    const filterGender = gender => { 
-        let numBooks = 0;
-        for(let i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            if (libro.gender === gender) {
-                numBooks++;
-            }
-        }
-        console.log('Gender: '+gender+' | '+numBooks+' books');
-    }
-    const filterYear = anyo => { 
-        let numBooks = 0;
-        for(let i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            if (libro.anyo === anyo) {
-                numBooks++;
-            }
-        }
-        console.log('Year: '+anyo+' | '+numBooks+' books');
-    }
-    const filterDecade = anyo => { 
-        let decadeStart = Math.floor(anyo/10)*10;
-        let decadeEnd = decadeStart+9;
-        let numBooks = 0;
-        for(let i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            if (libro.anyo >= decadeStart && libro.anyo <= decadeEnd) {
-                numBooks++;
-            }
-        }
-        console.log('Decade: '+decadeStart+'-'+decadeEnd+' | '+numBooks+' books');
-    }
-    const findCountries = () => {
-        let arrayOut = [];
-        for(let i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            if (!arrayOut.includes(libro.pais)) {
-                arrayOut.push(libro.pais);
-            }
-        }
-        arrayOut.sort();
-        return arrayOut;
-    }
-    const findGenders = () => {
-        let arrayOut = [];
-        for(let i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            if (!arrayOut.includes(libro.gender)) {
-                arrayOut.push(libro.gender);
-            }
-        }
-        arrayOut.sort();
-        return arrayOut;
-    }
-    const findYears = () => {
-        let arrayOut = [];
-        for(let i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            if (!arrayOut.includes(libro.anyo)) {
-                arrayOut.push(libro.anyo);
-            }
-        }
-        arrayOut.sort();
-        return arrayOut;
-    }
-    const findDecades = () => {
-        let arrayOut = [];
-        for(let i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            let decadeStart = Math.floor(libro.anyo/10)*10;
-            if (!arrayOut.includes(decadeStart)) {
-                arrayOut.push(decadeStart);
-            }
-        }
-        arrayOut.sort();
-        return arrayOut;
-    }
-    const summaryCountries = () => {
-        const arrayIn = findCountries();
-        for (let i=0; i<arrayIn.length; i++) {
-            filterCountry(arrayIn[i]);
+];
+const columnas = 12;
+const filterCountry = countryCode => { 
+    let numBooks = 0;
+    for(let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        if (libro.pais === countryCode) {
+            numBooks++;
         }
     }
-    const summaryGenders = () => {
-        const arrayIn = findGenders();
-        for (let i=0; i<arrayIn.length; i++) {
-            filterGender(arrayIn[i]);
+    console.log('Country: '+countryCode+' | '+numBooks+' books');
+}
+const filterGender = gender => { 
+    let numBooks = 0;
+    for(let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        if (libro.gender === gender) {
+            numBooks++;
         }
     }
-    const summaryYears = () => {
-        const arrayIn = findYears();
-        for (let i=0; i<arrayIn.length; i++) {
-            filterYear(arrayIn[i]);
+    console.log('Gender: '+gender+' | '+numBooks+' books');
+}
+const filterYear = anyo => { 
+    let numBooks = 0;
+    for(let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        if (libro.anyo === anyo) {
+            numBooks++;
         }
     }
-    const summaryDecades = () => {
-        const arrayIn = findDecades();
-        for (let i=0; i<arrayIn.length; i++) {
-            filterDecade(arrayIn[i]);
+    console.log('Year: '+anyo+' | '+numBooks+' books');
+}
+const filterDecade = anyo => { 
+    let decadeStart = Math.floor(anyo/10)*10;
+    let decadeEnd = decadeStart+9;
+    let numBooks = 0;
+    for(let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        if (libro.anyo >= decadeStart && libro.anyo <= decadeEnd) {
+            numBooks++;
         }
     }
-    const fullSummary = () => {
-        summaryCountries();
-        summaryGenders();
-        summaryYears();
-        summaryDecades();
+    console.log('Decade: '+decadeStart+'-'+decadeEnd+' | '+numBooks+' books');
+}
+const findCountries = () => {
+    let arrayOut = [];
+    for(let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        if (!arrayOut.includes(libro.pais)) {
+            arrayOut.push(libro.pais);
+        }
     }
+    arrayOut.sort();
+    return arrayOut;
+}
+const findGenders = () => {
+    let arrayOut = [];
+    for(let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        if (!arrayOut.includes(libro.gender)) {
+            arrayOut.push(libro.gender);
+        }
+    }
+    arrayOut.sort();
+    return arrayOut;
+}
+const findYears = () => {
+    let arrayOut = [];
+    for(let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        if (!arrayOut.includes(libro.anyo)) {
+            arrayOut.push(libro.anyo);
+        }
+    }
+    arrayOut.sort();
+    return arrayOut;
+}
+const findDecades = () => {
+    let arrayOut = [];
+    for(let i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        let decadeStart = Math.floor(libro.anyo/10)*10;
+        if (!arrayOut.includes(decadeStart)) {
+            arrayOut.push(decadeStart);
+        }
+    }
+    arrayOut.sort();
+    return arrayOut;
+}
+const summaryCountries = () => {
+    const arrayIn = findCountries();
+    for (let i=0; i<arrayIn.length; i++) {
+        filterCountry(arrayIn[i]);
+    }
+}
+const summaryGenders = () => {
+    const arrayIn = findGenders();
+    for (let i=0; i<arrayIn.length; i++) {
+        filterGender(arrayIn[i]);
+    }
+}
+const summaryYears = () => {
+    const arrayIn = findYears();
+    for (let i=0; i<arrayIn.length; i++) {
+        filterYear(arrayIn[i]);
+    }
+}
+const summaryDecades = () => {
+    const arrayIn = findDecades();
+    for (let i=0; i<arrayIn.length; i++) {
+        filterDecade(arrayIn[i]);
+    }
+}
+const fullSummary = () => {
+    summaryCountries();
+    summaryGenders();
+    summaryYears();
+    summaryDecades();
+}
 
 
-    function getFlagEmoji(countryCode) {
-        const codePoints = countryCode
-            .toUpperCase()
-            .split('')
-            .map(char =>  127397 + char.charCodeAt());
-        return String.fromCodePoint(...codePoints);
-    }
+function getFlagEmoji(countryCode) {
+    const codePoints = countryCode
+        .toUpperCase()
+        .split('')
+        .map(char =>  127397 + char.charCodeAt());
+    return String.fromCodePoint(...codePoints);
+}
 
-    function libreria() {
-        let libreria = "";
-        let total_obras = libros.length;
-        for(var i = 0; i < libros.length; i++) {
-            let libro = libros[i];
-            if (i % columnas == 0) {
-                if (i>0) { libreria += '</div>';}
-                libreria += '<div class="row">';
-            }
+function libreria() {
+    let libreria = "";
+    let total_obras = libros.length;
+    for(var i = 0; i < libros.length; i++) {
+        let libro = libros[i];
+        if (i % columnas == 0) {
+            if (i>0) { libreria += '</div>';}
+            libreria += '<div class="row">';
+        }
 
-            libreria += '<div class="card col border-0">';
-            libreria += '<div class="cover"><img class="card-img-top" src="'+libro.portada+'" alt="'+libro.titulo+'"></div>';
-            libreria += '<div>';
-            libreria += '<p class="small text-center p0"><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
-            libreria += '</div>';
-            libreria += '</div>';
-        }
-        for (i = i; i % columnas > 0; i++) {
-            libreria += '<div class="card col border-0"></div>';
-        }
+        libreria += '<div class="card col border-0">';
+        libreria += '<div class="cover"><img class="card-img-top" src="'+libro.portada+'" alt="'+libro.titulo+'"></div>';
+        libreria += '<div>';
+        libreria += '<p class="small text-center p0"><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
         libreria += '</div>';
-
-        document.getElementById('main').innerHTML = libreria;
+        libreria += '</div>';
     }
+    for (i = i; i % columnas > 0; i++) {
+        libreria += '<div class="card col border-0"></div>';
+    }
+    libreria += '</div>';
 
-    libreria();
+    document.getElementById('main').innerHTML = libreria;
+}
