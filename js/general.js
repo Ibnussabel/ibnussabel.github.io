@@ -7,9 +7,9 @@ const libros = [
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611855460l/56869429.jpg", titulo:"La Montaña Mágica", anyo:1924, autor:"Thomas Mann", gender:"male", pais:"DE"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1448531478l/27976165.jpg", titulo:"Donde las calles no tienen nombre", anyo:2015, autor:"Mónica Rouanet", gender:"female", pais:"ES"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1534795268l/15159488.jpg", titulo:"L'herència de Horst", anyo:2017, autor:"Teresa Roig", gender:"female", pais:"ES"},
-{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522139806l/39651837.jpg", titulo:"La novia gitana", anyo:2018, autor:"Carmen Mola", gender:"female", pais:"ES"},
-{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1551817480l/44284989.jpg", titulo:"La Red Púrpura ", anyo:2019, autor:"Carmen Mola", gender:"female", pais:"ES"},
-{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579946533l/50273222.jpg", titulo:"La nena", anyo:2020, autor:"Carmen Mola", gender:"female", pais:"ES"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522139806l/39651837.jpg", titulo:"La novia gitana", anyo:2018, autor:"Carmen Mola", gender:"male", pais:"ES"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1551817480l/44284989.jpg", titulo:"La Red Púrpura ", anyo:2019, autor:"Carmen Mola", gender:"male", pais:"ES"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579946533l/50273222.jpg", titulo:"La nena", anyo:2020, autor:"Carmen Mola", gender:"male", pais:"ES"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543232739l/41743264.jpg", titulo:"Reina roja", anyo:2018, autor:"Juan Gomez-Jurado", gender:"male", pais:"ES"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547655350l/40922689.jpg", titulo:"Normal People", anyo:2019, autor:"Sally Rooney", gender:"female", pais:"IE"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327204331l/6875163.jpg", titulo:"Traición", anyo:2005, autor:"Scott Westerfeld", gender:"male", pais:"US"},
@@ -35,6 +35,8 @@ const libros = [
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390513196l/20623749.jpg", titulo:"Las tres bodas de Manolita", anyo:2013, autor:"Almudena Grandes", gender:"female", pais:"ES"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432229875l/25576397.jpg", titulo:"Tres abuelas y un cocinero muerto", anyo:2013, autor:"Minna Lindgren", gender:"female", pais:"FI"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1603910684l/20426394.jpg", titulo:"El paciente", anyo:2014, autor:"Juan Gomez-Jurado", gender:"male", pais:"ES"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1433804020l/25667918.jpg", titulo:"Binti", anyo:2015, autor:"Nnedi Okorafor", gender:"female", pais:"US"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1470413227l/30038654.jpg", titulo:"Home", anyo:2017, autor:"Nnedi Okorafor", gender:"female", pais:"US"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388187650l/493456.jpg", titulo:"Extras", anyo:2006, autor:"Scott Westerfeld", gender:"male", pais:"US"}
 ];
 const columnas = 12;
