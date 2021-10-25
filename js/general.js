@@ -37,6 +37,8 @@ const libros = [
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1603910684l/20426394.jpg", titulo:"El paciente", anyo:2014, autor:"Juan Gomez-Jurado", gender:"male", pais:"ES"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1433804020l/25667918.jpg", titulo:"Binti", anyo:2015, autor:"Nnedi Okorafor", gender:"female", pais:"US"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1470413227l/30038654.jpg", titulo:"Home", anyo:2017, autor:"Nnedi Okorafor", gender:"female", pais:"US"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495725402l/34386617.jpg", titulo:"The Night Masquerade", anyo:2018, autor:"Nnedi Okorafor", gender:"female", pais:"US"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1542215231l/32603079.jpg", titulo:"Wanderers", anyo:2019, autor:"Chuck Wendig", gender:"male", pais:"US"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388187650l/493456.jpg", titulo:"Extras", anyo:2006, autor:"Scott Westerfeld", gender:"male", pais:"US"}
 ];
 const columnas = 12;
