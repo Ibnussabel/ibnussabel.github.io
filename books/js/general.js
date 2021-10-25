@@ -73,7 +73,7 @@ const filterYear = anyo => {
     console.log('Year: '+anyo+' | '+numBooks+' books');
 }
 const filterDecade = anyo => { 
-    let decadeStart = Math.floor(anyo/10)*10;
+    let decadeStart = Math.floor(anyo/10)*10+1;
     let decadeEnd = decadeStart+9;
     let numBooks = 0;
     for(let i = 0; i < libros.length; i++) {
@@ -121,7 +121,7 @@ const findDecades = () => {
     let arrayOut = [];
     for(let i = 0; i < libros.length; i++) {
         let libro = libros[i];
-        let decadeStart = Math.floor(libro.anyo/10)*10;
+        let decadeStart = Math.floor(libro.anyo/10)*10+1;
         if (!arrayOut.includes(decadeStart)) {
             arrayOut.push(decadeStart);
         }
