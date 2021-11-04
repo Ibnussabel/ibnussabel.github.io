@@ -10,19 +10,21 @@ h1 {
     letter-spacing: 1px;
 }
 
-.row {
-    margin-top: -5px;
-}
-
-#main {
+main {
     padding: 0 50px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.card-img-top {
-    width: 90px;
+article {
+    text-align: center;
+    margin: 10px;
+    padding: 0 10px;
+    background-color: rgb(246, 250, 255);
+    border-radius: 5%;
 }
 
-.cover {
+img {
     min-height: 156px; 
     margin: 0 auto;
 }
