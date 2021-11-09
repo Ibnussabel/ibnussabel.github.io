@@ -20,12 +20,21 @@ main {
 
 article {
     text-align: center;
-    padding: 0 6px;
+    padding: 0 4px;
     width: 150px;
 }
 
+article p {
+    margin: 0 0 1rem 0;
+}
+
+.author, .flag, .year {
+    font-size: 0.9rem;
+}
+
 img {
-    height: 156px;
+    height: 154px;
     margin: 0 auto;
     border-radius: 5%;
 }
+
