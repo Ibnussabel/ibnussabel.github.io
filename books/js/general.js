@@ -38,7 +38,8 @@ const libros = [
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1433804020l/25667918.jpg", titulo:"Binti", anyo:2015, autor:"Nnedi Okorafor", gender:"female", pais:"US"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1470413227l/30038654.jpg", titulo:"Home", anyo:2017, autor:"Nnedi Okorafor", gender:"female", pais:"US"},
 {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495725402l/34386617.jpg", titulo:"The Night Masquerade", anyo:2018, autor:"Nnedi Okorafor", gender:"female", pais:"US"},
-{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1542215231l/32603079.jpg", titulo:"Wanderers", anyo:2019, autor:"Chuck Wendig", gender:"male", pais:"US"}
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1542215231l/32603079.jpg", titulo:"Wanderers", anyo:2019, autor:"Chuck Wendig", gender:"male", pais:"US"},
+{portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1603910942l/27420709.jpg", titulo:"Cicatriz", anyo:2015, autor:"Juan Gomez-Jurado", gender:"male", pais:"ES"}
 ];
 const columnas = 12;
 const filterCountry = countryCode => { 
