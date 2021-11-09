@@ -15,12 +15,13 @@ main {
     width: 98%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 article {
     text-align: center;
-    padding: 0 10px;
-    width: 156px;
+    padding: 0 6px;
+    width: 150px;
 }
 
 img {
