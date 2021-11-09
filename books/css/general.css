@@ -11,7 +11,7 @@ h1 {
 }
 
 main {
-    margin: 0 auto;
+    padding: 0;
     width: 98%;
     display: flex;
     flex-wrap: wrap;
