@@ -41,7 +41,7 @@ const libros = [
     {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1542215231l/32603079.jpg", titulo:"Wanderers", anyo:2019, autor:"Chuck Wendig", gender:"male", pais:"US"},
     {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1603910942l/27420709.jpg", titulo:"Cicatriz", anyo:2015, autor:"Juan Gomez-Jurado", gender:"male", pais:"ES"},
     {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1449576817l/28137636.jpg", titulo:"Tres abuelas y un joyero de ida y vuelta", anyo:2014, autor:"Minna Lindgren", gender:"female", pais:"FI"},
-    {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505757328l/36240327.jpg", titulo:"Damas oscuras", anyo:2017, autor:"Varias autoras", gender:"female", pais:"UK"}
+    {portada:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505757328l/36240327.jpg", titulo:"Damas oscuras", anyo:2017, autor:"Varias autoras", gender:"female", pais:"GB"}
 ];
 
 const filterCountry = countryCode => {
