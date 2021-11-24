@@ -2,15 +2,14 @@ fetch('./assets/libros.json')
   .then(response => response.json())
   .then(data => {
     const libros = JSON.parse(JSON.stringify(data));
-    console.log(libros);
 
     let libreria = "";
     for(var i = 0; i < libros.length; i++) {
-    let libro = libros[i];
-    libreria += '<article>';
-    libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
-    libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
-    libreria += '</article>';
+      let libro = libros[i];
+      libreria += '<article>';
+      libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
+      libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
+      libreria += '</article>';
     }
     document.getElementById('shelf').innerHTML = libreria;    
 })
@@ -132,7 +131,6 @@ const fullSummary = () => {
     summaryYears();
     summaryDecades();
 }
-
 const getFlagEmoji = countryCode => {
     const codePoints = countryCode
         .toUpperCase()
@@ -140,4 +138,3 @@ const getFlagEmoji = countryCode => {
         .map(char =>  127397 + char.charCodeAt());
     return String.fromCodePoint(...codePoints);
 }
-
