@@ -1,8 +1,9 @@
 fetch('./assets/libros.json')
 .then(response => response.json())
 .then(jsonResponse => {
-  const libros = jsonResponse;
+  const json_libros = jsonResponse;
   console.log(libros);
+  var libros = JSON.parse(json_libros);
 });
 
 function filterCountry(countryCode) {
