@@ -1,13 +1,10 @@
-
 fetch('./assets/libros.json')
-.then(response => response.json())
-.then(jsonResponse => {
-  const json_libros = jsonResponse;
-  console.log("json_libros:"+JSON.parse(json_libros));
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
 
-  /*const libros = JSON.parse(json_libros);
-  console.log("libros:"+libros);
-
+  /*
   let libreria = "";
   for(var i = 0; i < libros.length; i++) {
     let libro = libros[i];
@@ -18,7 +15,7 @@ fetch('./assets/libros.json')
   }
 
   document.getElementById('shelf').innerHTML = libreria;*/
-});
+
 
 const filterCountry = countryCode => {
     let numBooks = 0;
