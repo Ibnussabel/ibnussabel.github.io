@@ -4,21 +4,20 @@ fetch('./assets/libros.json')
 .then(jsonResponse => {
   const json_libros = jsonResponse;
   console.log("json_libros:"+json_libros);
-})
-.then(response => {
-    const libros = JSON.parse(json_libros);
-    console.log("libros:"+libros);
-}).then(response => {
-    let libreria = "";
-    for(var i = 0; i < libros.length; i++) {
-        let libro = libros[i];
-        libreria += '<article>';
-        libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
-        libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
-        libreria += '</article>';
-    }
 
-    document.getElementById('shelf').innerHTML = libreria;
+  const libros = JSON.parse(json_libros);
+  console.log("libros:"+libros);
+
+  let libreria = "";
+  for(var i = 0; i < libros.length; i++) {
+    let libro = libros[i];
+    libreria += '<article>';
+    libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
+    libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
+    libreria += '</article>';
+  }
+
+  document.getElementById('shelf').innerHTML = libreria;
 });
 
 const filterCountry = countryCode => {
