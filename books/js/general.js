@@ -3,8 +3,7 @@ fetch('./assets/libros.json')
 .then(jsonResponse => {
   const json_libros = jsonResponse;
   const libros = JSON.parse(json_libros);
-  const libreria = () => {
-    let libreria = "";
+  let libreria = "";
     for(var i = 0; i < libros.length; i++) {
         let libro = libros[i];
         libreria += '<article>';
@@ -14,7 +13,6 @@ fetch('./assets/libros.json')
     }
 
     document.getElementById('shelf').innerHTML = libreria;
-  }
 });
 
 const filterCountry = countryCode => {
