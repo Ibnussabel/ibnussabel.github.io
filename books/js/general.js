@@ -1,22 +1,25 @@
-fetch('./assets/libros.json')
-.then(response => response.json())
-.then(jsonResponse => {
-  const json_libros = jsonResponse;
-  const libros = JSON.parse(json_libros);
+const req = new XMLHttpRequest();
+req.responseType = 'json';
+req.open('GET', './assets/libros.json');
+req.onload = () => {
+    const json_libros = req.response;
+};
+ 
+req.send();
 
-  console.log(libros);
+const libros = JSON.parse(json_libros);
+console.log(libros);
   
-  let libreria = "";
-    for(var i = 0; i < libros.length; i++) {
-        let libro = libros[i];
-        libreria += '<article>';
-        libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
-        libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
-        libreria += '</article>';
-    }
+let libreria = "";
+for(var i = 0; i < libros.length; i++) {
+  let libro = libros[i];
+  libreria += '<article>';
+  libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
+  libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
+  libreria += '</article>';
+}
 
-    document.getElementById('shelf').innerHTML = libreria;
-});
+document.getElementById('shelf').innerHTML = libreria;
 
 const filterCountry = countryCode => {
     let numBooks = 0;
