@@ -1,11 +1,8 @@
 const req = new XMLHttpRequest();
 req.responseType = 'json';
 req.open('GET', './assets/libros.json');
-req.onload = () => {
-    const json_libros = req.response;
-};
- 
 req.send();
+const json_libros = req.response;
 
 const libros = JSON.parse(json_libros);
 console.log(libros);
