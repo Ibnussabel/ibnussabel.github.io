@@ -3,6 +3,9 @@ fetch('./assets/libros.json')
 .then(jsonResponse => {
   const json_libros = jsonResponse;
   const libros = JSON.parse(json_libros);
+
+  console.log(libros);
+  
   let libreria = "";
     for(var i = 0; i < libros.length; i++) {
         let libro = libros[i];
