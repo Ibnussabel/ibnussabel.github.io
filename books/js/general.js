@@ -3,7 +3,7 @@ fetch('./assets/libros.json')
 .then(response => response.json())
 .then(jsonResponse => {
   const json_libros = jsonResponse;
-  console.log("json_libros:"+json_libros);
+  console.log("json_libros:"+JSON.parse(json_libros));
 
   /*const libros = JSON.parse(json_libros);
   console.log("libros:"+libros);
