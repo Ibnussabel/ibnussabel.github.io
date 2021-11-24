@@ -5,7 +5,7 @@ fetch('./assets/libros.json')
   const json_libros = jsonResponse;
   console.log("json_libros:"+json_libros);
 
-  const libros = JSON.parse(json_libros);
+  /*const libros = JSON.parse(json_libros);
   console.log("libros:"+libros);
 
   let libreria = "";
@@ -17,7 +17,7 @@ fetch('./assets/libros.json')
     libreria += '</article>';
   }
 
-  document.getElementById('shelf').innerHTML = libreria;
+  document.getElementById('shelf').innerHTML = libreria;*/
 });
 
 const filterCountry = countryCode => {
