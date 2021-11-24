@@ -1,7 +1,7 @@
 fetch('./assets/libros.json')
   .then(response => response.json())
   .then(data => {
-    const libros = data;
+    const libros = JSON.parse(data);
     console.log(libros);
   })
 
