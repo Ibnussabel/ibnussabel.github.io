@@ -39,6 +39,9 @@ img.cover {
     border-radius: 4%;
 }
 
+img.flag {
+    height: 15px;
+}
 
 @media only screen and (max-width: 600px) {
     article {
