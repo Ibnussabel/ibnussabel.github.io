@@ -106,25 +106,25 @@ const findDecades = () => {
     return arrayOut;
 }
 const summaryCountries = () => {
-    const arrayIn = findCountries();
+    let arrayIn = findCountries();
     for (let i=0; i<arrayIn.length; i++) {
         filterCountry(arrayIn[i]);
     }
 }
 const summaryGenders = () => {
-    const arrayIn = findGenders();
+    let arrayIn = findGenders();
     for (let i=0; i<arrayIn.length; i++) {
         filterGender(arrayIn[i]);
     }
 }
 const summaryYears = () => {
-    const arrayIn = findYears();
+    let arrayIn = findYears();
     for (let i=0; i<arrayIn.length; i++) {
         filterYear(arrayIn[i]);
     }
 }
 const summaryDecades = () => {
-    const arrayIn = findDecades();
+    let arrayIn = findDecades();
     for (let i=0; i<arrayIn.length; i++) {
         filterDecade(arrayIn[i]);
     }
