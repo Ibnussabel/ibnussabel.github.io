@@ -1,14 +1,17 @@
+const contry_names = {AR: "Argentina", AT: "Austria", DE: "Alemania", ES: "España", FI: "Finlandia", FR: "Francia", GB: "Reino Unido", IE: "Irlanda", IT: "Italia", JP: "Japón", RU: "Rusia", US: "Estados Unidos de América"};
+
 fetch('./assets/libros.json')
   .then(response => response.json())
   .then(data => {
     const libros = JSON.parse(JSON.stringify(data));
 
     let libreria = "";
-    for(var i = 0; i < libros.length; i++) {
+    for(let i = 0; i < libros.length; i++) {
       let libro = libros[i];
       libreria += '<article>';
       libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
-      libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br><span class="flag">'+getFlagEmoji(libro.pais)+'</span> <span class="year">'+libro.anyo+'</span></p>';
+      libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br>';
+      libreria += '<img class="flag" src="./img/flags/'+libro.pais+'.png" alt="Bandera de '+contry_names[libro.pais]+'" title="'+contry_names[libro.pais]+'"> <span class="year">'+libro.anyo+'</span></p>';
       libreria += '</article>';
     }
     document.getElementById('shelf').innerHTML = libreria;    
@@ -130,11 +133,4 @@ const fullSummary = () => {
     summaryGenders();
     summaryYears();
     summaryDecades();
-}
-const getFlagEmoji = countryCode => {
-    const codePoints = countryCode
-        .toUpperCase()
-        .split('')
-        .map(char =>  127397 + char.charCodeAt());
-    return String.fromCodePoint(...codePoints);
 }
