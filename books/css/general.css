@@ -33,7 +33,7 @@ article p {
     font-size: 0.9rem;
 }
 
-img {
+img.cover {
     height: 154px;
     margin: 0 auto;
     border-radius: 4%;

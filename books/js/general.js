@@ -9,7 +9,7 @@ fetch('./assets/libros.json')
     for(let i = 0; i < libros.length; i++) {
       let libro = libros[i];
       libreria += '<article>';
-      libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
+      libreria += '<img clas="cover" src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
       libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br>';
       libreria += '<img class="flag" src="./img/flags/'+libro.pais.toLowerCase()+'.png" alt="Bandera de '+contry_names[libro.pais]+'" title="'+contry_names[libro.pais]+'"> <span class="year">'+libro.anyo+'</span></p>';
       libreria += '</article>';
