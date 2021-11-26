@@ -19,14 +19,14 @@ fetch('./assets/libros.json')
 })
 
 const filterCountry = countryCode => {
-    let numBooks = 0;
+    let arrayOut = [];
     for (let i = 0; i < libros.length; i++) {
         let libro = libros[i];
         if (libro.pais === countryCode) {
-            numBooks++;
+            arrayOut.push(libro);
         }
     }
-    console.log('Country: ' + countryCode + ' | ' + numBooks + ' books');
+    return arrayOut;
 }
 const filterGender = gender => { 
     let numBooks = 0;
