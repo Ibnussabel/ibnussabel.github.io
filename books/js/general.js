@@ -1,21 +1,21 @@
 const contry_names = {AR: "Argentina", AT: "Austria", DE: "Alemania", ES: "España", FI: "Finlandia", FR: "Francia", GB: "Reino Unido", IE: "Irlanda", IT: "Italia", JP: "Japón", RU: "Rusia", US: "Estados Unidos de América"};
 
-fetch('./assets/libros.json')
+const libros = fetch('./assets/libros.json')
   .then(response => response.json())
   .then(data => {
-    const libros = JSON.parse(JSON.stringify(data));
-
-    let libreria = "";
-    for(let i = 0; i < libros.length; i++) {
-      let libro = libros[i];
-      libreria += '<article>';
-      libreria += '<img class="cover" src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
-      libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br>';
-      libreria += '<img class="flag" src="./img/flags/'+libro.pais.toLowerCase()+'.png" alt="Bandera de '+contry_names[libro.pais]+'" title="'+contry_names[libro.pais]+'"> <span class="year">'+libro.anyo+'</span></p>';
-      libreria += '</article>';
-    }
-    document.getElementById('shelf').innerHTML = libreria;    
+     return JSON.parse(JSON.stringify(data));    
 })
+
+let libreria = "";
+for(let i = 0; i < libros.length; i++) {
+  let libro = libros[i];
+  libreria += '<article>';
+  libreria += '<img class="cover" src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
+  libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br>';
+  libreria += '<img class="flag" src="./img/flags/'+libro.pais.toLowerCase()+'.png" alt="Bandera de '+contry_names[libro.pais]+'" title="'+contry_names[libro.pais]+'"> <span class="year">'+libro.anyo+'</span></p>';
+  libreria += '</article>';
+}
+document.getElementById('shelf').innerHTML = libreria;
 
 const filterCountry = countryCode => {
     let numBooks = 0;
