@@ -29,36 +29,36 @@ const filterCountry = countryCode => {
     return arrayOut;
 }
 const filterGender = gender => { 
-    let numBooks = 0;
-    for(let i = 0; i < libros.length; i++) {
+    let arrayOut = [];
+    for (let i = 0; i < libros.length; i++) {
         let libro = libros[i];
         if (libro.gender === gender) {
-            numBooks++;
+            arrayOut.push(libro);
         }
     }
-    console.log('Gender: '+gender+' | '+numBooks+' books');
+    return arrayOut;
 }
 const filterYear = anyo => { 
-    let numBooks = 0;
-    for(let i = 0; i < libros.length; i++) {
+    let arrayOut = [];
+    for (let i = 0; i < libros.length; i++) {
         let libro = libros[i];
         if (libro.anyo === anyo) {
-            numBooks++;
+            arrayOut.push(libro);
         }
     }
-    console.log('Year: '+anyo+' | '+numBooks+' books');
+    return arrayOut;
 }
 const filterDecade = anyo => { 
     let decadeStart = Math.floor(anyo/10)*10+1;
     let decadeEnd = decadeStart+9;
-    let numBooks = 0;
+    let arrayOut = [];
     for(let i = 0; i < libros.length; i++) {
         let libro = libros[i];
         if (libro.anyo >= decadeStart && libro.anyo <= decadeEnd) {
-            numBooks++;
+            arrayOut.push(libro);
         }
     }
-    console.log('Decade: '+decadeStart+'-'+decadeEnd+' | '+numBooks+' books');
+    return arrayOut;
 }
 const findCountries = () => {
     let arrayOut = [];
