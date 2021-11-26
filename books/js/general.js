@@ -1,11 +1,11 @@
 const contry_names = {AR: "Argentina", AT: "Austria", DE: "Alemania", ES: "España", FI: "Finlandia", FR: "Francia", GB: "Reino Unido", IE: "Irlanda", IT: "Italia", JP: "Japón", RU: "Rusia", US: "Estados Unidos de América"};
+var libros;
 
 fetch('./assets/libros.json')
   .then(response => response.json())
   .then(data => {
-    return JSON.parse(JSON.stringify(data));
-})
-  .then(libros => {
+    libros = JSON.parse(JSON.stringify(data));
+
     let libreria = "";
     for(let i = 0; i < libros.length; i++) {
       let libro = libros[i];
@@ -17,7 +17,6 @@ fetch('./assets/libros.json')
     }
     document.getElementById('shelf').innerHTML = libreria;    
 })
-
 
 const filterCountry = countryCode => {
     let numBooks = 0;
