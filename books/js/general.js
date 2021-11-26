@@ -11,7 +11,7 @@ fetch('./assets/libros.json')
       libreria += '<article>';
       libreria += '<img src="'+libro.portada+'" alt="'+libro.titulo+'. '+libro.autor+', '+libro.anyo+'">';
       libreria += '<p><strong class="title">'+libro.titulo+'</strong><br><span class="author">'+libro.autor+'</span><br>';
-      libreria += '<img class="flag" src="./img/flags/'+libro.pais+'.png" alt="Bandera de '+contry_names[libro.pais]+'" title="'+contry_names[libro.pais]+'"> <span class="year">'+libro.anyo+'</span></p>';
+      libreria += '<img class="flag" src="./img/flags/'+libro.pais.toLowerCase()+'.png" alt="Bandera de '+contry_names[libro.pais]+'" title="'+contry_names[libro.pais]+'"> <span class="year">'+libro.anyo+'</span></p>';
       libreria += '</article>';
     }
     document.getElementById('shelf').innerHTML = libreria;    
