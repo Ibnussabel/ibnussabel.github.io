@@ -6,8 +6,7 @@ const showcase = (books, writers, countries) => {
     let shelf = '';
     for(let i = 0; i < books.length; i++) {
         let book = books[i];
-        let authors = writers.filter(writer => writer.name == book.writer);
-        let author = authors[0];
+        let author = writers.find(writer => writer.name == book.writer);
         shelf += '<article>';
         shelf += '<img class="cover" src="'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'">';
         shelf += '<p><strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
