@@ -13,8 +13,7 @@ const showcase = books => {
         shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png"> <span class="year">'+book.published+'</span></p>';
         shelf += '</article>';
     }
-    console.log(writers);
-    console.log(countries);
+    console.log(author);
     document.getElementById('shelf').innerHTML = shelf;    
 }
 
