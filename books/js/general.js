@@ -6,12 +6,12 @@ const showcase = (books, writers, countries) => {
     let shelf = '';
     for(let i = 0; i < books.length; i++) {
         let book = books[i];
-        let author = writers.filter(writer => writer.name == book.writer);
-        let writer = author[0];
+        let authors = writers.filter(writer => writer.name == book.writer);
+        let author = authors[0];
         shelf += '<article>';
         shelf += '<img class="cover" src="'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'">';
         shelf += '<p><strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
-        shelf += '<img class="flag" src="./img/flags/'+writer.country.toLowerCase()+'.png"> <span class="year">'+book.published+'</span></p>';
+        shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png"> <span class="year">'+book.published+'</span></p>';
         shelf += '</article>';
     }
     console.log(author);
