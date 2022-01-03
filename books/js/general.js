@@ -2,7 +2,7 @@ var books;
 var writers;
 var countries;
 
-const showcase = books => {
+const showcase = (books, writers, countries) => {
     let shelf = '';
     for(let i = 0; i < books.length; i++) {
         let book = books[i];
@@ -34,5 +34,5 @@ fetch('./assets/books.json')
   .then(data => {
     books = JSON.parse(JSON.stringify(data));
 
-    showcase(books);
+    showcase(books, writers, countries);
   })
