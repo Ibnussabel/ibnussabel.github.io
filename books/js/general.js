@@ -16,5 +16,7 @@ fetch('./assets/books.json')
   .then(response => response.json())
   .then(data => {
     books = JSON.parse(JSON.stringify(data));
+
+    console.log(books);
     showcase(books);
   })
