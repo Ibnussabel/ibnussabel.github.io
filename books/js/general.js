@@ -8,12 +8,12 @@ const showcase = (books) => {
     for(let i = 0; i < books.length; i++) {
         let book = books[i];
         let author = writers.find(person => person.name == book.writer);
-        console.log(i+' '+book.name);
+        let country = countries.find(place => place.code == author.country);
  
         shelf += '<article>';
         shelf += '<img class="cover" src="'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'">';
-        shelf += '<p><strong class="title">'+book.name+'</strong><br><span class="author '+author.gender+'">'+book.writer+'</span><br>';
-        shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png"> <span class="year">'+book.published+'</span></p>';
+        shelf += '<p><strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
+        shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png" alt="'+country.name+' flag" title="'+country.name+'"> <span class="year">'+book.published+'</span></p>';
         shelf += '</article>';
     }
     document.getElementById('shelf').innerHTML = shelf;    
