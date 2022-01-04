@@ -5,12 +5,11 @@ var countries;
 const showcase = (books) => {
     let shelf = '';
 
-    console.log(writers);
     for(let i = 0; i < books.length; i++) {
         let book = books[i];
         let author = writers.find(person => person.name == book.writer);
-        console.log(author.gender);
-
+        console.log(i+' '.book.name);
+ 
         shelf += '<article>';
         shelf += '<img class="cover" src="'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'">';
         shelf += '<p><strong class="title">'+book.name+'</strong><br><span class="author '+author.gender+'">'+book.writer+'</span><br>';
