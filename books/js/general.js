@@ -5,11 +5,12 @@ var countries;
 const showcase = (books) => {
     let book, author, country, gender;
     let shelf = '';
-    console.log("---");
+
     console.log(writers);
     for(let i = 0; i < books.length; i++) {
         book = books[i];
-        author = writers.find(person => person.name == book.writer);        
+        author = writers.find(person => person.name == book.writer);
+        console.log(author);   
         gender = author.gender;
         country = author.country;
 
@@ -37,7 +38,6 @@ fetch('./assets/writers.json')
     .then(data => {
       books = JSON.parse(JSON.stringify(data));
 
-      console.log(writers);
       showcase(books);
     })
   })
