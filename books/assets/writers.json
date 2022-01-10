@@ -28,5 +28,6 @@
     {"name": "Several writers", "gender": "female", "country": "GB"}, 
     {"name": "Liliana Bodoc", "gender": "female", "country": "AR"}, 
     {"name": "Fran Ferriz", "gender": "male", "country": "ES"}, 
-    {"name": "Ángel Martín Gómez", "gender": "male", "country": "ES"}
+    {"name": "Ángel Martín Gómez", "gender": "male", "country": "ES"}, 
+    {"name": "Tamsyn Muir", "gender": "female", "country": "NZ"}    
 ]
