@@ -110,7 +110,6 @@ const filterBooks = (tag, operator, comparison) => {
       let language = languages.find(lang => lang.code == comparison);
       criteria = 'Escrito en '+language.name;
       break;
-
   } 
 
   if (books2.length) {
@@ -124,4 +123,23 @@ const filterBooks = (tag, operator, comparison) => {
 const resetBooks = () => {
   showcase(books);
   document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
+}
+
+const armaSelect = (collection, id) => {
+  let select = '<select id='+id+' name='+id+'>';
+  for(let i = 0; i < collection.length; i++) {
+    let item = collection[i];
+    select += '<option value='+item.code+'>'+item.name+'</option>';
+  }
+  select += '</select>';
+}
+
+const checkComparison = () => {
+  if (document.filtro.tag.value == 'language') {
+    document.getElementById('fieldComparison').innerHTML = armaSelect(languages, 'comparison');
+  } else if (document.filtro.tag.value == 'country') {
+    document.getElementById('fieldComparison').innerHTML = armaSelect(countries, 'comparison');
+  } else {
+    document.getElementById('fieldComparison').innerHTML = '<input type="text" id="comparison" name="comparison">';
+  }
 }
