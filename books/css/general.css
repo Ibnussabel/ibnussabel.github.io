@@ -21,12 +21,12 @@ main {
 
 article {
     text-align: center;
-    padding: 0 2px;
-    width: 140px;
+    padding: 0 0.2rem;
+    width: 8.5rem;
 }
 
 article p {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.9rem 0;
 }
 
 .author, .flag, .year {
@@ -34,13 +34,13 @@ article p {
 }
 
 img.cover {
-    height: 154px;
+    height: 10rem;
     margin: 0 auto;
     border-radius: 4%;
 }
 
 img.flag {
-    height: 12px;
+    height: 0.8rem;
 }
 
 .year {
@@ -48,6 +48,22 @@ img.flag {
     line-height: 1.25rem;
     vertical-align: top;
     padding-left: 0.2rem;
+}
+
+form {
+    padding: 0;
+    margin: 0 auto 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+fieldset {
+    border: 0;
+}
+
+fieldset legend {
+    display: none;
 }
 
 @media only screen and (max-width: 600px) {
