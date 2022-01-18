@@ -16,7 +16,7 @@
             <legend>Filtrar</legend>
             
             <label for="tag">Etiqueta</label>
-            <select id="tag" name="tag">
+            <select id="tag" name="tag" onchange="checkComparison()">
                 <option value="name">Título</option>
                 <option value="writer">Escritor</option>
                 <option value="published">Año de publicación</option>
@@ -36,7 +36,7 @@
             </select>
         
             <label for="comparison">Comparación</label>
-            <input type="text" id="comparison" name="comparison">
+            <span id="fieldComparison"><input type="text" id="comparison" name="comparison"></span>
 
             <input type="button" value="Filtrar" onclick="filterBooks(document.filtro.tag.value, document.filtro.operator.value, document.filtro.comparison.value)">
             <input type="button" value="Restablecer" onclick="resetBooks()">            
