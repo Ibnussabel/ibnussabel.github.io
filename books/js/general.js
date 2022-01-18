@@ -70,7 +70,7 @@ const filterBooks = (tag, operator, comparison) => {
   if (tag == 'name' || tag == 'published' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
     switch (operator) {
       case 'same':
-        books2 = books.filter(book => book[tag].toLowerCase() == comparison.toLowerCase());
+        books2 = books.filter(book => book[tag] == comparison);
         arg1 = 'en '+comparison;
         arg2 = comparison+' estrellas';
         break;
