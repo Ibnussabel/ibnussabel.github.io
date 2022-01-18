@@ -28,13 +28,93 @@ fetch('./assets/writers.json')
     .then(response => response.json())
     .then(data => {
       countries = JSON.parse(JSON.stringify(data));
+      
+    fetch('./assets/languages.json')
+      .then(response => response.json())
+      .then(data => {
+        languages = JSON.parse(JSON.stringify(data));
 
-  fetch('./assets/books.json')
-    .then(response => response.json())
-    .then(data => {
-      books = JSON.parse(JSON.stringify(data));
+      fetch('./assets/books.json')
+        .then(response => response.json())
+        .then(data => {
+          books = JSON.parse(JSON.stringify(data));
 
-      showcase(books);
+        showcase(books);
+        document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
+      })
     })
   })
 })
+
+const filterBooks = (tag, operator, comparison) => {
+  let books2, criteria, arg1;
+  
+  if (tag == 'name' || tag == 'published' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
+    switch (operator) {
+      case 'same':
+        books2 = books.filter(book => book[tag] == comparison);
+        arg1 = 'en '+comparison;
+        arg2 = comparison+' estrellas';
+        break;
+      case 'more':
+        books2 = books.filter(book => book[tag] > comparison);
+        arg1 = 'después de '+comparison;
+        arg2 = 'Más de '+comparison+' estrellas';
+        break;
+      case 'less':
+        books2 = books.filter(book => book[tag] < comparison);
+        arg1 = 'antes de '+comparison;
+        arg2 = 'Menos de '+comparison+' estrellas';
+        break;
+      case 'has':
+        books2 = books.filter(book => book[tag].includes(comparison));
+        break;
+      case 'sameormore':
+        books2 = books.filter(book => book[tag] >= comparison);
+        arg1 = 'en '+comparison+' o después';
+        arg2 = comparison+' estrellas o más';
+        break;
+      case 'sameorless':
+        books2 = books.filter(book => book[tag] <= comparison);
+        arg1 = 'en '+comparison+' o antes';
+        arg2 = comparison+' estrellas o menos';
+        break;
+    }
+  }
+
+  switch (tag) {
+    case 'published':
+      criteria = 'Publicado '+arg1;
+      break;
+    case 'read':
+      criteria = 'Leído '+arg1;
+      break;
+    case 'name':
+      if (operator == 'same') {
+        criteria = 'Titulado "'+comparison+'"';
+      } else {
+        criteria = 'El título contiene "'+comparison+'"';
+      }
+      break;
+    case 'writer':
+      if (operator == 'same') {
+        criteria = 'Escrito por "'+comparison+'"';
+      } else {
+        criteria = 'El nombre del escritor contiene "'+comparison+'"';
+      }
+      break;
+    case 'rating':
+      criteria = 'Valoración '+arg2;
+      break;
+    case 'language':
+      let language = languages.find(lang => lang.code == comparison);
+      criteria = 'Escrito en '+language.name;
+      break;
+
+  } 
+
+  if (books2.length) {
+    showcase(books2);
+    document.getElementById('title').innerText = criteria+' ('+books2.length+')';
+  }
+}
