@@ -116,6 +116,8 @@ const filterBooks = (tag, operator, comparison) => {
   if (books2.length) {
     showcase(books2);
     document.getElementById('title').innerText = criteria+' ('+books2.length+')';
+  } else {
+    alert('El filtro introducido no ha producido ningún resultado.')
   }
 }
 

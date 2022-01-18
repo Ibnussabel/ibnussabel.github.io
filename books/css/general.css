@@ -66,6 +66,10 @@ fieldset legend {
     display: none;
 }
 
+fieldset label {
+    padding: 0 0.2rem 0 1rem;
+}
+
 @media only screen and (max-width: 600px) {
     article {
         margin: 4px 0;
