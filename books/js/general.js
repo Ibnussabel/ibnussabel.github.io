@@ -1,19 +1,4 @@
-var books;
-var writers;
-var countries;
-
-const genders = [
-  {"code": "male", "name": "masculino"}, 
-  {"code": "female", "name": "femenino"}
-];
-
-const ratings = [
-  {"code": "1", "name": "&starf;&star;&star;&star;&star;"}, 
-  {"code": "2", "name": "&starf;&starf;&star;&star;&star;"}, 
-  {"code": "3", "name": "&starf;&starf;&starf;&star;&star;"}, 
-  {"code": "4", "name": "&starf;&starf;&starf;&starf;&star;"}, 
-  {"code": "5", "name": "&starf;&starf;&starf;&starf;&starf;"}
-];
+var books, writers, countries, genders, ratings;
 
 const showcase = (books) => {
     let shelf = '';
@@ -54,6 +39,19 @@ fetch('./assets/writers.json')
         .then(data => {
           books = JSON.parse(JSON.stringify(data));
 
+        genders = [
+          {"code": "male", "name": "masculino"}, 
+          {"code": "female", "name": "femenino"}
+        ];
+        
+        ratings = [
+          {"code": "1", "name": "&starf;&star;&star;&star;&star;"}, 
+          {"code": "2", "name": "&starf;&starf;&star;&star;&star;"}, 
+          {"code": "3", "name": "&starf;&starf;&starf;&star;&star;"}, 
+          {"code": "4", "name": "&starf;&starf;&starf;&starf;&star;"}, 
+          {"code": "5", "name": "&starf;&starf;&starf;&starf;&starf;"}
+        ];
+          
         showcase(books);
         document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
       })
