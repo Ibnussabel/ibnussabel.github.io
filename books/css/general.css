@@ -48,6 +48,12 @@ img.flag {
     height: 0.8rem;
 }
 
+.rating {
+    color: orangered;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
 .year {
     font-size: 0.75rem;
     line-height: 1.25rem;
@@ -80,7 +86,7 @@ input[value=Filtrar] {
 }
 
 .dim {
-    color: rgba(0, 0, 0, 0.5);
+    opacity: 50%;
 }
 
 @media only screen and (max-width: 600px) {
