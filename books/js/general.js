@@ -132,6 +132,8 @@ const armaSelect = (collection, id) => {
     select += '<option value='+item.code+'>'+item.name+'</option>';
   }
   select += '</select>';
+
+  return select;
 }
 
 const checkComparison = () => {
