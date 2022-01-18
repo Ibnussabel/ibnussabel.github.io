@@ -70,7 +70,7 @@ const filterBooks = (tag, operator, comparison) => {
   if (tag == 'name' || tag == 'published' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
     switch (operator) {
       case 'same':
-        books2 = books.filter(book => book[tag] == comparison);
+        books2 = books.filter(book => book[tag].toLowerCase() == comparison.toLowerCase());
         arg1 = 'en '+comparison;
         arg2 = comparison+' estrellas';
         break;
@@ -85,7 +85,7 @@ const filterBooks = (tag, operator, comparison) => {
         arg2 = 'Menos de '+comparison+' estrellas';
         break;
       case 'has':
-        books2 = books.filter(book => book[tag].includes(comparison));
+        books2 = books.filter(book => book[tag].toLowerCase().includes(comparison.toLowerCase()));
         break;
       case 'sameormore':
         books2 = books.filter(book => book[tag] >= comparison);
@@ -140,6 +140,9 @@ const filterBooks = (tag, operator, comparison) => {
 
 const resetBooks = () => {
   showcase(books);
+  document.filtro.tag.selectedIndex = 0;
+  document.filtro.operator.selectedIndex = 0;
+  document.filtro.comparison.value = '';
   document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
 }
 
