@@ -22,10 +22,12 @@ const showcase = (books) => {
         let book = books[i];
         let author = writers.find(person => person.name == book.writer);
         let country = countries.find(place => place.code == author.country);
+        let rating = ratings.find(points => points.code == book.rating);
  
         shelf += '<article>';
         shelf += '<img class="cover" src="'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'">';
-        shelf += '<p><strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
+        shelf += '<p><strong class="rating">'+rating.name+'</strong><br>';
+        shelf += '<strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
         shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png" alt="'+country.name+' flag" title="'+country.name+'"> <span class="year">'+book.published+'</span></p>';
         shelf += '</article>';
     }
