@@ -2,6 +2,19 @@ var books;
 var writers;
 var countries;
 
+const genders = [
+  {"code": "male", "name": "masculino"}, 
+  {"code": "female", "name": "femenino"}
+];
+
+const ratings = [
+  {"code": "1", "name": "&starf;&star;&star;&star;&star;"}, 
+  {"code": "2", "name": "&starf;&starf;&star;&star;&star;"}, 
+  {"code": "3", "name": "&starf;&starf;&starf;&star;&star;"}, 
+  {"code": "4", "name": "&starf;&starf;&starf;&starf;&star;"}, 
+  {"code": "5", "name": "&starf;&starf;&starf;&starf;&starf;"}
+];
+
 const showcase = (books) => {
     let shelf = '';
 
@@ -141,6 +154,10 @@ const checkComparison = () => {
     document.getElementById('fieldComparison').innerHTML = armaSelect(languages, 'comparison');
   } else if (document.filtro.tag.value == 'country') {
     document.getElementById('fieldComparison').innerHTML = armaSelect(countries, 'comparison');
+  } else if (document.filtro.tag.value == 'rating') {
+    document.getElementById('fieldComparison').innerHTML = armaSelect(ratings, 'comparison');
+  } else if (document.filtro.tag.value == 'gender') {
+    document.getElementById('fieldComparison').innerHTML = armaSelect(genders, 'comparison');
   } else {
     document.getElementById('fieldComparison').innerHTML = '<input type="text" id="comparison" name="comparison">';
   }
