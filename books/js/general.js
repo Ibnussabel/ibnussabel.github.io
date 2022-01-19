@@ -65,7 +65,7 @@ fetch('./assets/writers.json')
 })
 
 const filterBooks = (tag, operator, comparison) => {
-  let books2, criteria, arg1;
+  let books2, criteria, arg1, writers2;
   
   if (tag == 'name' || tag == 'published' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
     switch (operator) {
@@ -129,12 +129,12 @@ const filterBooks = (tag, operator, comparison) => {
       criteria = 'Escrito en '+language.name;
       break;
     case 'country':
-      let writers2 = writers.filter(writer => writer.country == comparison);
+      writers2 = writers.filter(writer => writer.country == comparison);
       books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
       criteria = 'Escritor(es) de '+countries.find(country => country.code == comparison);
       break;
     case 'gender':
-      let writers2 = writer.filter(writer => writer.gender == comparison);
+      writers2 = writer.filter(writer => writer.gender == comparison);
       books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
       if (comparison === 'male') {
         criteria = 'Escritores';
