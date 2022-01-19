@@ -128,6 +128,22 @@ const filterBooks = (tag, operator, comparison) => {
       let language = languages.find(lang => lang.code == comparison);
       criteria = 'Escrito en '+language.name;
       break;
+    case 'country':
+      let writers2 = writers.filter(writer => writer.country == comparison);
+      books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+      criteria = 'Escritor(es) de '+countries.find(country => country.code == comparison);
+      break;
+    case 'gender':
+      let writers2 = writer.filter(writer => writer.gender == comparison);
+      books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+      if (comparison === 'male') {
+        criteria = 'Escritores';
+      } else if (comparison === 'female') {
+        criteria = 'Escritoras';
+      } else {
+        criteria = "Escritores sin género";
+      }
+      break;
   } 
 
   if (books2.length) {
