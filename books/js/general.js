@@ -134,7 +134,7 @@ const filterBooks = (tag, operator, comparison) => {
       criteria = 'Escritor(es) de '+countries.find(country => country.code == comparison);
       break;
     case 'gender':
-      writers2 = writer.filter(writer => writer.gender == comparison);
+      writers2 = writers.filter(writer => writer.gender == comparison);
       books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
       if (comparison === 'male') {
         criteria = 'Escritores';
