@@ -14,20 +14,14 @@ main {
     padding: 0;
     margin: 0 auto;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 8.5rem);
     justify-content: space-between;
 }
 
-main::after {
-  content: "";
-  flex: auto;
-}
 
 article {
     text-align: center;
-    padding: 0 0.2rem;
-    width: 8.5rem;
 }
 
 article p {
