@@ -158,6 +158,7 @@ const resetBooks = () => {
   showcase(books);
   document.filtro.tag.selectedIndex = 0;
   document.filtro.operator.selectedIndex = 0;
+  checkComparison();
   document.filtro.comparison.value = '';
   document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
 }
