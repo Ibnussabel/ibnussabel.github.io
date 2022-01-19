@@ -19,7 +19,6 @@ main {
     justify-content: space-between;
 }
 
-
 article {
     text-align: center;
 }
@@ -84,9 +83,8 @@ input[value=Filtrar] {
 }
 
 @media only screen and (max-width: 600px) {
-    article {
-        margin: 4px 0;
-        width: 120px;
+    main {
+        grid-template-columns: repeat(auto-fill, 7.5rem);
     }
     article p {
         display: none;
