@@ -16,7 +16,7 @@
         <fieldset>
             <legend>Filtrar</legend>
             
-            <label for="tag">Etiqueta</label>
+            <label for="tag">Etiqueta
             <select id="tag" name="tag" onchange="checkComparison()">
                 <option value="name">Título</option>
                 <option value="writer">Escritor</option>
@@ -26,9 +26,9 @@
                 <option value="read">Año de lectura</option>
                 <option value="language">Idioma</option>
                 <option value="rating">Valoración</option>
-            </select>
+            </select></label>
         
-            <label for="operator">Criterio</label>
+            <label for="operator">Criterio
             <select id="operator" name="operator">
                 <option value="same">igual que</option>
                 <option value="has">contiene</option>
@@ -36,13 +36,15 @@
                 <option value="sameormore">mayor o igual que</option>
                 <option value="less">menor que</option>
                 <option value="sameorless">menor o igual que</option>
-            </select>
+            </select></label>
         
-            <label for="comparison">Comparación</label>
-            <span id="fieldComparison"><input type="text" id="comparison" name="comparison"></span>
+            <label for="comparison">Comparación
+            <span id="fieldComparison"><input type="text" id="comparison" name="comparison"></span></label>
 
-            <input type="button" value="Filtrar" onclick="filterBooks(document.filtro.tag.value, document.filtro.operator.value, document.filtro.comparison.value)">
-            <input type="button" value="Restablecer" onclick="resetBooks()">            
+            <label>
+                <input type="button" value="Filtrar" onclick="filterBooks(document.filtro.tag.value, document.filtro.operator.value, document.filtro.comparison.value)">
+                <input type="button" value="Restablecer" onclick="resetBooks()">            
+            </label>
         </fieldset>
     </form>
 </header>

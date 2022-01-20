@@ -94,4 +94,9 @@ input[value=Filtrar] {
     article p {
         display: none;
     }
+    
+    label {
+        display: block;
+        padding: 0.5rem 0 0 0 !important;;
+    }
 }
