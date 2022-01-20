@@ -82,10 +82,15 @@ input[value=Filtrar] {
     opacity: 50%;
 }
 
-@media only screen and (max-width: 600px) {
-    article {
-        margin: 0 1rem;
+@media only screen and (max-width: 400px) {
+    main {
+        grid-template-columns: repeat(auto-fill, 7rem);
     }
+
+    article {
+        margin: 0.5rem;
+    }
+    
     article p {
         display: none;
     }

@@ -28,7 +28,7 @@ const showcase = (books) => {
           ratingClass = 'dim';
         }
         shelf += '<article>';
-        shelf += '<img class="cover" src="'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'">';
+        shelf += '<a href="'+book.url+'" title="'+book.name+'. '+book.writer+', '+book.published+'"><img class="cover" src="'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'"></a>';
         shelf += '<p><strong class="rating '+ratingClass+'">'+rating.name+'</strong><br>';
         shelf += '<strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
         shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png" alt="'+country.name+' flag" title="'+country.name+'"> <span class="year">'+book.published+'</span></p>';
@@ -131,7 +131,8 @@ const filterBooks = (tag, operator, comparison) => {
     case 'country':
       writers2 = writers.filter(writer => writer.country == comparison);
       books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
-      criteria = 'Escritor(es) de '+countries.find(country => country.code == comparison);
+      let country = countries.find(country => country.code == comparison);
+      criteria = 'Escritor(es) de '+country.name;
       break;
     case 'gender':
       writers2 = writers.filter(writer => writer.gender == comparison);
@@ -167,7 +168,9 @@ const armaSelect = (collection, id) => {
   let select = '<select id='+id+' name='+id+'>';
   for(let i = 0; i < collection.length; i++) {
     let item = collection[i];
-    select += '<option value='+item.code+'>'+item.name+'</option>';
+    if (item.code) {
+      select += '<option value='+item.code+'>'+item.name+'</option>';
+    }
   }
   select += '</select>';
 
