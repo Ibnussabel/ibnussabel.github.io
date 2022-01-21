@@ -5,15 +5,13 @@ body {
 
 h1 {
     text-align: center;
+}
+
+h1 span {
     font-size: 1.5rem; 
     line-height: 3rem;
     letter-spacing: 0.1rem;
 }
-
-.toggleFiltro {
-    float: left;
-}
-
 main {
     padding: 0;
     margin: 0 auto;
