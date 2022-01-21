@@ -60,6 +60,11 @@ form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-height: 150px;
+    overflow: hidden;
+    transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: ease;
 }
 
 fieldset {
@@ -80,6 +85,10 @@ input[value=Filtrar] {
 
 .dim {
     opacity: 50%;
+}
+
+.closed {
+    max-height: 0;
 }
 
 @media only screen and (max-width: 400px) {
