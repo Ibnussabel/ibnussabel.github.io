@@ -209,8 +209,9 @@ const armaSelect = (collection, tag, id) => {
 const armaSelectDecades = (id) => {
   let count, decade;
   let select = '<select id='+id+' name='+id+'>';
-  for(let i = 1800; i <= new Date().getFullYear(); i += 10) {
+  for(let i = 1800; i <= 2100; i += 10) {
       count = countBooks('published', i);
+      console.log(i+' '+count);
       decade = Math.floor(comparison/10)*10+'s';
       if (count > 0) {
         select += '<option value='+i+'>'+decade+' ('+count+')</option>';
