@@ -103,7 +103,7 @@ const filterBooks = (tag, operator, comparison) => {
   switch (tag) {
     case 'published':
       let startYear = Math.floor(comparison/10)*10+1;
-      let endYear = startYear+10;
+      let endYear = startYear+9;
       let decade = Math.floor(comparison/10)*10+'s';
       switch (operator) {
         case 'same':
@@ -223,14 +223,18 @@ const checkComparison = () => {
 const countBooks = (tag, comparison) => {
   let books2, writers2;
   
-  if (tag == 'name' || tag == 'published' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
+  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
         books2 = books.filter(book => book[tag] == comparison);
   } else if (tag == 'country') {
       writers2 = writers.filter(writer => writer.country == comparison);
       books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
   } else if (tag == 'gender') {
-      writers2 = writers.filter(writer => writer.gender == comparison);
-      books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+    writers2 = writers.filter(writer => writer.gender == comparison);
+    books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+  } else if (tag == 'published') {
+      let startYear = Math.floor(comparison/10)*10+1;
+      let endYear = startYear+9;
+      books2 = books.filter(book => (book[tag] >= startYear && book[tag] <= endYear));
   } 
 
   return books2.length;
