@@ -164,13 +164,11 @@ const resetBooks = () => {
   document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
 }
 
-const armaSelect = (collection, id) => {
-  let tag;
+const armaSelect = (collection, tag, id) => {
   let select = '<select id='+id+' name='+id+'>';
   for(let i = 0; i < collection.length; i++) {
     let item = collection[i];
     if (item.code) {
-      (collection == 'countries') ? tag = 'country' : tag = collection.slice(0, -1);
       select += '<option value='+item.code+'>'+item.name+' ('+countBooks(tag, item.code)+')</option>';
     }
   }
@@ -181,13 +179,13 @@ const armaSelect = (collection, id) => {
 
 const checkComparison = () => {
   if (document.filtro.tag.value == 'language') {
-    document.getElementById('fieldComparison').innerHTML = armaSelect(languages, 'comparison');
+    document.getElementById('fieldComparison').innerHTML = armaSelect(languages, 'language', 'comparison');
   } else if (document.filtro.tag.value == 'country') {
-    document.getElementById('fieldComparison').innerHTML = armaSelect(countries, 'comparison');
+    document.getElementById('fieldComparison').innerHTML = armaSelect(countries, 'country', 'comparison');
   } else if (document.filtro.tag.value == 'rating') {
-    document.getElementById('fieldComparison').innerHTML = armaSelect(ratings, 'comparison');
+    document.getElementById('fieldComparison').innerHTML = armaSelect(ratings, 'rating', 'comparison');
   } else if (document.filtro.tag.value == 'gender') {
-    document.getElementById('fieldComparison').innerHTML = armaSelect(genders, 'comparison');
+    document.getElementById('fieldComparison').innerHTML = armaSelect(genders, 'gender', 'comparison');
   } else {
     document.getElementById('fieldComparison').innerHTML = '<input type="text" id="comparison" name="comparison">';
   }
