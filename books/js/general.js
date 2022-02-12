@@ -165,11 +165,13 @@ const resetBooks = () => {
 }
 
 const armaSelect = (collection, id) => {
+  let tag;
   let select = '<select id='+id+' name='+id+'>';
   for(let i = 0; i < collection.length; i++) {
     let item = collection[i];
     if (item.code) {
-      select += '<option value='+item.code+'>'+item.name+'</option>';
+      (collection == 'countries') ? tag = 'country' : tag = collection.slice(0, -1);
+      select += '<option value='+item.code+'>'+item.name+' ('+countBooks(tag, item.code)+')</option>';
     }
   }
   select += '</select>';
@@ -189,4 +191,20 @@ const checkComparison = () => {
   } else {
     document.getElementById('fieldComparison').innerHTML = '<input type="text" id="comparison" name="comparison">';
   }
+}
+
+const countBooks = (tag, comparison) => {
+  let books2, writers2;
+  
+  if (tag == 'name' || tag == 'published' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
+        books2 = books.filter(book => book[tag] == comparison);
+  } else if (tag == 'country') {
+      writers2 = writers.filter(writer => writer.country == comparison);
+      books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+  } else if (tag == 'gender') {
+      writers2 = writers.filter(writer => writer.gender == comparison);
+      books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+  } 
+
+  return books2.length;
 }
