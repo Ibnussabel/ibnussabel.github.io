@@ -206,6 +206,22 @@ const armaSelect = (collection, tag, id) => {
   return select;
 }
 
+const armaSelectDecades = (id) => {
+  let count, decade;
+  let select = '<select id='+id+' name='+id+'>';
+  for(let i = 1800; i <= new Date().getFullYear(); i += 10) {
+      count = countBooks('published', i);
+      decade = Math.floor(comparison/10)*10+'s';
+      if (count > 0) {
+        select += '<option value='+i+'>'+decade+' ('+count+')</option>';
+      }
+    }
+  }
+  select += '</select>';
+
+  return select;
+}
+
 const checkComparison = () => {
   if (document.filtro.tag.value == 'language') {
     document.getElementById('fieldComparison').innerHTML = armaSelect(languages, 'language', 'comparison');
@@ -215,6 +231,8 @@ const checkComparison = () => {
     document.getElementById('fieldComparison').innerHTML = armaSelect(ratings, 'rating', 'comparison');
   } else if (document.filtro.tag.value == 'gender') {
     document.getElementById('fieldComparison').innerHTML = armaSelect(genders, 'gender', 'comparison');
+  } else if (document.filtro.tag.value == 'published') {
+    document.getElementById('fieldComparison').innerHTML = armaSelectDecades('comparison');
   } else {
     document.getElementById('fieldComparison').innerHTML = '<input type="text" id="comparison" name="comparison">';
   }
