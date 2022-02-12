@@ -211,7 +211,7 @@ const armaSelectDecades = (id) => {
   let select = '<select id='+id+' name='+id+'>';
   for(let i = 1800; i <= 2100; i += 10) {
     count = countBooks('published', i);
-    decade = Math.floor(comparison/10)*10+'s';
+    decade = Math.floor(i/10)*10+'s';
     if (count > 0) {
       select += '<option value='+i+'>'+decade+' ('+count+')</option>';
     }
