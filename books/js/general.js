@@ -67,7 +67,7 @@ fetch('./assets/writers.json')
 const filterBooks = (tag, operator, comparison) => {
   let books2, criteria, arg1, writers2;
   
-  if (tag == 'name' || tag == 'published' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
+  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
     switch (operator) {
       case 'same':
         books2 = books.filter(book => book[tag] == comparison);
@@ -102,6 +102,31 @@ const filterBooks = (tag, operator, comparison) => {
 
   switch (tag) {
     case 'published':
+      let startYear = Math.floor(comparison/10)*10+1;
+      let endYear = startYear+10;
+      let decade = Math.floor(comparison/10)*10+'s';
+      switch (operator) {
+        case 'same':
+          books2 = books.filter(book => (book[tag] >= startYear && book[tag] <= endYear));
+          arg1 = 'en los '+decade;
+          break;
+        case 'more':
+          books2 = books.filter(book => book[tag] > endYear);
+          arg1 = 'después de los '+decade;
+          break;
+        case 'less':
+          books2 = books.filter(book => book[tag] < startYear);
+          arg1 = 'antes de los '+decade;
+          break;
+        case 'sameormore':
+          books2 = books.filter(book => book[tag] >= startYear);
+          arg1 = 'en los '+decade+' o después';
+          break;
+        case 'sameorless':
+          books2 = books.filter(book => book[tag] <= endYear);
+          arg1 = 'en los '+decade+' o antes';
+          break;
+      }
       criteria = 'Publicado '+arg1;
       break;
     case 'read':
@@ -165,11 +190,15 @@ const resetBooks = () => {
 }
 
 const armaSelect = (collection, tag, id) => {
+  let count;
   let select = '<select id='+id+' name='+id+'>';
   for(let i = 0; i < collection.length; i++) {
     let item = collection[i];
     if (item.code) {
-      select += '<option value='+item.code+'>'+item.name+' ('+countBooks(tag, item.code)+')</option>';
+      count = countBooks(tag, item.code);
+      if (count > 0) {
+        select += '<option value='+item.code+'>'+item.name+' ('+count+')</option>';
+      }
     }
   }
   select += '</select>';
