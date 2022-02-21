@@ -63,7 +63,7 @@ fetch('./assets/writers.json')
             books = JSON.parse(JSON.stringify(data));
 
           showcase(books);
-          document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
+          resetBooks();
         })
       })
     })
