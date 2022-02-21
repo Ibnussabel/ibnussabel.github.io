@@ -52,13 +52,19 @@ fetch('./assets/writers.json')
       .then(data => {
         languages = JSON.parse(JSON.stringify(data));
 
-      fetch('./assets/books.json')
+      fetch('./assets/series.json')
         .then(response => response.json())
         .then(data => {
-          books = JSON.parse(JSON.stringify(data));
+          series = JSON.parse(JSON.stringify(data));
 
-        showcase(books);
-        document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
+        fetch('./assets/books.json')
+          .then(response => response.json())
+          .then(data => {
+            books = JSON.parse(JSON.stringify(data));
+
+          showcase(books);
+          document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
+        })
       })
     })
   })
@@ -67,7 +73,7 @@ fetch('./assets/writers.json')
 const filterBooks = (tag, operator, comparison) => {
   let books2, criteria, arg1, writers2;
   
-  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
+  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating' || tag == 'series') {
     switch (operator) {
       case 'same':
         books2 = books.filter(book => book[tag] == comparison);
@@ -170,6 +176,9 @@ const filterBooks = (tag, operator, comparison) => {
         criteria = "Escritores sin género";
       }
       break;
+    case 'series':
+      criteria = "("+comparison+")";
+      break;
   } 
 
   if (books2.length) {
@@ -224,15 +233,28 @@ const armaSelectDecades = (id) => {
 const checkComparison = () => {
   if (document.filtro.tag.value == 'language') {
     document.getElementById('fieldComparison').innerHTML = armaSelect(languages, 'language', 'comparison');
+    availableOptions([0]);
   } else if (document.filtro.tag.value == 'country') {
     document.getElementById('fieldComparison').innerHTML = armaSelect(countries, 'country', 'comparison');
+    availableOptions([0]);
   } else if (document.filtro.tag.value == 'rating') {
     document.getElementById('fieldComparison').innerHTML = armaSelect(ratings, 'rating', 'comparison');
+    availableOptions([0,2,3,4,5]);
   } else if (document.filtro.tag.value == 'gender') {
     document.getElementById('fieldComparison').innerHTML = armaSelect(genders, 'gender', 'comparison');
+    availableOptions([0]);
+  } else if (document.filtro.tag.value == 'series') {
+    document.getElementById('fieldComparison').innerHTML = armaSelect(series, 'series', 'comparison');
+    availableOptions([0]);
   } else if (document.filtro.tag.value == 'published') {
     document.getElementById('fieldComparison').innerHTML = armaSelectDecades('comparison');
+    availableOptions([0,2,3,4,5]);
   } else {
+    if (document.filtro.tag.value == 'name' || document.filtro.tag.value == 'writer') {
+      availableOptions([0,1]);
+    } else {
+      availableOptions([0,2,3,4,5]);
+    }
     document.getElementById('fieldComparison').innerHTML = '<input type="text" id="comparison" name="comparison">';
   }
 }
@@ -255,4 +277,14 @@ const countBooks = (tag, comparison) => {
   } 
 
   return books2.length;
+}
+
+const availableOptions = options => {
+  for (let i = 0; i<document.getElementById('operator').options.length; i++) {
+    if (options.includes(i)) {
+      document.getElementById('operator').options[i].disabled = false;
+    } else {
+      document.getElementById('operator').options[i].disabled = true;
+    }
+  }
 }
