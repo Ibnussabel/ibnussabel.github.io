@@ -177,7 +177,8 @@ const filterBooks = (tag, operator, comparison) => {
       }
       break;
     case 'series':
-      criteria = "("+comparison+")";
+      let series2 = series.find(item => item.code == comparison);
+      criteria = series2.name;
       break;
   } 
 
