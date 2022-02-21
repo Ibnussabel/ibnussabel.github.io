@@ -262,7 +262,7 @@ const checkComparison = () => {
 const countBooks = (tag, comparison) => {
   let books2, writers2;
   
-  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
+  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating' || tag == 'series') {
         books2 = books.filter(book => book[tag] == comparison);
   } else if (tag == 'country') {
       writers2 = writers.filter(writer => writer.country == comparison);

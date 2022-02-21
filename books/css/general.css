@@ -83,6 +83,10 @@ fieldset label {
     padding: 0 0.2rem 0 1rem;
 }
 
+option[disabled] {
+    display: none;
+}
+
 input[value=Filtrar] {
     margin: 0 0.5rem 0 2rem;
 }
