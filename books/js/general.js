@@ -1,4 +1,4 @@
-var books, writers, countries, genders, ratings;
+var books, writers, countries, genders, ratings, series, selectedBooks;
 genders = [
   {"code": "male", "name": "masculino"}, 
   {"code": "female", "name": "femenino"}, 
@@ -16,6 +16,7 @@ ratings = [
 
 const showcase = (books) => {
     let shelf = '';
+    selectedBooks = books;
 
     for(let i = 0; i < books.length; i++) {
         let book = books[i];
@@ -37,69 +38,36 @@ const showcase = (books) => {
     document.getElementById('shelf').innerHTML = shelf;    
 }
 
-fetch('./assets/writers.json')
-  .then(response => response.json())
-  .then(data => {
-    writers = JSON.parse(JSON.stringify(data));
-
-  fetch('./assets/countries.json')
-    .then(response => response.json())
-    .then(data => {
-      countries = JSON.parse(JSON.stringify(data));
-      
-    fetch('./assets/languages.json')
-      .then(response => response.json())
-      .then(data => {
-        languages = JSON.parse(JSON.stringify(data));
-
-      fetch('./assets/series.json')
-        .then(response => response.json())
-        .then(data => {
-          series = JSON.parse(JSON.stringify(data));
-
-        fetch('./assets/books.json')
-          .then(response => response.json())
-          .then(data => {
-            books = JSON.parse(JSON.stringify(data));
-
-          showcase(books);
-          resetBooks();
-        })
-      })
-    })
-  })
-})
-
 const filterBooks = (tag, operator, comparison) => {
   let books2, criteria, arg1, writers2;
   
   if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating' || tag == 'series') {
     switch (operator) {
       case 'same':
-        books2 = books.filter(book => book[tag] == comparison);
+        books2 = selectedBooks.filter(book => book[tag] == comparison);
         arg1 = 'en '+comparison;
         arg2 = comparison+' estrellas';
         break;
       case 'more':
-        books2 = books.filter(book => book[tag] > comparison);
+        books2 = selectedBooks.filter(book => book[tag] > comparison);
         arg1 = 'después de '+comparison;
         arg2 = 'Más de '+comparison+' estrellas';
         break;
       case 'less':
-        books2 = books.filter(book => book[tag] < comparison);
+        books2 = selectedBooks.filter(book => book[tag] < comparison);
         arg1 = 'antes de '+comparison;
         arg2 = 'Menos de '+comparison+' estrellas';
         break;
       case 'has':
-        books2 = books.filter(book => book[tag].includes(comparison));
+        books2 = selectedBooks.filter(book => book[tag].includes(comparison));
         break;
       case 'sameormore':
-        books2 = books.filter(book => book[tag] >= comparison);
+        books2 = selectedBooks.filter(book => book[tag] >= comparison);
         arg1 = 'en '+comparison+' o después';
         arg2 = comparison+' estrellas o más';
         break;
       case 'sameorless':
-        books2 = books.filter(book => book[tag] <= comparison);
+        books2 = selectedBooks.filter(book => book[tag] <= comparison);
         arg1 = 'en '+comparison+' o antes';
         arg2 = comparison+' estrellas o menos';
         break;
@@ -113,23 +81,23 @@ const filterBooks = (tag, operator, comparison) => {
       let decade = Math.floor(comparison/10)*10+'s';
       switch (operator) {
         case 'same':
-          books2 = books.filter(book => (book[tag] >= startYear && book[tag] <= endYear));
+          books2 = selectedBooks.filter(book => (book[tag] >= startYear && book[tag] <= endYear));
           arg1 = 'en los '+decade;
           break;
         case 'more':
-          books2 = books.filter(book => book[tag] > endYear);
+          books2 = selectedBooks.filter(book => book[tag] > endYear);
           arg1 = 'después de los '+decade;
           break;
         case 'less':
-          books2 = books.filter(book => book[tag] < startYear);
+          books2 = selectedBooks.filter(book => book[tag] < startYear);
           arg1 = 'antes de los '+decade;
           break;
         case 'sameormore':
-          books2 = books.filter(book => book[tag] >= startYear);
+          books2 = selectedBooks.filter(book => book[tag] >= startYear);
           arg1 = 'en los '+decade+' o después';
           break;
         case 'sameorless':
-          books2 = books.filter(book => book[tag] <= endYear);
+          books2 = selectedBooks.filter(book => book[tag] <= endYear);
           arg1 = 'en los '+decade+' o antes';
           break;
       }
@@ -161,13 +129,13 @@ const filterBooks = (tag, operator, comparison) => {
       break;
     case 'country':
       writers2 = writers.filter(writer => writer.country == comparison);
-      books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+      books2 = selectedBooks.filter(book => writers2.find(writer => writer.name == book.writer))
       let country = countries.find(country => country.code == comparison);
       criteria = 'Escritor(es) de '+country.name;
       break;
     case 'gender':
       writers2 = writers.filter(writer => writer.gender == comparison);
-      books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+      books2 = selectedBooks.filter(book => writers2.find(writer => writer.name == book.writer))
       if (comparison === 'male') {
         criteria = 'Escritores';
       } else if (comparison === 'female') {
@@ -264,17 +232,17 @@ const countBooks = (tag, comparison) => {
   let books2, writers2;
   
   if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating' || tag == 'series') {
-        books2 = books.filter(book => book[tag] == comparison);
+        books2 = selectedBooks.filter(book => book[tag] == comparison);
   } else if (tag == 'country') {
       writers2 = writers.filter(writer => writer.country == comparison);
-      books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+      books2 = selectedBooks.filter(book => writers2.find(writer => writer.name == book.writer))
   } else if (tag == 'gender') {
     writers2 = writers.filter(writer => writer.gender == comparison);
-    books2 = books.filter(book => writers2.find(writer => writer.name == book.writer))
+    books2 = selectedBooks.filter(book => writers2.find(writer => writer.name == book.writer))
   } else if (tag == 'published') {
       let startYear = Math.floor(comparison/10)*10+1;
       let endYear = startYear+9;
-      books2 = books.filter(book => (book[tag] >= startYear && book[tag] <= endYear));
+      books2 = selectedBooks.filter(book => (book[tag] >= startYear && book[tag] <= endYear));
   } 
 
   return books2.length;
@@ -289,3 +257,36 @@ const availableOptions = options => {
     }
   }
 }
+
+fetch('./assets/writers.json')
+  .then(response => response.json())
+  .then(data => {
+    writers = JSON.parse(JSON.stringify(data));
+
+  fetch('./assets/countries.json')
+    .then(response => response.json())
+    .then(data => {
+      countries = JSON.parse(JSON.stringify(data));
+      
+    fetch('./assets/languages.json')
+      .then(response => response.json())
+      .then(data => {
+        languages = JSON.parse(JSON.stringify(data));
+
+      fetch('./assets/series.json')
+        .then(response => response.json())
+        .then(data => {
+          series = JSON.parse(JSON.stringify(data));
+
+        fetch('./assets/books.json')
+          .then(response => response.json())
+          .then(data => {
+            books = JSON.parse(JSON.stringify(data));
+
+          showcase(books);
+          resetBooks();
+        })
+      })
+    })
+  })
+})
