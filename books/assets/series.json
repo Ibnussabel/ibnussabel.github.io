@@ -10,6 +10,7 @@
     {"code": 9, "name": "La saga de los confines", "writer": "Liliana Bodoc"},
     {"code": 10, "name": "The Locked Tomb", "writer": "Tamsyn Muir"},
     {"code": 11, "name": "The Vampire Chronicles", "writer": "Anne Rice"},
-    {"code": 12, "name": "Arsène Lupin", "writer": "Maurice Leblanc"}   ,
-    {"code": 13, "name": "Les veus de la utopia", "writer": "Svetlana Alexievich"}    
+    {"code": 12, "name": "Arsène Lupin", "writer": "Maurice Leblanc"},
+    {"code": 13, "name": "Les veus de la utopia", "writer": "Svetlana Alexievich"},
+    {"code": 14, "name": "Discworld", "writer": "Terry Pratchett"}
 ]
