@@ -35,5 +35,6 @@
     {"name": "Ilaria Tuti", "gender": "female", "country": "IT"}, 
     {"name": "Chuck Wendig", "gender": "male", "country": "US"}, 
     {"name": "Scott Westerfeld", "gender": "male", "country": "US"}, 
-    {"name": "Several writers", "gender": "female", "country": "GB"}
+    {"name": "Several writers", "gender": "female", "country": "GB"}, 
+    {"name": "Varias autoras", "gender": "female", "country": "ES"}
 ]
