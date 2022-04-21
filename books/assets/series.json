@@ -12,5 +12,6 @@
     {"code": 11, "name": "The Vampire Chronicles", "writer": "Anne Rice"},
     {"code": 12, "name": "Arsène Lupin", "writer": "Maurice Leblanc"},
     {"code": 13, "name": "Les veus de la utopia", "writer": "Svetlana Alexievich"},
-    {"code": 14, "name": "Discworld", "writer": "Terry Pratchett"}
+    {"code": 14, "name": "Discworld", "writer": "Terry Pratchett"},
+    {"code": 15, "name": "Teresa Battaglia", "writer": "Ilaria Tuti"}
 ]
