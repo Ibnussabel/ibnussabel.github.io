@@ -14,5 +14,6 @@
     {"code": "KR", "name": "Corea del Sur"}, 
     {"code": "NZ", "name": "Nueva Zelanda"}, 
     {"code": "RU", "name": "Rusia"}, 
-    {"code": "US", "name": "Estados Unidos"}
+    {"code": "US", "name": "Estados Unidos"}, 
+    {"code": "ZA", "name": "Sudáfrica"}
 ]
