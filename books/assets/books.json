@@ -77,5 +77,6 @@
     {"cover": "1361212999i/17384199.jpg", "name": "Memento mori", "published": 2013, "writer": "César Pérez Gellida", "read": 2022, "language": "ES", "rating": 2, "id": "17384199", "series": null, "seriesBook": null},
     {"cover": "1240507367i/34518.jpg", "name": "Mort", "published": 1987, "writer": "Terry Pratchett", "read": 2022, "language": "EN", "rating": 3, "id": "34518", "series": 14, "seriesBook": 4},
     {"cover": "1616788834i/56978100.jpg", "name": "The Girl Who Fell Beneath the Sea", "published": 2022, "writer": "Axie Oh", "read": 2022, "language": "EN", "rating": 3, "id": "56978100", "series": null, "seriesBook": null},
-    {"cover": "1447086249i/26883558.jpg", "name": "The Ballad of Black Tom", "published": 2016, "writer": "Victor LaValle", "read": null, "language": "EN", "rating": null, "id": "26883558", "series": null, "seriesBook": null}
+    {"cover": "1447086249i/26883558.jpg", "name": "The Ballad of Black Tom", "published": 2016, "writer": "Victor LaValle", "read": 2022, "language": "EN", "rating": 4, "id": "26883558", "series": null, "seriesBook": null}, 
+    {"cover": "1655067153i/61277726.jpg", "name": "Las madres", "published": 2022, "writer": "Carmen Mola", "read": null, "language": "ES", "rating": null, "id": "61277726", "series": 1, "seriesBook": 4}
 ]
