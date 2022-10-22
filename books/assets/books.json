@@ -79,6 +79,6 @@
     {"id": "56978100", "cover": "1616788834i/56978100.jpg", "name": "The Girl Who Fell Beneath the Sea", "writer": "Axie Oh", "published": 2022, "language": "EN", "series": null, "seriesBook": null, "read": 2022, "rating": 3},
     {"id": "26883558", "cover": "1447086249i/26883558.jpg", "name": "The Ballad of Black Tom", "writer": "Victor LaValle", "published": 2016, "language": "EN", "series": null, "seriesBook": null, "read": 2022, "rating": 4},
     {"id": "61277726", "cover": "1655067153i/61277726.jpg", "name": "Las madres", "writer": "Carmen Mola", "published": 2022, "language": "ES", "series": 1, "seriesBook": 4, "read": 2022, "rating": 5},
-    {"id": "58662507", "cover": "1643298298i/58662507.jpg", "name": "Nona the Ninth", "writer": "Tamsyn Muir", "published": 2022, "language": "EN", "series": 10, "seriesBook": 3, "read": null, "rating": null},
+    {"id": "58662507", "cover": "1643298298i/58662507.jpg", "name": "Nona the Ninth", "writer": "Tamsyn Muir", "published": 2022, "language": "EN", "series": 10, "seriesBook": 3, "read": 2022, "rating": 3},
     {"id": "89724", "cover": "1415357189l/89724.jpg", "name": "We Have Always Lived in the Castle", "writer": "Shirley Jackson", "published": 1962, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
