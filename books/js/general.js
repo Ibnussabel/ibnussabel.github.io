@@ -248,6 +248,76 @@ const countBooks = (tag, comparison) => {
   return books2.length;
 }
 
+const fullSummary = () => {
+  let i, linea1, linea2;
+
+  console.log('Sumario completo');
+  console.log('----------------------------------------------');
+  console.log('Género:');
+  for (i=0; i<genders.length; i++) {
+    linea1 = genders[i].name;
+    linea2 = countBooks('gender', genders[i].code);
+    if (linea2 > 0) {
+      console.log(linea1+': '+linea2);
+    }
+  }
+  console.log('----------------------------------------------');
+  console.log('Idioma:');
+  for (i=0; i<languages.length; i++) {
+    linea1 = languages[i].name;
+    linea2 = countBooks('language', languages[i].code);
+    if (linea2 > 0) {
+      console.log(linea1+': '+linea2);
+    }
+  }
+  console.log('----------------------------------------------');
+  console.log('País:');
+  for (i=0; i<countries.length; i++) {
+    linea1 = countries[i].name;
+    linea2 = countBooks('country', countries[i].code);
+    if (linea2 > 0) {
+      console.log(linea1+': '+linea2);
+    }
+  }
+  console.log('----------------------------------------------');
+  console.log('Década:');
+  for(i = 1800; i <= 2100; i += 10) {
+    linea1 = Math.floor(i/10)*10+'s';
+    linea2 = countBooks('published', i);
+    if (linea2 > 0) {
+      console.log(linea1+': '+linea2);
+    }
+  }
+  console.log('----------------------------------------------');
+  console.log('Autor:');
+  for (i=0; i<writers.length; i++) {
+    linea1 = writers[i].name;
+    linea2 = countBooks('writer', writers[i].name);
+    if (linea2 > 0) {
+      console.log(linea1+': '+linea2);
+    }
+  }
+  console.log('----------------------------------------------');
+  console.log('Serie:');
+  for (i=0; i<series.length; i++) {
+    linea1 = series[i].name+' ('+series[i].writer+')';
+    linea2 = countBooks('series', series[i].code);
+    if (linea2 > 0) {
+      console.log(linea1+': '+linea2);
+    }
+  }
+  console.log('----------------------------------------------');
+  console.log('Puntuación:');
+  for (i=0; i<ratings.length; i++) {
+    linea1 = ratings[i].code+' estrellas';
+    linea2 = countBooks('rating', ratings[i].code);
+    if (linea2 > 0 && linea1 > 0) {
+      console.log(linea1+': '+linea2);
+    }
+  }
+  console.log('----------------------------------------------');
+}
+
 const availableOptions = options => {
   for (let i = 0; i<document.getElementById('operator').options.length; i++) {
     if (options.includes(i)) {
