@@ -311,7 +311,7 @@ const fullSummary = () => {
   for (i=0; i<ratings.length; i++) {
     linea1 = ratings[i].code+' estrellas';
     linea2 = countBooks('rating', ratings[i].code);
-    if (linea2 > 0 && linea1 > 0) {
+    if (linea2 > 0 && ratings[i].code != null) {
       console.log(linea1+': '+linea2);
     }
   }
