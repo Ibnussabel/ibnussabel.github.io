@@ -248,6 +248,16 @@ const countBooks = (tag, comparison) => {
   return books2.length;
 }
 
+const availableOptions = options => {
+  for (let i = 0; i<document.getElementById('operator').options.length; i++) {
+    if (options.includes(i)) {
+      document.getElementById('operator').options[i].disabled = false;
+    } else {
+      document.getElementById('operator').options[i].disabled = true;
+    }
+  }
+}
+
 const fullSummary = () => {
   let i, linea1, linea2;
 
@@ -316,16 +326,6 @@ const fullSummary = () => {
     }
   }
   console.log('----------------------------------------------');
-}
-
-const availableOptions = options => {
-  for (let i = 0; i<document.getElementById('operator').options.length; i++) {
-    if (options.includes(i)) {
-      document.getElementById('operator').options[i].disabled = false;
-    } else {
-      document.getElementById('operator').options[i].disabled = true;
-    }
-  }
 }
 
 fetch('./assets/writers.json')
