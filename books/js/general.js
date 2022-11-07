@@ -1,4 +1,12 @@
 var books, writers, countries, genders, ratings, series, selectedBooks;
+var datos_genero = [];
+var datos_idioma = [];
+var datos_pais = [];
+var datos_decada = [];
+var datos_autor = [];
+var datos_serie = [];
+var datos_puntuacion = [];
+
 genders = [
   {"code": "male", "name": "masculino"}, 
   {"code": "female", "name": "femenino"}, 
@@ -15,27 +23,35 @@ ratings = [
 ];
 
 const showcase = (books) => {
-    let shelf = '';
-    selectedBooks = books;
+  let shelf = '';
+  selectedBooks = books;
 
-    for(let i = 0; i < books.length; i++) {
-        let book = books[i];
-        let author = writers.find(person => person.name == book.writer);
-        let country = countries.find(place => place.code == author.country);
-        let rating = ratings.find(points => points.code == book.rating);
-        let ratingClass = '';
- 
-        if (book.rating === null) {
-          ratingClass = 'dim';
-        }
-        shelf += '<article>';
-        shelf += '<a href="https://www.goodreads.com/book/show/'+book.id+'" title="'+book.name+'. '+book.writer+', '+book.published+'"><img class="cover" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'"></a>';
-        shelf += '<p><strong class="rating '+ratingClass+'">'+rating.name+'</strong><br>';
-        shelf += '<strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
-        shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png" alt="'+country.name+' flag" title="'+country.name+'"> <span class="year">'+book.published+'</span></p>';
-        shelf += '</article>';
-    }
-    document.getElementById('shelf').innerHTML = shelf;    
+  for(let i = 0; i < books.length; i++) {
+      let book = books[i];
+      let author = writers.find(person => person.name == book.writer);
+      let country = countries.find(place => place.code == author.country);
+      let rating = ratings.find(points => points.code == book.rating);
+      let ratingClass = '';
+
+      if (book.rating === null) {
+        ratingClass = 'dim';
+      }
+      shelf += '<article>';
+      shelf += '<a href="https://www.goodreads.com/book/show/'+book.id+'" title="'+book.name+'. '+book.writer+', '+book.published+'"><img class="cover" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'"></a>';
+      shelf += '<p><strong class="rating '+ratingClass+'">'+rating.name+'</strong><br>';
+      shelf += '<strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
+      shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png" alt="'+country.name+' flag" title="'+country.name+'"> <span class="year">'+book.published+'</span></p>';
+      shelf += '</article>';
+  }
+  document.getElementById('shelf').innerHTML = shelf;    
+}
+
+const stats = () => {
+    let graphs = '';
+
+    fullSummary();
+
+    document.getElementById('stats').innerHTML = graphs;    
 }
 
 const filterBooks = (tag, operator, comparison) => {
@@ -261,71 +277,47 @@ const availableOptions = options => {
 const fullSummary = () => {
   let i, linea1, linea2;
 
-  console.log('Sumario completo');
-  console.log('----------------------------------------------');
-  console.log('Género:');
   for (i=0; i<genders.length; i++) {
     linea1 = genders[i].name;
     linea2 = countBooks('gender', genders[i].code);
-    if (linea2 > 0) {
-      console.log(linea1+': '+linea2);
-    }
+    datos_genero.push([linea1, linea2]);
   }
-  console.log('----------------------------------------------');
-  console.log('Idioma:');
+
   for (i=0; i<languages.length; i++) {
     linea1 = languages[i].name;
     linea2 = countBooks('language', languages[i].code);
-    if (linea2 > 0) {
-      console.log(linea1+': '+linea2);
-    }
+    datos_idioma.push([linea1, linea2]);
   }
-  console.log('----------------------------------------------');
-  console.log('País:');
+  
   for (i=0; i<countries.length; i++) {
     linea1 = countries[i].name;
     linea2 = countBooks('country', countries[i].code);
-    if (linea2 > 0) {
-      console.log(linea1+': '+linea2);
-    }
+    datos_pais.push([linea1, linea2]);
   }
-  console.log('----------------------------------------------');
-  console.log('Década:');
+  
   for(i = 1800; i <= 2100; i += 10) {
     linea1 = Math.floor(i/10)*10+'s';
     linea2 = countBooks('published', i);
-    if (linea2 > 0) {
-      console.log(linea1+': '+linea2);
-    }
+    datos_decada.push([linea1, linea2]);
   }
-  console.log('----------------------------------------------');
-  console.log('Autor:');
+  
   for (i=0; i<writers.length; i++) {
     linea1 = writers[i].name;
     linea2 = countBooks('writer', writers[i].name);
-    if (linea2 > 0) {
-      console.log(linea1+': '+linea2);
-    }
+    datos_autor.push([linea1, linea2]);
   }
-  console.log('----------------------------------------------');
-  console.log('Serie:');
+  
   for (i=0; i<series.length; i++) {
     linea1 = series[i].name+' ('+series[i].writer+')';
     linea2 = countBooks('series', series[i].code);
-    if (linea2 > 0) {
-      console.log(linea1+': '+linea2);
-    }
+    datos_serie.push([linea1, linea2]);
   }
-  console.log('----------------------------------------------');
-  console.log('Puntuación:');
+  
   for (i=0; i<ratings.length; i++) {
     linea1 = ratings[i].code+' estrellas';
     linea2 = countBooks('rating', ratings[i].code);
-    if (linea2 > 0 && ratings[i].code != null) {
-      console.log(linea1+': '+linea2);
-    }
+    datos_puntuacion.push([linea1, linea2]);
   }
-  console.log('----------------------------------------------');
 }
 
 fetch('./assets/writers.json')
@@ -353,8 +345,15 @@ fetch('./assets/writers.json')
           .then(data => {
             books = JSON.parse(JSON.stringify(data));
 
-          showcase(books);
-          resetBooks();
+          if (document.getElementById('shelf')) {
+            showcase(books);
+            resetBooks();
+          }
+
+          if (document.getElementById('stats')) {
+            stats();
+            resetBooks();
+          }
         })
       })
     })

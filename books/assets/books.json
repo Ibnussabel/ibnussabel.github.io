@@ -81,5 +81,7 @@
     {"id": "61277726", "cover": "1655067153i/61277726.jpg", "name": "Las madres", "writer": "Carmen Mola", "published": 2022, "language": "ES", "series": 1, "seriesBook": 4, "read": 2022, "rating": 5},
     {"id": "58662507", "cover": "1643298298i/58662507.jpg", "name": "Nona the Ninth", "writer": "Tamsyn Muir", "published": 2022, "language": "EN", "series": 10, "seriesBook": 3, "read": 2022, "rating": 3},
     {"id": "89724", "cover": "1415357189l/89724.jpg", "name": "We Have Always Lived in the Castle", "writer": "Shirley Jackson", "published": 1962, "language": "EN", "series": null, "seriesBook": null, "read": 2022, "rating": 4},
-    {"id": "61231967", "cover": "1654462723l/61231967.jpg", "name": "Todo arde", "writer": "Juan Gómez-Jurado", "published": 2022, "language": "ES", "series": null, "seriesBook": null, "read": null, "rating": null}
+    {"id": "61231967", "cover": "1654462723l/61231967.jpg", "name": "Todo arde", "writer": "Juan Gómez-Jurado", "published": 2022, "language": "ES", "series": null, "seriesBook": null, "read": 2022, "rating": 5},
+    {"id": "50905325", "cover": "1565123933l/50905325.jpg", "name": "Prosper's Demon", "writer": "K.J. Parker", "published": 2020, "language": "EN", "series": 16, "seriesBook": 1, "read": 2022, "rating": 4},
+    {"id": "51819946", "cover": "1582790347l/51819946.jpg", "name": "Un mag de Terramar", "writer": "Ursula K. Le Guin", "published": 1968, "language": "EN", "series": 17, "seriesBook": 1, "read": null, "rating": null}
 ]
