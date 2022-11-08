@@ -352,7 +352,6 @@ fetch('./assets/writers.json')
 
           if (document.getElementById('stats')) {
             stats();
-            resetBooks();
           }
         })
       })
