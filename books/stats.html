@@ -13,7 +13,44 @@
 <header>
     <h1>
         <span id="title">Estadísticas</span>
+        <a id="toggleFiltro" href="#" onclick="document.getElementById('filtro').classList.toggle('closed');"><img src="./img/icons/control_equalizer.png" alt="Filtro" title="Abrir o cerrar el filtro" ></a>
     </h1>
+    <form id="filtro" name="filtro" class="closed">
+        <fieldset>
+            <legend>Filtrar</legend>
+            
+            <label for="tag">Etiqueta
+            <select id="tag" name="tag" onchange="checkComparison()">
+                <option value="name">Título</option>
+                <option value="writer">Escritor</option>
+                <option value="published">Década de publicación</option>
+                <option value="country">País</option>
+                <option value="language">Idioma</option>
+                <option value="rating">Valoración</option>
+                <option value="gender">Género</option>
+                <option value="series">Serie</option>
+                <option value="read">Año de lectura</option>
+            </select></label>
+        
+            <label for="operator">Criterio
+            <select id="operator" name="operator">
+                <option value="same">igual que</option>
+                <option value="has">contiene</option>
+                <option value="more">mayor que</option>
+                <option value="sameormore">mayor o igual que</option>
+                <option value="less">menor que</option>
+                <option value="sameorless">menor o igual que</option>
+            </select></label>
+        
+            <label for="comparison">Comparación
+            <span id="fieldComparison"><input type="text" id="comparison" name="comparison"></span></label>
+
+            <label>
+                <input type="button" value="Filtrar" onclick="filterBooks(document.filtro.tag.value, document.filtro.operator.value, document.filtro.comparison.value)">
+                <input type="button" value="Restablecer" onclick="resetBooks()">            
+            </label>
+        </fieldset>
+    </form>
 </header>
 <main id="stats">
 </main>
