@@ -1,4 +1,5 @@
 [
+    {"name": "Susan Abulhawa", "gender": "female", "country": "PS"}, 
     {"name": "Svetlana Alexievich", "gender": "female", "country": "BY"}, 
     {"name": "Lauren Beukes", "gender": "female", "country": "ZA"}, 
     {"name": "Liliana Bodoc", "gender": "female", "country": "AR"}, 
@@ -41,6 +42,7 @@
     {"name": "Katrin Pereda", "gender": "female", "country": "ES"},  
     {"name": "César Pérez Gellida", "gender": "male", "country": "ES"},  
     {"name": "Terry Pratchett", "gender": "male", "country": "GB"}, 
+    {"name": "Dorit Rabinyan", "gender": "female", "country": "IL"},  
     {"name": "Dolores Reyes", "gender": "female", "country": "AR"}, 
     {"name": "Anne Rice", "gender": "female", "country": "US"}, 
     {"name": "Teresa Roig", "gender": "female", "country": "ES"}, 

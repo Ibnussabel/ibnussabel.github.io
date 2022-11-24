@@ -85,5 +85,7 @@
     {"id": "50905325", "cover": "1565123933l/50905325.jpg", "name": "Prosper's Demon", "writer": "K.J. Parker", "published": 2020, "language": "EN", "series": 16, "seriesBook": 1, "read": 2022, "rating": 4},
     {"id": "51819946", "cover": "1582790347l/51819946.jpg", "name": "Un mag de Terramar", "writer": "Ursula K. Le Guin", "published": 1968, "language": "EN", "series": 17, "seriesBook": 1, "read": 2022, "rating": 5},
     {"id": "57840571", "cover": "1628794005l/57840571.jpg", "name": "The Hacienda", "writer": "Isabel Cañas", "published": 2022, "language": "EN", "series": null, "seriesBook": null, "read": 2022, "rating": 3},
-    {"id": "43459662", "cover": "1549482799l/43459662.jpg", "name": "The Gurkha and the Lord of Tuesday", "writer": "Saad Z. Hossain", "published": 2019, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null}
+    {"id": "43459662", "cover": "1549482799l/43459662.jpg", "name": "The Gurkha and the Lord of Tuesday", "writer": "Saad Z. Hossain", "published": 2019, "language": "EN", "series": null, "seriesBook": null, "read": 2022, "rating": 2},
+    {"id": "57062378", "cover": "1613345315l/57062378.jpg", "name": "Todos los rios del mundo", "writer": "Dorit Rabinyan", "published": 2013, "language": "HE", "series": null, "seriesBook": null, "read": null, "rating": null},
+    {"id": "29241255", "cover": "1456963396l/29241255.jpg", "name": "El azul entre el cielo y el agua", "writer": "Susan Abulhawa", "published": 2015, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
