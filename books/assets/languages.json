@@ -9,6 +9,7 @@
     {"code": "IT", "name": "italiano"}, 
     {"code": "JA", "name": "japones"},  
     {"code": "KO", "name": "coreano"}, 
-    {"code": "RU", "name": "ruso"}, 
+    {"code": "RU", "name": "ruso"},  
+    {"code": "ZH", "name": "chino"}, 
     {"code": null, "name": "multilingüe"}
 ]
