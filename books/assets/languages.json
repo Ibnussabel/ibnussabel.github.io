@@ -1,15 +1,15 @@
 [
-    {"code": "CA", "name": "catalán"}, 
-    {"code": "FR", "name": "francés"}, 
-    {"code": "DE", "name": "alemán"}, 
-    {"code": "EN", "name": "inglés"}, 
-    {"code": "ES", "name": "español"}, 
-    {"code": "FI", "name": "finés"}, 
-    {"code": "HE", "name": "hebreo"}, 
-    {"code": "IT", "name": "italiano"}, 
-    {"code": "JA", "name": "japones"},  
-    {"code": "KO", "name": "coreano"}, 
-    {"code": "RU", "name": "ruso"},  
-    {"code": "ZH", "name": "chino"}, 
-    {"code": null, "name": "multilingüe"}
+{"code": "CA", "name": "catalán"}, 
+{"code": "FR", "name": "francés"}, 
+{"code": "DE", "name": "alemán"}, 
+{"code": "EN", "name": "inglés"}, 
+{"code": "ES", "name": "español"}, 
+{"code": "FI", "name": "finés"}, 
+{"code": "HE", "name": "hebreo"}, 
+{"code": "IT", "name": "italiano"}, 
+{"code": "JA", "name": "japones"},  
+{"code": "KO", "name": "coreano"}, 
+{"code": "RU", "name": "ruso"},  
+{"code": "ZH", "name": "chino"}, 
+{"code": null, "name": "multilingüe"}
 ]
