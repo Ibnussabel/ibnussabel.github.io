@@ -93,7 +93,7 @@
 {"id": "13565514", "cover": "1333040201l/13565514.jpg", "name": "Relatos de los Confines: Oficio de búhos", "writer": "Liliana Bodoc", "published": 2012, "language": "ES", "series": 9, "seriesBook": 3.5, "read": 2023, "rating": 4},
 {"id": "22926616", "cover": "1412529915l/22926616.jpg", "name": "The Color of Smoke", "writer": "Menyhért Lakatos", "published": 1975, "language": "HU", "series": null, "seriesBook": null, "read": 2023, "rating": 1},
 {"id": "31027058", "cover": "1468323777l/31027058.jpg", "name": "Il segreto del Bosco Vecchio", "writer": "Dino Buzzati", "published": 1935, "language": "IT", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
-{"id": "40003724", "cover": "1525112855l/40003724.jpg", "name": "Los desposeídos", "writer": "Ursula K. Le Guin", "published": 1974, "language": "EN", "series": 18, "seriesBook": null, "read": null, "rating": null},
+{"id": "40003724", "cover": "1525112855l/40003724.jpg", "name": "Los desposeídos", "writer": "Ursula K. Le Guin", "published": 1974, "language": "EN", "series": 18, "seriesBook": null, "read": 2023, "rating": 5},
 {"id": "59575941", "cover": "1662441132l/59575941.jpg", "name": "Wayward", "writer": "Chuck Wendig", "published": 2022, "language": "EN", "series": 8, "seriesBook": 2, "read": null, "rating": null},
 {"id": "50737142", "cover": "1563280357l/50737142.jpg", "name": "La cara norte del corazón", "writer": "Dolores Redondo", "published": 2019, "language": "ES", "series": null, "seriesBook": null, "read": null, "rating": null},
 {"id": "2115195", "cover": "1347392270l/2115195.jpg", "name": "Mengele Zoo", "writer": "Gert Nygårdshaug", "published": 1989, "language": "NO", "series": null, "seriesBook": null, "read": null, "rating": null},
