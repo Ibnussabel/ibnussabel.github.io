@@ -29,9 +29,7 @@ const showcase = (books) => {
   for(let i = 0; i < books.length; i++) {
       let book = books[i];
       let author = writers.find(person => person.name == book.writer);
-      console.log("author.country: "+author.country);
       let country = countries.find(place => place.code == author.country);
-      console.log("country: "+country);
       let rating = ratings.find(points => points.code == book.rating);
       let ratingClass = '';
 
