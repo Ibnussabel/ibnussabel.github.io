@@ -37,7 +37,7 @@ const showcase = (books) => {
         ratingClass = 'dim';
       }
       shelf += '<article>';
-      shelf += '<a href="https://www.goodreads.com/book/show/'+book.id+'" title="'+book.name+'. '+book.writer+', '+book.published+'"><img class="cover" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/'+book.cover+'" alt="'+book.name+'. '+book.writer+', '+book.published+'"></a>';
+      shelf += '<a href="https://www.goodreads.com/book/show/'+book.id+'" title="'+book.name+'. '+book.writer+', '+book.published+'"><img class="cover" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/'+book.cover+'/'+book.id+'.jpg" alt="'+book.name+'. '+book.writer+', '+book.published+'"></a>';
       shelf += '<p><strong class="rating '+ratingClass+'">'+rating.name+'</strong><br>';
       shelf += '<strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
       shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png" alt="'+country.name+' flag" title="'+country.name+'"> <span class="year">'+book.published+'</span></p>';
