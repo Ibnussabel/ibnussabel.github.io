@@ -29,7 +29,7 @@ const showcase = (books) => {
   for(let i = 0; i < books.length; i++) {
       let book = books[i];
       let author = writers.find(person => person.name == book.writer);
-      let country = countries.find(place => place.code == author.country);
+      //let country = countries.find(place => place.code == author.country);
       let rating = ratings.find(points => points.code == book.rating);
       let ratingClass = '';
 
@@ -40,7 +40,7 @@ const showcase = (books) => {
       shelf += '<a href="https://www.goodreads.com/book/show/'+book.id+'" title="'+book.name+'. '+book.writer+', '+book.published+'"><img class="cover" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/'+book.cover+'/'+book.id+'.jpg" alt="'+book.name+'. '+book.writer+', '+book.published+'"></a>';
       shelf += '<p><strong class="rating '+ratingClass+'">'+rating.name+'</strong><br>';
       shelf += '<strong class="title">'+book.name+'</strong><br><span class="author">'+book.writer+'</span><br>';
-      shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png" alt="'+country.name+' flag" title="'+country.name+'"> <span class="year">'+book.published+'</span></p>';
+      //shelf += '<img class="flag" src="./img/flags/'+author.country.toLowerCase()+'.png" alt="'+country.name+' flag" title="'+country.name+'"> <span class="year">'+book.published+'</span></p>';
       shelf += '</article>';
   }
   document.getElementById('shelf').innerHTML = shelf;    
