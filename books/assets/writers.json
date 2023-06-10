@@ -1,6 +1,7 @@
 [
 {"name": "Susan Abulhawa", "gender": "female", "country": "PS"}, 
 {"name": "Svetlana Alexievich", "gender": "female", "country": "BY"}, 
+{"name": "Ivo Andrić", "gender": "male", "country": "BA"}, 
 {"name": "Lauren Beukes", "gender": "female", "country": "ZA"}, 
 {"name": "Liliana Bodoc", "gender": "female", "country": "AR"}, 
 {"name": "Katharine Burdekin", "gender": "female", "country": "GB"}, 
@@ -14,7 +15,7 @@
 {"name": "Clara Dies Valls", "gender": "female", "country": "ES"}, 
 {"name": "P. Djèlí Clark", "gender": "male", "country": "US"}, 
 {"name": "Fyodor Dostoevsky", "gender": "male", "country": "RU"}, 
-{"name": "Akwaeke Emezi", "gender": null, "country": "NG"}, 
+{"name": "Akwaeke Emezi", "gender": "nb", "country": "NG"}, 
 {"name": "Fran Ferriz", "gender": "male", "country": "ES"}, 
 {"name": "Viktor E. Frankl", "gender": "male", "country": "AT"}, 
 {"name": "Pablo Gallo", "gender": "male", "country": "ES"}, 

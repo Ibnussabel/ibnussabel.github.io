@@ -105,6 +105,7 @@
 {"id": "594399", "cover": "1510071694i", "name": "Mecanoscrit del segon origen", "writer": "Manuel de Pedrolo", "published": 1974, "language": "CA", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
 {"id": "732924", "cover": "1417199858i", "name": "Mientras escribo", "writer": "Stephen King", "published": 2004, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
 {"id": "39196207", "cover": "1520911525i", "name": "Pachinko", "writer": "Min Jin Lee", "published": 2017, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 3},
-{"id": "74872028", "cover": "1677904472i", "name": "Mascota", "writer": "Akwaeke Emezi", "published": 2019, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null},
+{"id": "74872028", "cover": "1677904472i", "name": "Mascota", "writer": "Akwaeke Emezi", "published": 2019, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
+{"id": "3324", "cover": "1332710967i", "name": "Un puente sobre el Drina", "writer": "Ivo Andrić", "published": 1945, "language": "SH", "series": 20, "seriesBook": 1, "read": null, "rating": null},
 {"id": "6752712", "cover": "1251147791l", "name": "Viaje al Oeste: Las aventuras del Rey Mono", "writer": "Wu Cheng'en", "published": 1592, "language": "ZH", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]

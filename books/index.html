@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Lecturas</title>
+    <title>Lectures</title>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,42 +12,42 @@
 <body>
 <header>
     <h1>
-        <span id="title">Mis lecturas</span>
-        <a id="toggleFiltro" href="#" onclick="document.getElementById('filtro').classList.toggle('closed');"><img src="./img/icons/control_equalizer.png" alt="Filtro" title="Abrir o cerrar el filtro" ></a>
+        <span id="title">Les meves lectures</span>
+        <a id="toggleFiltro" href="#" onclick="document.getElementById('filtro').classList.toggle('closed');"><img src="./img/icons/control_equalizer.png" alt="Filtro" title="Obrir o tancar el filtre" ></a>
     </h1>
     <form id="filtro" name="filtro" class="closed">
         <fieldset>
-            <legend>Filtrar</legend>
+            <legend>Filtre</legend>
             
             <label for="tag">Etiqueta
             <select id="tag" name="tag" onchange="checkComparison()">
-                <option value="name">Título</option>
-                <option value="writer">Escritor</option>
-                <option value="published">Década de publicación</option>
+                <option value="name">Títol</option>
+                <option value="writer">Escriptor</option>
+                <option value="published">Dècada de publicació</option>
                 <option value="country">País</option>
                 <option value="language">Idioma</option>
-                <option value="rating">Valoración</option>
-                <option value="gender">Género</option>
-                <option value="series">Serie</option>
-                <option value="read">Año de lectura</option>
+                <option value="rating">Valoració</option>
+                <option value="gender">Gènere</option>
+                <option value="series">Sèrie</option>
+                <option value="read">Any de lectura</option>
             </select></label>
         
-            <label for="operator">Criterio
+            <label for="operator">Criteri
             <select id="operator" name="operator">
                 <option value="same">igual que</option>
-                <option value="has">contiene</option>
-                <option value="more">mayor que</option>
-                <option value="sameormore">mayor o igual que</option>
+                <option value="has">conté</option>
+                <option value="more">major que</option>
+                <option value="sameormore">major o igual que</option>
                 <option value="less">menor que</option>
                 <option value="sameorless">menor o igual que</option>
             </select></label>
         
-            <label for="comparison">Comparación
+            <label for="comparison">Comparació
             <span id="fieldComparison"><input type="text" id="comparison" name="comparison"></span></label>
 
             <label>
-                <input type="button" value="Filtrar" onclick="filterBooks(document.filtro.tag.value, document.filtro.operator.value, document.filtro.comparison.value)">
-                <input type="button" value="Restablecer" onclick="resetBooks()">            
+                <input type="button" value="Filtra" onclick="filterBooks(document.filtro.tag.value, document.filtro.operator.value, document.filtro.comparison.value)">
+                <input type="button" value="Esborra" onclick="resetBooks()">            
             </label>
         </fieldset>
     </form>

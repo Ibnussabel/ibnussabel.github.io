@@ -8,9 +8,10 @@ var datos_serie = [];
 var datos_puntuacion = [];
 
 genders = [
-  {"code": "male", "name": "masculino"}, 
-  {"code": "female", "name": "femenino"}, 
-  {"code": null, "name": "otro"}
+  {"code": "male", "name": "masculí"}, 
+  {"code": "female", "name": "femení"}, 
+  {"code": "nb", "name": "no binari"}, 
+  {"code": null, "name": "no definit"}
 ];
 
 ratings = [
@@ -61,31 +62,31 @@ const filterBooks = (tag, operator, comparison) => {
     switch (operator) {
       case 'same':
         books2 = selectedBooks.filter(book => book[tag] == comparison);
-        arg1 = 'en '+comparison;
-        arg2 = comparison+' estrellas';
+        arg1 = 'el '+comparison;
+        arg2 = comparison+' estrelles';
         break;
       case 'more':
         books2 = selectedBooks.filter(book => book[tag] > comparison);
-        arg1 = 'después de '+comparison;
-        arg2 = 'Más de '+comparison+' estrellas';
+        arg1 = 'després de '+comparison;
+        arg2 = 'Més de '+comparison+' estrelles';
         break;
       case 'less':
         books2 = selectedBooks.filter(book => book[tag] < comparison);
-        arg1 = 'antes de '+comparison;
-        arg2 = 'Menos de '+comparison+' estrellas';
+        arg1 = 'abans de '+comparison;
+        arg2 = 'Menys de '+comparison+' estrelles';
         break;
       case 'has':
         books2 = selectedBooks.filter(book => book[tag].includes(comparison));
         break;
       case 'sameormore':
         books2 = selectedBooks.filter(book => book[tag] >= comparison);
-        arg1 = 'en '+comparison+' o después';
-        arg2 = comparison+' estrellas o más';
+        arg1 = 'el '+comparison+' o després';
+        arg2 = comparison+' estrelles o més';
         break;
       case 'sameorless':
         books2 = selectedBooks.filter(book => book[tag] <= comparison);
-        arg1 = 'en '+comparison+' o antes';
-        arg2 = comparison+' estrellas o menos';
+        arg1 = 'el '+comparison+' o abans';
+        arg2 = comparison+' estrelles o menys';
         break;
     }
   }
@@ -98,66 +99,66 @@ const filterBooks = (tag, operator, comparison) => {
       switch (operator) {
         case 'same':
           books2 = selectedBooks.filter(book => (book[tag] >= startYear && book[tag] <= endYear));
-          arg1 = 'en los '+decade;
+          arg1 = 'als '+decade;
           break;
         case 'more':
           books2 = selectedBooks.filter(book => book[tag] > endYear);
-          arg1 = 'después de los '+decade;
+          arg1 = 'després dels '+decade;
           break;
         case 'less':
           books2 = selectedBooks.filter(book => book[tag] < startYear);
-          arg1 = 'antes de los '+decade;
+          arg1 = 'abans dels '+decade;
           break;
         case 'sameormore':
           books2 = selectedBooks.filter(book => book[tag] >= startYear);
-          arg1 = 'en los '+decade+' o después';
+          arg1 = 'als '+decade+' o després';
           break;
         case 'sameorless':
           books2 = selectedBooks.filter(book => book[tag] <= endYear);
-          arg1 = 'en los '+decade+' o antes';
+          arg1 = 'als '+decade+' o abans';
           break;
       }
-      criteria = 'Publicado '+arg1;
+      criteria = 'Publicat '+arg1;
       break;
     case 'read':
-      criteria = 'Leído '+arg1;
+      criteria = 'Llegit '+arg1;
       break;
     case 'name':
       if (operator == 'same') {
-        criteria = 'Titulado "'+comparison+'"';
+        criteria = 'Titulat "'+comparison+'"';
       } else {
-        criteria = 'El título contiene "'+comparison+'"';
+        criteria = 'El títol conté "'+comparison+'"';
       }
       break;
     case 'writer':
       if (operator == 'same') {
-        criteria = 'Escrito por "'+comparison+'"';
+        criteria = 'Escrit per "'+comparison+'"';
       } else {
-        criteria = 'El nombre del escritor contiene "'+comparison+'"';
+        criteria = 'El nom de l\'escriptor conté "'+comparison+'"';
       }
       break;
     case 'rating':
-      criteria = 'Valoración '+arg2;
+      criteria = 'Valoració '+arg2;
       break;
     case 'language':
       let language = languages.find(lang => lang.code == comparison);
-      criteria = 'Escrito en '+language.name;
+      criteria = 'Escrit en '+language.name;
       break;
     case 'country':
       writers2 = writers.filter(writer => writer.country == comparison);
       books2 = selectedBooks.filter(book => writers2.find(writer => writer.name == book.writer))
       let country = countries.find(country => country.code == comparison);
-      criteria = 'Escritor(es) de '+country.name;
+      criteria = 'Escriptor(es) de '+country.name;
       break;
     case 'gender':
       writers2 = writers.filter(writer => writer.gender == comparison);
       books2 = selectedBooks.filter(book => writers2.find(writer => writer.name == book.writer))
       if (comparison === 'male') {
-        criteria = 'Escritores';
+        criteria = 'Escriptors';
       } else if (comparison === 'female') {
-        criteria = 'Escritoras';
+        criteria = 'Escriptores';
       } else {
-        criteria = "Escritores sin género";
+        criteria = "Escriptors sense gènere";
       }
       break;
     case 'series':
@@ -170,7 +171,7 @@ const filterBooks = (tag, operator, comparison) => {
     showcase(books2);
     document.getElementById('title').innerText = criteria+' ('+books2.length+')';
   } else {
-    alert('El filtro introducido no ha producido ningún resultado.')
+    alert('El filtre introduït no ha produït cap resultat.')
   }
 }
 
@@ -180,7 +181,7 @@ const resetBooks = () => {
   document.filtro.operator.selectedIndex = 0;
   checkComparison();
   document.filtro.comparison.value = '';
-  document.getElementById('title').innerText = 'Mis lecturas ('+books.length+')';
+  document.getElementById('title').innerText = 'Les meves lectures ('+books.length+')';
 }
 
 const armaSelect = (collection, tag, id) => {
