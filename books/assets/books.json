@@ -108,6 +108,7 @@
 {"id": "74872028", "cover": "1677904472i", "name": "Mascota", "writer": "Akwaeke Emezi", "published": 2019, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
 {"id": "3324", "cover": "1332710967i", "name": "Un puente sobre el Drina", "writer": "Ivo Andrić", "published": 1945, "language": "SH", "series": 20, "seriesBook": 1, "read": 2023, "rating": 3},
 {"id": "29152181", "cover": "1455650663i", "name": "La tercera verge", "writer": "Fred Vargas", "published": 2006, "language": "FR", "series": 21, "seriesBook": 7, "read": 2023, "rating": 5},
-{"id": "107719294", "cover": "1675947887i", "name": "Las tempestálidas", "writer": "Georgi Gospodinov", "published": 2020, "language": "BG", "series": null, "seriesBook": null, "read": null, "rating": null},
+{"id": "107719294", "cover": "1675947887i", "name": "Las tempestálidas", "writer": "Georgi Gospodinov", "published": 2020, "language": "BG", "series": null, "seriesBook": null, "read": 2023, "rating": 5},
+{"id": "35880183", "cover": "1501501696i", "name": "Llegendes de pescadors i altres històries de la mar", "writer": "Joan de Deu Prats", "published": 2016, "language": "CA", "series": null, "seriesBook": null, "read": null, "rating": null},
 {"id": "6752712", "cover": "1251147791l", "name": "Viaje al Oeste: Las aventuras del Rey Mono", "writer": "Wu Cheng'en", "published": 1592, "language": "ZH", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
