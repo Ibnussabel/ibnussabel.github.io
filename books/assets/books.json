@@ -110,6 +110,8 @@
 {"id": "29152181", "cover": "1455650663i", "name": "La tercera verge", "writer": "Fred Vargas", "published": 2006, "language": "FR", "series": 21, "seriesBook": 7, "read": 2023, "rating": 5},
 {"id": "107719294", "cover": "1675947887i", "name": "Las tempestálidas", "writer": "Georgi Gospodinov", "published": 2020, "language": "BG", "series": null, "seriesBook": null, "read": 2023, "rating": 5},
 {"id": "35880183", "cover": "1501501696i", "name": "Llegendes de pescadors i altres històries de la mar", "writer": "Joan de Deu Prats", "published": 2016, "language": "CA", "series": null, "seriesBook": null, "read": 2023, "rating": 3},
-{"id": "60683191", "cover": "1652272084i", "name": "Todas esas cosas que te diré mañana", "writer": "Elísabet Benavent", "published": 2022, "language": "ES", "series": null, "seriesBook": null, "read": null, "rating": null},
+{"id": "60683191", "cover": "1652272084i", "name": "Todas esas cosas que te diré mañana", "writer": "Elísabet Benavent", "published": 2022, "language": "ES", "series": null, "seriesBook": null, "read": 2023, "rating": 3},
+{"id": "1060776", "cover": "1282571233i", "name": "Delicioso suicidio en grupo", "writer": "Arto Paasilinna", "published": 1990, "language": "FI", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
+{"id": "55119872", "cover": "1610382210i", "name": "Black Water Sister", "writer": "Zen Cho", "published": 2021, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null},
 {"id": "6752712", "cover": "1251147791l", "name": "Viaje al Oeste: Las aventuras del Rey Mono", "writer": "Wu Cheng'en", "published": 1592, "language": "ZH", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
