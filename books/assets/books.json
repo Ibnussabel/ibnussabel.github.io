@@ -4,7 +4,7 @@
 {"id": "51219756", "cover": "1581579145l", "name": "The Ballad of Songbirds and Snakes", "writer": "Suzanne Collins", "published": 2020, "language": "EN", "series": null, "seriesBook": null, "read": 2021, "rating": 5},
 {"id": "31217006", "cover": "1469463042l", "name": "El hombre en busca de sentido", "writer": "Viktor E. Frankl", "published": 1946, "language": "DE", "series": null, "seriesBook": null, "read": 2021, "rating": 4},
 {"id": "57286545", "cover": "1616174335l", "name": "Bestiario de Tierra y Tinta", "writer": "Clara Dies Valls", "published": 2021, "language": null, "series": null, "seriesBook": null, "read": 2021, "rating": 4},
-{"id": "56869429", "cover": "1611855460l", "name": "La Montaña Mágica", "writer": "Thomas Mann", "published": 1924, "language": "DE", "series": null, "seriesBook": null, "read": 2021, "rating": 3},
+{"id": "56869429", "cover": "1611855460l", "name": "La Montaña Mágica", "writer": "Thomas Mann", "published": 1924, "language": "DE", "series": null, "seriesBook": null, "read": 2021, "rating": 5},
 {"id": "27976165", "cover": "1448531478l", "name": "Donde las calles no tienen nombre", "writer": "Mónica Rouanet", "published": 2015, "language": "ES", "series": null, "seriesBook": null, "read": 2021, "rating": 4},
 {"id": "15159488", "cover": "1534795268l", "name": "L'herència de Horst", "writer": "Teresa Roig", "published": 2017, "language": "CA", "series": null, "seriesBook": null, "read": 2021, "rating": 3},
 {"id": "39651837", "cover": "1522139806l", "name": "La novia gitana", "writer": "Carmen Mola", "published": 2018, "language": "ES", "series": 1, "seriesBook": 1, "read": 2021, "rating": 3},
@@ -116,6 +116,7 @@
 {"id": "23235025", "cover": "1410912884i", "name": "La glándula de Ícaro", "writer": "Anna Starobinets", "published": 2013, "language": "RU", "series": null, "seriesBook": null, "read": 2023, "rating": 5},
 {"id": "43331228", "cover": "1545658818i", "name": "Un llarg hivern", "writer": "Colm Tóibín", "published": 2007, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 3},
 {"id": "50058115", "cover": "1563885685l", "name": "Señoras que se empotraron hace mucho", "writer": "Cristina Domenech", "published": 2019, "language": "ES", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
-{"id": "7767021", "cover": "1348469489i", "name": "Who Fears Death", "writer": "Nnedi Okorafor", "published": 2010, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null},
+{"id": "7767021", "cover": "1348469489i", "name": "Who Fears Death", "writer": "Nnedi Okorafor", "published": 2010, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 5},
+{"id": "34687485", "cover": "1490560173i", "name": "Medio sol amarillo", "writer": "Chimamanda Ngozi Adichie", "published": 2006, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null},
 {"id": "6752712", "cover": "1251147791l", "name": "Viaje al Oeste: Las aventuras del Rey Mono", "writer": "Wu Cheng'en", "published": 1592, "language": "ZH", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
