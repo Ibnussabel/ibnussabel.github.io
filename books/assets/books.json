@@ -119,6 +119,7 @@
 {"id": "7767021", "cover": "1348469489i", "name": "Who Fears Death", "writer": "Nnedi Okorafor", "published": 2010, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 5},
 {"id": "34687485", "cover": "1490560173i", "name": "Medio sol amarillo", "writer": "Chimamanda Ngozi Adichie", "published": 2006, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
 {"id": "61937038", "cover": "1660235654i", "name": "To Shape a Dragon's Breath", "writer": "Moniquill Blackgoose", "published": 2023, "language": "EN", "series": null, "seriesBook": null, "read": 2023, "rating": 3},
-{"id": "49398065", "cover": "1607511367i", "name": "Gente ansiosa", "writer": "Fredrik Backman", "published": 2019, "language": "SV", "series": null, "seriesBook": null, "read": null, "rating": null},
+{"id": "49398065", "cover": "1607511367i", "name": "Gente ansiosa", "writer": "Fredrik Backman", "published": 2019, "language": "SV", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
+{"id": "35876602", "cover": "1501492390i", "name": "Donde la ciudad cambia su nombre", "writer": "Francisco Candel", "published": 1957, "language": "ES", "series": null, "seriesBook": null, "read": null, "rating": null},
 {"id": "6752712", "cover": "1251147791l", "name": "Viaje al Oeste: Las aventuras del Rey Mono", "writer": "Wu Cheng'en", "published": 1592, "language": "ZH", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
