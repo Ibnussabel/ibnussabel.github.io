@@ -125,5 +125,7 @@
 {"id": "36195012", "cover": "1504756671i", "name": "El llibre d'Emma", "writer": "Marie-Célie Agnant", "published": 2001, "language": "FR", "series": null, "seriesBook": null, "read": 2023, "rating": 3},
 {"id": "181111705", "cover": "1687873902i", "name": "Todo vuelve", "writer": "Juan Gómez-Jurado", "published": 2023, "language": "ES", "series": 22, "seriesBook": 2, "read": 2023, "rating": 3},
 {"id": "55173261", "cover": "1598822696i", "name": "Les tombes d'Atuan", "writer": "Ursula K. Le Guin", "published": 1970, "language": "EN", "series": 17, "seriesBook": 2, "read": 2023, "rating": 5},
+{"id": "192364", "cover": "1368741531i", "name": "Sin noticias de Gurb", "writer": "Eduardo Mendoza", "published": 1990, "language": "ES", "series": null, "seriesBook": null, "read": null, "rating": null},
+{"id": "157265081", "cover": "1689071571i", "name": "The Narrow Road Between Desires", "writer": "Patrick Rothfuss", "published": 2023, "language": "EN", "series": 5, "seriesBook": 2.6, "read": null, "rating": null},
 {"id": "6752712", "cover": "1251147791l", "name": "Viaje al Oeste: Las aventuras del Rey Mono", "writer": "Wu Cheng'en", "published": 1592, "language": "ZH", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
