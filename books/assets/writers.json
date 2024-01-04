@@ -88,7 +88,9 @@
 {"name": "Fred Vargas", "gender": "female", "country": "FR"},    
 {"name": "Chuck Wendig", "gender": "male", "country": "US"}, 
 {"name": "Scott Westerfeld", "gender": "male", "country": "US"},
-{"name": "Rebecca Yarros", "gender": "female", "country": "US"}, 
+{"name": "Rebecca Yarros", "gender": "female", "country": "US"},
+{"name": "Gabrielle Zevin", "gender": "female", "country": "US"}, 
 {"name": "Several writers", "gender": "female", "country": "GB"}, 
-{"name": "Varias autoras", "gender": "female", "country": "ES"}
+{"name": "Varias autoras", "gender": "female", "country": "ES"}, 
+{"name": "Varios autores", "gender": null, "country": "ES"}
 ]
