@@ -131,7 +131,8 @@
 {"id": "1175547", "cover": "1518799576i", "name": "La casa de Bernarda Alba", "writer": "Federico García Lorca", "published": 1936, "language": "ES", "series": null, "seriesBook": null, "read": 2023, "rating": 4},
 {"id": "187622892", "cover": "1689055697i", "name": "Alas de sangre", "writer": "Rebecca Yarros", "published": 2023, "language": "EN", "series": 23, "seriesBook": 1, "read": 2024, "rating": 3},
 {"id": "57966579", "cover": "", "name": "51 Historias Sin Demostrar y Tres Mentiras Probadas", "writer": "Teodoro Carabba", "published": 2020, "language": "ES", "series": null, "seriesBook": null, "read": 2024, "rating": 3},
-{"id": "91875791", "cover": "1675130930i", "name": "Mañana, y mañana, y mañana", "writer": "Gabrielle Zevin", "published": 2022, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null},
-{"id": "", "cover": "", "name": "Breve viaje por la España de las brujas", "writer": "Varios autores", "published": 2023, "language": "ES", "series": null, "seriesBook": null, "read": null, "rating": null},
+{"id": "205180215", "cover": "", "name": "Breve viaje por la España de las brujas", "writer": "Varios autores", "published": 2023, "language": "ES", "series": null, "seriesBook": null, "read": 2024, "rating": 3},
+{"id": "91875791", "cover": "1675130930i", "name": "Mañana, y mañana, y mañana", "writer": "Gabrielle Zevin", "published": 2022, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 5},
+{"id": "24100285", "cover": "1518017807i", "name": "Space Opera", "writer": "Catherynne M. Valente", "published": 2018, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null},
 {"id": "6752712", "cover": "1251147791l", "name": "Viaje al Oeste: Las aventuras del Rey Mono", "writer": "Wu Cheng'en", "published": 1592, "language": "ZH", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
