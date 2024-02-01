@@ -135,6 +135,6 @@
 {"id": "91875791", "cover": "1675130930i", "name": "Mañana, y mañana, y mañana", "writer": "Gabrielle Zevin", "published": 2022, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 5},
 {"id": "24100285", "cover": "1518017807i", "name": "Space Opera", "writer": "Catherynne M. Valente", "published": 2018, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 1},
 {"id": "55815759", "cover": "1603973254i", "name": "La costa més llunyana", "writer": "Ursula K. Le Guin", "published": 1972, "language": "EN", "series": 17, "seriesBook": 3, "read": 2024, "rating": 5},
-{"id": "32758901", "cover": "1631585309i", "name": "All Systems Red", "writer": "Martha Wells", "published": 2017, "language": "EN", "series": 24, "seriesBook": 1, "read": null, "rating": null},
-{"id": "6752712", "cover": "1251147791l", "name": "Viaje al Oeste: Las aventuras del Rey Mono", "writer": "Wu Cheng'en", "published": 1592, "language": "ZH", "series": null, "seriesBook": null, "read": null, "rating": null}
+{"id": "32758901", "cover": "1631585309i", "name": "All Systems Red", "writer": "Martha Wells", "published": 2017, "language": "EN", "series": 24, "seriesBook": 1, "read": 2024, "rating": 4},
+{"id": "40961230", "cover": "1532711745i", "name": "The Travelling Cat Chronicles", "writer": "Hiro Arikawa", "published": 2012, "language": "JA", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
