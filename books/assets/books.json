@@ -140,5 +140,6 @@
 {"id": "35959740", "cover": "1565909496i", "name": "Circe", "writer": "Madeline Miller", "published": 2018, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 4},
 {"id": "57018361", "cover": "1612949999i", "name": "Las que estamos muertas", "writer": "Namina Forna", "published": 2020, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 3},
 {"id": "3421791", "cover": "1307231169i", "name": "Cometas en el cielo", "writer": "Khaled Hosseini", "published": 2003, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 3},
+{"id": "31625452", "cover": "1471973010i", "name": "El capot i altres relats peterburguesos", "writer": "Nikolai Gogol", "published": 1836, "language": "RU", "series": null, "seriesBook": null, "read": null, "rating": null},
 {"id": "202498647", "cover": "1700679072i", "name": "Alas de hierro", "writer": "Rebecca Yarros", "published": 2023, "language": "EN", "series": 23, "seriesBook": 2, "read": null, "rating": null}
 ]

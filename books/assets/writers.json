@@ -34,6 +34,7 @@
 {"name": "Federico García Lorca", "gender": "male", "country": "ES"},
 {"name": "Gabriel García Márquez", "gender": "male", "country": "CO"},
 {"name": "Juan Gómez-Jurado", "gender": "male", "country": "ES"}, 
+{"name": "Nikolai Gogol", "gender": "male", "country": "UA"}, 
 {"name": "Georgi Gospodinov", "gender": "male", "country": "BG"}, 
 {"name": "Almudena Grandes", "gender": "female", "country": "ES"}, 
 {"name": "Kika Hatzopoulou", "gender": "female", "country": "GR"}, 
