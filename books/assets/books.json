@@ -141,7 +141,8 @@
 {"id": "57018361", "cover": "1612949999i", "name": "Las que estamos muertas", "writer": "Namina Forna", "published": 2020, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 3},
 {"id": "3421791", "cover": "1307231169i", "name": "Cometas en el cielo", "writer": "Khaled Hosseini", "published": 2003, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 3},
 {"id": "31625452", "cover": "1471973010i", "name": "El capot i altres relats peterburguesos", "writer": "Nikolai Gogol", "published": 1836, "language": "RU", "series": null, "seriesBook": null, "2024": null, "rating": 3},
-{"id": "59111053", "cover": "1632869741i", "name": "Cosas pequeñas como esas", "writer": "Claire Keegan", "published": 2021, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null},
-{"id": "168381063", "cover": "1685490059i", "name": "El infierno", "writer": "Carmen Mola", "published": 2023, "language": "ES", "series": null, "seriesBook": null, "read": null, "rating": null},
-{"id": "202498647", "cover": "1700679072i", "name": "Alas de hierro", "writer": "Rebecca Yarros", "published": 2023, "language": "EN", "series": 23, "seriesBook": 2, "read": null, "rating": null}
+{"id": "59111053", "cover": "1632869741i", "name": "Cosas pequeñas como esas", "writer": "Claire Keegan", "published": 2021, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 4},
+{"id": "168381063", "cover": "1685490059i", "name": "El infierno", "writer": "Carmen Mola", "published": 2023, "language": "ES", "series": null, "seriesBook": null, "read": 2024, "rating": 4},
+{"id": "202498647", "cover": "1700679072i", "name": "Alas de hierro", "writer": "Rebecca Yarros", "published": 2023, "language": "EN", "series": 23, "seriesBook": 2, "read": null, "rating": null},
+{"id": "35068705", "cover": "1515691735i", "name": "The Poppy War", "writer": "R.F. Kuang", "published": 2018, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
