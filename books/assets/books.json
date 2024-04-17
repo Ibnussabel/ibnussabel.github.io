@@ -143,8 +143,9 @@
 {"id": "31625452", "cover": "1471973010i", "name": "El capot i altres relats peterburguesos", "writer": "Nikolai Gogol", "published": 1836, "language": "RU", "series": null, "seriesBook": null, "read": 2024, "rating": 3},
 {"id": "59111053", "cover": "1632869741i", "name": "Cosas pequeñas como esas", "writer": "Claire Keegan", "published": 2021, "language": "EN", "series": null, "seriesBook": null, "read": 2024, "rating": 4},
 {"id": "168381063", "cover": "1685490059i", "name": "El infierno", "writer": "Carmen Mola", "published": 2023, "language": "ES", "series": null, "seriesBook": null, "read": 2024, "rating": 4},
-{"id": "35068705", "cover": "1515691735i", "name": "The Poppy War", "writer": "R.F. Kuang", "published": 2018, "language": "EN", "series": 25, "seriesBook": 1, "read": 2024, "rating": 4},
+{"id": "181113513", "cover": "1688686973i", "name": "La Guerra de la Amapola", "writer": "R.F. Kuang", "published": 2018, "language": "EN", "series": 25, "seriesBook": 1, "read": 2024, "rating": 4},
 {"id": "202498647", "cover": "1700679072i", "name": "Alas de hierro", "writer": "Rebecca Yarros", "published": 2023, "language": "EN", "series": 23, "seriesBook": 2, "read": 2024, "rating": 3},
 {"id": "41633564", "cover": "1535950878i", "name": "La octava vida", "writer": "Nino Haratischwili", "published": 2014, "language": "DE", "series": null, "seriesBook": null, "read": 2024, "rating": 5},
-{"id": "184213307", "cover": "1688554467i", "name": "El descontento", "writer": "Beatriz Serrano", "published": 2023, "language": "ES", "series": null, "seriesBook": null, "read": null, "rating": null}
+{"id": "184213307", "cover": "1688554467i", "name": "El descontento", "writer": "Beatriz Serrano", "published": 2023, "language": "ES", "series": null, "seriesBook": null, "read": 2024, "rating": 5},
+{"id": "57945316", "cover": "1677361825i", "name": "Babel", "writer": "R.F. Kuang", "published": 2022, "language": "EN", "series": null, "seriesBook": null, "read": null, "rating": null}
 ]
