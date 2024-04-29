@@ -1,10 +1,9 @@
-var books, writers, countries, genders, ratings, series, selectedBooks;
+var books, writers, countries, genders, ratings, selectedBooks;
 var datos_genero = [];
 var datos_idioma = [];
 var datos_pais = [];
 var datos_decada = [];
 var datos_autor = [];
-var datos_serie = [];
 var datos_puntuacion = [];
 
 genders = [
@@ -62,7 +61,7 @@ const stats = () => {
 const filterBooks = (tag, operator, comparison) => {
   let books2, criteria, arg1, writers2;
   
-  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating' || tag == 'series') {
+  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
     switch (operator) {
       case 'same':
         books2 = selectedBooks.filter(book => book[tag] == comparison);
@@ -165,10 +164,6 @@ const filterBooks = (tag, operator, comparison) => {
         criteria = "Escriptors sense gènere";
       }
       break;
-    case 'series':
-      let series2 = series.find(item => item.code == comparison);
-      criteria = series2.name;
-      break;
   } 
 
   if (books2.length) {
@@ -233,9 +228,6 @@ const checkComparison = () => {
   } else if (document.filtro.tag.value == 'gender') {
     document.getElementById('fieldComparison').innerHTML = armaSelect(genders, 'gender', 'comparison');
     availableOptions([0]);
-  } else if (document.filtro.tag.value == 'series') {
-    document.getElementById('fieldComparison').innerHTML = armaSelect(series, 'series', 'comparison');
-    availableOptions([0]);
   } else if (document.filtro.tag.value == 'published') {
     document.getElementById('fieldComparison').innerHTML = armaSelectDecades('comparison');
     availableOptions([0,2,3,4,5]);
@@ -252,7 +244,7 @@ const checkComparison = () => {
 const countBooks = (tag, comparison) => {
   let books2, writers2;
   
-  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating' || tag == 'series') {
+  if (tag == 'name' || tag == 'writer' || tag == 'read' || tag == 'language' || tag == 'rating') {
         books2 = selectedBooks.filter(book => book[tag] == comparison);
   } else if (tag == 'country') {
       writers2 = writers.filter(writer => writer.country == comparison);
@@ -311,13 +303,7 @@ const fullSummary = () => {
     linea2 = countBooks('writer', writers[i].name);
     datos_autor.push([linea1, linea2]);
   }
-  
-  for (i=0; i<series.length; i++) {
-    linea1 = series[i].name+' ('+series[i].writer+')';
-    linea2 = countBooks('series', series[i].code);
-    datos_serie.push([linea1, linea2]);
-  }
-  
+
   for (i=0; i<ratings.length; i++) {
     linea1 = ratings[i].code+' estrellas';
     linea2 = countBooks('rating', ratings[i].code);
@@ -340,25 +326,19 @@ fetch('./assets/writers.json')
       .then(data => {
         languages = JSON.parse(JSON.stringify(data));
 
-      fetch('./assets/series.json')
+      fetch('./assets/books.json')
         .then(response => response.json())
         .then(data => {
-          series = JSON.parse(JSON.stringify(data));
+          books = JSON.parse(JSON.stringify(data));
 
-        fetch('./assets/books.json')
-          .then(response => response.json())
-          .then(data => {
-            books = JSON.parse(JSON.stringify(data));
+        if (document.getElementById('shelf')) {
+          showcase(books);
+          resetBooks();
+        }
 
-          if (document.getElementById('shelf')) {
-            showcase(books);
-            resetBooks();
-          }
-
-          if (document.getElementById('stats')) {
-            stats();
-          }
-        })
+        if (document.getElementById('stats')) {
+          stats();
+        }
       })
     })
   })
