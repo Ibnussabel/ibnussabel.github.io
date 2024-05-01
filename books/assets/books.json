@@ -148,5 +148,6 @@
 {"id": "41633564", "cover": "1535950878i", "name": "La octava vida", "writer": "Nino Haratischwili", "published": 2014, "language": "DE", "read": 2024, "rating": 5},
 {"id": "184213307", "cover": "1688554467i", "name": "El descontento", "writer": "Beatriz Serrano", "published": 2023, "language": "ES", "read": 2024, "rating": 5},
 {"id": "57945316", "cover": "1677361825i", "name": "Babel", "writer": "R.F. Kuang", "published": 2022, "language": "EN", "read": 2024, "rating": 5},
-{"id": "372389", "cover": "1358275612i", "name": "Dioses menores", "writer": "Terry Pratchett", "published": 1992, "language": "EN", "read": null, "rating": null}
+{"id": "372389", "cover": "1358275612i", "name": "Dioses menores", "writer": "Terry Pratchett", "published": 1992, "language": "EN", "read": 2024, "rating": 3},
+{"id": "34418540", "cover": "1538829752i", "name": "La quinta estación", "writer": "N.K. Jemisin", "published": 2015, "language": "EN", "read": null, "rating": null}
 ]
