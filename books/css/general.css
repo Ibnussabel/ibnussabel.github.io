@@ -17,7 +17,7 @@ main {
     margin: 0 auto;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 7rem);
+    grid-template-columns: repeat(auto-fill, 7.5rem);
     justify-content: space-between;
 }
 
