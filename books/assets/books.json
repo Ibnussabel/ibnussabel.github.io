@@ -152,5 +152,6 @@
 {"id": "34418540", "cover": "1538829752i", "name": "La quinta estación", "writer": "N.K. Jemisin", "published": 2015, "language": "EN", "read": 2024, "rating": 4},
 {"id": "63851840", "cover": "1669543727i", "name": "Let the Mountains Be My Grave", "writer": "Francesca Tacchi", "published": 2022, "language": "EN", "read": 2024, "rating": 4},
 {"id": "13670", "cover": "1471534251i", "name": "Tehanu", "writer": "Ursula K. Le Guin", "published": 1990, "language": "EN", "read": 2024, "rating": 5},
-{"id": "46006142", "cover": "1566689891i", "name": "El priorato del naranjo", "writer": "Samantha Shannon", "published": 2019, "language": "EN", "read": null, "rating": null}
+{"id": "46006142", "cover": "1566689891i", "name": "El priorato del naranjo", "writer": "Samantha Shannon", "published": 2019, "language": "EN", "read": 2024, "rating": 5},
+{"id": "55254377", "cover": "1599472493i", "name": "Les mares no", "writer": "Katixa Agirre", "published": 2018, "language": "EU", "read": null, "rating": null}
 ]
