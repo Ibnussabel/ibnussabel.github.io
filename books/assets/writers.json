@@ -1,6 +1,7 @@
 [
 {"name": "Susan Abulhawa", "gender": "female", "country": "PS"}, 
 {"name": "Chimamanda Ngozi Adichie", "gender": "female", "country": "NG"}, 
+{"name": "Aravind Adiga", "gender": "male", "country": "IN"}, 
 {"name": "Marie-Célie Agnant", "gender": "female", "country": "HT"}, 
 {"name": "Katixa Agirre", "gender": "female", "country": "EUS"},   
 {"name": "Svetlana Alexievich", "gender": "female", "country": "BY"}, 
@@ -93,6 +94,7 @@
 {"name": "Roberto Saviano", "gender": "male", "country": "IT"}, 
 {"name": "Beatriz Serrano", "gender": "female", "country": "ES"}, 
 {"name": "Samantha Shannon", "gender": "female", "country": "GB"}, 
+{"name": "Neal Shusterman", "gender": "male", "country": "US"}, 
 {"name": "Irene Solà", "gender": "female", "country": "CAT"}, 
 {"name": "Anna Starobinets", "gender": "female", "country": "RU"}, 
 {"name": "Francesca Tacchi", "gender": "nb", "country": "IT"}, 
