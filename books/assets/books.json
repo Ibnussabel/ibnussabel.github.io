@@ -157,6 +157,7 @@
 {"id": "1812744", "cover": "1188681720i", "name": "El nombre del mundo es Bosque", "writer": "Ursula K. Le Guin", "published": 1972, "language": "EN", "read": 2024, "rating": 4},
 {"id": "17339799", "cover": "1360266111i", "name": "Tigre blanc", "writer": "Aravind Adiga", "published": 2008, "language": "EN", "read": 2024, "rating": 3},
 {"id": "35377546", "cover": "1550411834i", "name": "Siega", "writer": "Neal Shusterman", "published": 2016, "language": "EN", "read": 2024, "rating": 3},
-{"id": "1453626", "cover": "1223053581i", "name": "Cuentos de Terramar", "writer": "Ursula K. Le Guin", "published": 2001, "language": "EN", "read": null, "rating": null},
-{"id": "20451690", "cover": "1389008428i", "name": "Las bellas extranjeras", "writer": "Mircea Cartarescu", "published": 2010, "language": "RO", "read": null, "rating": null}
+{"id": "1453626", "cover": "1223053581i", "name": "Cuentos de Terramar", "writer": "Ursula K. Le Guin", "published": 2001, "language": "EN", "read": 2024, "rating": 5},
+{"id": "20451690", "cover": "1389008428i", "name": "Las bellas extranjeras", "writer": "Mircea Cartarescu", "published": 2010, "language": "RO", "read": 2024, "rating": 2},
+{"id": "56790287", "cover": "1611392723i", "name": "Pedres a la butxaca", "writer": "Kaouther Adimi", "published": 2019, "language": "FR", "read": null, "rating": null}
 ]
