@@ -162,5 +162,6 @@
 {"id": "56790287", "cover": "1611392723i", "name": "Pedres a la butxaca", "writer": "Kaouther Adimi", "published": 2019, "language": "FR", "read": 2024, "rating": 4},
 {"id": "41118857", "cover": "1539963703i", "name": "The Dragon Republic", "writer": "R.F. Kuang", "published": 2019, "language": "EN", "read": 2024, "rating": 5},
 {"id": "76062012", "cover": "1673499066i", "name": "Amarilla", "writer": "R.F. Kuang", "published": 2023, "language": "EN", "read": 2024, "rating": 5},
-{"id": "9991707", "cover": "1293043871i", "name": "Estrella roja", "writer": "Alexandr Bogdanov", "published": 1908, "language": "RU", "read": null, "rating": null}
+{"id": "9991707", "cover": "1293043871i", "name": "Estrella roja", "writer": "Alexandr Bogdanov", "published": 1908, "language": "RU", "2024": null, "4": null},
+{"id": "123723946", "cover": "1696809224i", "name": "La mala costumbre", "writer": "Alana S. Portero", "published": 2023, "language": "ES", "read": null, "rating": null}
 ]
