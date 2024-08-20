@@ -164,5 +164,10 @@
 {"id": "76062012", "cover": "1673499066i", "name": "Amarilla", "writer": "R.F. Kuang", "published": 2023, "language": "EN", "read": 2024, "rating": 5},
 {"id": "9991707", "cover": "1293043871i", "name": "Estrella roja", "writer": "Alexandr Bogdanov", "published": 1908, "language": "RU", "read": 2024, "rating": 4},
 {"id": "123723946", "cover": "1696809224i", "name": "La mala costumbre", "writer": "Alana S. Portero", "published": 2023, "language": "ES", "read": 2024, "rating": 4},
-{"id": "18068486", "cover": "1370971227i", "name": "La verdad sobre el caso Harry Quebert", "writer": "Joël Dicker", "published": 2012, "language": "FR", "read": null, "rating": null}
+{"id": "18068486", "cover": "1370971227i", "name": "La verdad sobre el caso Harry Quebert", "writer": "Joël Dicker", "published": 2012, "language": "FR", "read": 2024, "rating": 3},
+{"id": "202795132", "cover": "1706825093i", "name": "La riada", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": 2024, "rating": 4},
+{"id": "45857086", "cover": "1584965579i", "name": "The Burning God", "writer": "R.F. Kuang", "published": 2020, "language": "EN", "read": 2024, "rating": 3},
+{"id": "202795005", "cover": "1707720758i", "name": "El dique", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": 2024, "rating": 4},
+{"id": "75379129", "cover": "1672259333i", "name": "Mitologia dels Països Catalans", "writer": "Daniel Rangil", "published": 2022, "language": "CA", "read": null, "rating": null},
+{"id": "63830105", "cover": "1669238649i", "name": "La casa", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": null, "rating": null}
 ]
