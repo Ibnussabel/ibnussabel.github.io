@@ -169,6 +169,7 @@
 {"id": "45857086", "cover": "1584965579i", "name": "The Burning God", "writer": "R.F. Kuang", "published": 2020, "language": "EN", "read": 2024, "rating": 3},
 {"id": "202795005", "cover": "1707720758i", "name": "El dique", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": 2024, "rating": 4},
 {"id": "63830105", "cover": "1669238649i", "name": "La casa", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": 2024, "rating": 4},
-{"id": "75379129", "cover": "1672259333i", "name": "Mitologia dels Països Catalans", "writer": "Daniel Rangil", "published": 2022, "language": "CA", "read": null, "rating": null},
-{"id": "64998366", "cover": "1712409889i", "name": "La guerra", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": null, "rating": null}
+{"id": "202795194", "cover": "1707720788i", "name": "La guerra", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": 2024, "rating": 4},
+{"id": "202795056", "cover": "1707720863i", "name": "La fortuna", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": null, "rating": null},
+{"id": "75379129", "cover": "1672259333i", "name": "Mitologia dels Països Catalans", "writer": "Daniel Rangil", "published": 2022, "language": "CA", "read": null, "rating": null}
 ]
