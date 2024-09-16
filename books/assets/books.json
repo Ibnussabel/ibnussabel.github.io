@@ -172,7 +172,8 @@
 {"id": "202795194", "cover": "1707720788i", "name": "La guerra", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": 2024, "rating": 4},
 {"id": "202795056", "cover": "1707720863i", "name": "La fortuna", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": 2024, "rating": 4},
 {"id": "2674644", "cover": "1327994021i", "name": "En el otro viento", "writer": "Ursula K. Le Guin", "published": 2001, "language": "EN", "read": 2024, "rating": 5},
-{"id": "202794928", "cover": "1707720894i", "name": "Lluvia", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": null, "rating": null},
-{"id": "57394345", "cover": "1619626058i", "name": "Gótico", "writer": "Silvia Moreno-Garcia", "published": 2020, "language": "EN", "read": null, "rating": null},
+{"id": "57394345", "cover": "1619626058i", "name": "Gótico", "writer": "Silvia Moreno-Garcia", "published": 2020, "language": "EN", "read": 2024, "rating": 3},
+{"id": "202794928", "cover": "1707720894i", "name": "Lluvia", "writer": "Michael McDowell", "published": 1983, "language": "EN", "read": 2024, "rating": 5},
+{"id": "214507008", "cover": "1719032180i", "name": "El clan", "writer": "Carmen Mola", "published": 2024, "language": "ES", "read": null, "rating": null},
 {"id": "75379129", "cover": "1672259333i", "name": "Mitologia dels Països Catalans", "writer": "Daniel Rangil", "published": 2022, "language": "CA", "read": null, "rating": null}
 ]
