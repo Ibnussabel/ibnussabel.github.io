@@ -37,6 +37,7 @@ article p {
 
 img.cover {
     height: 10rem;
+    max-width: 110px;
     margin: 0 auto;
     border-radius: 4%;
 }
