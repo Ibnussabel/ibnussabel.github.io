@@ -62,7 +62,7 @@ const justdata = (books) => {
       let ratingClass = '';
 
 
-      shelf += '\n'+book.name+';'+book.writer+';'+author.gender+';'+book.published+';'+author.country+';'+book.read+';'+book.language+';'+rating.name;
+      shelf += '\n'+book.name+';'+book.writer+';'+author.gender+';'+book.published+';'+author.country+';'+book.read+';'+book.language+';'+book.rating;
   }
   console.log = shelf;    
 }
