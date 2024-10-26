@@ -51,7 +51,7 @@ const showcase = (books) => {
 }
 
 const justdata = (books) => {
-  console.log('Títol;Autor;Gènere Autor;Any publicació;País;Idioma original;Valoració');
+  console.log('Títol;Autor;Gènere Autor;Any publicació;País;Any lectura;Idioma original;Valoració');
 
   for(let i = 0; i < books.length; i++) {
       let book = books[i];
