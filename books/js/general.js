@@ -343,6 +343,7 @@ fetch('./assets/writers.json')
 
         if (document.getElementById('shelf')) {
           showcase(books);
+          justdata(books);
           resetBooks();
         }
 
