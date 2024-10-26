@@ -51,20 +51,13 @@ const showcase = (books) => {
 }
 
 const justdata = (books) => {
-  let shelf = 'Títol;Autor;Gènere Autor;Any publicació;País;Idioma original;Valoració';
-  selectedBooks = books;
+  console.log('Títol;Autor;Gènere Autor;Any publicació;País;Idioma original;Valoració');
 
   for(let i = 0; i < books.length; i++) {
       let book = books[i];
       let author = writers.find(person => person.name == book.writer);
-      let country = countries.find(place => place.code == author.country);
-      let rating = ratings.find(points => points.code == book.rating);
-      let ratingClass = '';
-
-
-      shelf += '\n'+book.name+';'+book.writer+';'+author.gender+';'+book.published+';'+author.country+';'+book.read+';'+book.language+';'+book.rating;
+      console.log(book.name+';'+book.writer+';'+author.gender+';'+book.published+';'+author.country+';'+book.read+';'+book.language+';'+book.rating);
   }
-  console.log = shelf;    
 }
 
 const stats = () => {
