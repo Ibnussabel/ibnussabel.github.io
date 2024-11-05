@@ -180,5 +180,6 @@
 {"id": "61329986", "cover": "1655754124i", "name": "L'home dels ulls compostos", "writer": "Wu Ming-Yi", "published": 2011, "language": "ZH", "read": 2024, "rating": 5},
 {"id": "122754290", "cover": "1676677096i", "name": "El día que se abrió el cielo", "writer": "Samantha Shannon", "published": 2023, "language": "EN", "read": 2024, "rating": 5},
 {"id": "62020631", "cover": "1660911844i", "name": "El mundo de Rocannon", "writer": "Ursula K. Le Guin", "published": 1966, "language": "EN", "read": 2024, "rating": 3},
-{"id": "45301882", "cover": "1556202501i", "name": "Ninga dormiente", "writer": "Ilaria Tuti", "published": 2015, "language": "IT", "read": null, "rating": null}
+{"id": "45301882", "cover": "1556202501i", "name": "Ninfa dormiente", "writer": "Ilaria Tuti", "published": 2015, "language": "IT", "read": 2024, "rating": 4},
+{"id": "3765016", "cover": "1393271123i", "name": "Planeta de exilio", "writer": "Ursula K. Le Guin", "published": 1966, "language": "EN", "read": null, "rating": null}
 ]
