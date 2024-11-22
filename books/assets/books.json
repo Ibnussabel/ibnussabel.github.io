@@ -184,5 +184,6 @@
 {"id": "3765016", "cover": "1393271123i", "name": "Planeta de exilio", "writer": "Ursula K. Le Guin", "published": 1966, "language": "EN", "read": 2024, "rating": 4},
 {"id": "51190882", "cover": "1565188992l", "name": "The Empress of Salt and Fortune", "writer": "Nghi Vo", "published": 2020, "language": "EN", "read": 2024, "rating": 3},
 {"id": "220476025", "cover": "1729587115i", "name": "Fuego en la garganta", "writer": "Beatriz Serrano", "published": 2024, "language": "ES", "read": 2024, "rating": 5},
-{"id": "218548848", "cover": "1726034650i", "name": "Todo muere", "writer": "Juan Gómez-Jurado", "published": 2024, "language": "ES", "read": null, "rating": null}
+{"id": "218548848", "cover": "1726034650i", "name": "Todo muere", "writer": "Juan Gómez-Jurado", "published": 2024, "language": "ES", "read": 2024, "rating": 3},
+{"id": "31674998", "cover": "1478033608i", "name": "El señor del Sabbath", "writer": "Mariana Palova", "published": 2017, "language": "ES", "read": null, "rating": null}
 ]
