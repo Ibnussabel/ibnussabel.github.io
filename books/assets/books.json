@@ -191,5 +191,6 @@
 {"id": "41436198", "cover": "1631330837i", "name": "Un segundo amor", "writer": "Mariana Palova", "published": 2021, "language": "ES", "read": 2024, "rating": 3},
 {"id": "218169330", "cover": "1724932911i", "name": "Las que no duermen", "writer": "Dolores Redondo", "published": 2024, "language": "ES", "read": 2025, "rating": 3},
 {"id": "53056071", "cover": "1682291610i", "name": "Luna de hueso", "writer": "Mariana Palova", "published": 2023, "language": "ES", "read": 2025, "rating": 4},
-{"id": "28788192", "cover": "1453933572i", "name": "L'amiga genial", "writer": "Elena Ferrante", "published": 2011, "language": "IT", "read": null, "rating": null}
+{"id": "28788192", "cover": "1453933572i", "name": "L'amiga genial", "writer": "Elena Ferrante", "published": 2011, "language": "IT", "read": 2025, "rating": 3},
+{"id": "216146570", "cover": "1721755930i", "name": "Un momento de ternura y de piedad", "writer": "Irene Cuevas", "published": 2024, "language": "ES", "read": null, "rating": null}
 ]
