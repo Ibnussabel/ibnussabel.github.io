@@ -194,6 +194,6 @@
 {"id": "28788192", "cover": "1453933572i", "name": "L'amiga genial", "writer": "Elena Ferrante", "published": 2011, "language": "IT", "read": 2025, "rating": 3},
 {"id": "216146570", "cover": "1721755930i", "name": "Un momento de ternura y de piedad", "writer": "Irene Cuevas", "published": 2024, "language": "ES", "read": 2025, "rating": 4},
 {"id": "219566130", "cover": "1738106555i", "name": "Alas de ónix", "writer": "Rebecca Yarros", "published": 2023, "language": "EN", "read": 2025, "rating": 3},
-{"id": "39391224", "cover": "1562267888i", "name": "Mandíbula", "writer": "Mónica Ojeda", "published": 2018, "language": "ES", "read": null, "rating": null}
+{"id": "39391224", "cover": "1562267888i", "name": "Mandíbula", "writer": "Mónica Ojeda", "published": 2018, "language": "ES", "read": 2025, "rating": 3},
+{"id": "50632714", "cover": "1579775479i", "name": "Rūha | Alma", "writer": "Caryanna Reuven", "published": 2020, "language": "ES", "read": null, "rating": null}
 ]
-
