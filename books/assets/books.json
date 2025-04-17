@@ -199,5 +199,6 @@
 {"id": "193767866", "cover": "1689879116i", "name": "Alter Cantabria. Libro I. De brujas, ladrones y ojáncanos", "writer": "G.G. Lapresa", "published": 2023, "language": "ES", "read": 2025, "rating": 3},
 {"id": "220471102", "cover": "1736952497i", "name": "Amanecer en la cosecha", "writer": "Suzanne Collins", "published": 2025, "language": "EN", "read": 2025, "rating": 5},
 {"id": "58103015", "cover": "1621511463i", "name": "Piranesi", "writer": "Susanna Clarke", "published": 2020, "language": "EN", "read": 2025, "rating": 4},
-{"id": "216232616", "cover": "1720458125i", "name": "La travesía", "writer": "Ana Roux", "published": 2024, "language": "EN", "read": null, "rating": null}
+{"id": "216232616", "cover": "1720458125i", "name": "La travesía", "writer": "Ana Roux", "published": 2024, "language": "ES", "read": 2025, "rating": 3},
+{"id": "29485127", "cover": "1458599576i", "name": "Història del nou cognom", "writer": "Elena Ferrante", "published": 2012, "language": "IT", "read": null, "rating": null}
 ]
