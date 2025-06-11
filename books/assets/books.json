@@ -203,5 +203,6 @@
 {"id": "29485127", "cover": "1458599576i", "name": "Història del nou cognom", "writer": "Elena Ferrante", "published": 2012, "language": "IT", "read": 2025, "rating": 5},
 {"id": "30627560", "cover": "1466009441i", "name": "Una fuig, l'altra es queda", "writer": "Elena Ferrante", "published": 2013, "language": "IT", "read": 2025, "rating": 5},
 {"id": "220473668", "cover": "1729082224i", "name": "Chicharra", "writer": "Irene B. Trenas", "published": 2024, "language": "ES", "read": 2025, "rating": 4},
-{"id": "31937697", "cover": "1473540066i", "name": "La nena perduda", "writer": "Elena Ferrante", "published": 2014, "language": "IT", "read": null, "rating": null}
+{"id": "31937697", "cover": "1473540066i", "name": "La nena perduda", "writer": "Elena Ferrante", "published": 2014, "language": "IT", "read": 2025, "rating": 5},
+{"id": "230089493", "cover": "1742470664i", "name": "Las brujas de Manningtree", "writer": "A.K. Blakemore", "published": 2021, "language": "EN", "read": null, "rating": null}
 ]
