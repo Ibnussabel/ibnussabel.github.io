@@ -204,5 +204,8 @@
 {"id": "30627560", "cover": "1466009441i", "name": "Una fuig, l'altra es queda", "writer": "Elena Ferrante", "published": 2013, "language": "IT", "read": 2025, "rating": 5},
 {"id": "220473668", "cover": "1729082224i", "name": "Chicharra", "writer": "Irene B. Trenas", "published": 2024, "language": "ES", "read": 2025, "rating": 4},
 {"id": "31937697", "cover": "1473540066i", "name": "La nena perduda", "writer": "Elena Ferrante", "published": 2014, "language": "IT", "read": 2025, "rating": 5},
-{"id": "230089493", "cover": "1742470664i", "name": "Las brujas de Manningtree", "writer": "A.K. Blakemore", "published": 2021, "language": "EN", "read": null, "rating": null}
+{"id": "230089493", "cover": "1742470664i", "name": "Las brujas de Manningtree", "writer": "A.K. Blakemore", "published": 2021, "language": "EN", "read": 2025, "rating": 2},
+{"id": "36402881", "cover": "1530879568i", "name": "El portal de los obeliscos", "writer": "N.K. Jemisin", "published": 2016, "language": "EN", "read": 2025, "rating": 4},
+{"id": "211988103", "cover": "1713800378i", "name": "Tangerinn", "writer": "Emanuela Anechoum", "published": 2024, "language": "IT", "read": null, "rating": null},
+{"id": "41577333", "cover": "1535711211i", "name": "El cielo de piedra", "writer": "N.K. Jemisin", "published": 2017, "language": "EN", "read": null, "rating": null}
 ]
