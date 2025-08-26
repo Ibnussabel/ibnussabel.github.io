@@ -209,5 +209,7 @@
 {"id": "211988103", "cover": "1713800378i", "name": "Tangerinn", "writer": "Emanuela Anechoum", "published": 2024, "language": "IT", "read": 2025, "rating": 5},
 {"id": "41577333", "cover": "1535711211i", "name": "El cielo de piedra", "writer": "N.K. Jemisin", "published": 2017, "language": "EN", "read": 2025, "rating": 5},
 {"id": "231741918", "cover": "1747883339i", "name": "Atmosphere", "writer": "Taylor Jenkins Reid", "published": 2025, "language": "EN", "read": 2025, "rating": 4},
-{"id": "80637132", "cover": "1674140043i", "name": "Ragazze perbene", "writer": "Olga Campofreda", "published": 2023, "language": "IT", "read": null, "rating": null}
+{"id": "80637132", "cover": "1674140043i", "name": "Ragazze perbene", "writer": "Olga Campofreda", "published": 2023, "language": "IT", "read": 2025, "rating": 3},
+{"id": "228468560", "cover": "1743504524i", "name": "Cositas", "writer": "Benoît Coquil", "published": 2023, "language": "FR", "read": 2025, "rating": 4},
+{"id": "196787602", "cover": "1692030644i", "name": "El rumor del agua", "writer": "Estela Gutiérrez Torres", "published": 2023, "language": "ES", "read": null, "rating": null}
 ]
