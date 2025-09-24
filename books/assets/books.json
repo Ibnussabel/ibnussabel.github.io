@@ -213,5 +213,8 @@
 {"id": "228468560", "cover": "1743504524i", "name": "Cositas", "writer": "Benoît Coquil", "published": 2023, "language": "FR", "read": 2025, "rating": 4},
 {"id": "196787602", "cover": "1692030644i", "name": "El rumor del agua", "writer": "Estela Gutiérrez Torres", "published": 2023, "language": "ES", "read": 2025, "rating": 4},
 {"id": "6123712", "cover": "1280851856i", "name": "El mar no baña Nápoles", "writer": "Anna Maria Ortese", "published": 1953, "language": "IT", "read": 2025, "rating": 2},
-{"id": "210223811", "cover": "1738769146i", "name": "Katabasis", "writer": "R.F. Kuang", "published": 2025, "language": "EN", "read": null, "rating": null}
+{"id": "210223811", "cover": "1738769146i", "name": "Katabasis", "writer": "R.F. Kuang", "published": 2025, "language": "EN", "read": 2025, "rating": 5},
+{"id": "222939722", "cover": "1738270273i", "name": "Crisálida", "writer": "Fernando Navarro", "published": 2025, "language": "ES", "read": 2025, "rating": 34},
+{"id": "36696699", "cover": "1750268760i", "name": "Cadáver exquisito", "writer": "Agustina Bazterrica", "published": 2017, "language": "ES", "read": 2025, "rating": 5},
+{"id": "52791864", "cover": "1579001689l", "name": "Un poco de odio", "writer": "Joe Abercrombie", "published": 2019, "language": "EN", "read": null, "rating": null}
 ]

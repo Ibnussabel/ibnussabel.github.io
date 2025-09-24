@@ -1,4 +1,5 @@
 [
+{"name": "Joe Abercrombie", "gender": "male", "country": "GB"}, 
 {"name": "Susan Abulhawa", "gender": "female", "country": "PS"}, 
 {"name": "Chimamanda Ngozi Adichie", "gender": "female", "country": "NG"}, 
 {"name": "Aravind Adiga", "gender": "male", "country": "IN"}, 
@@ -10,6 +11,7 @@
 {"name": "Emanuela Anechoum", "gender": "female", "country": "IT"}, 
 {"name": "Hiro Arikawa", "gender": "female", "country": "JP"}, 
 {"name": "Fredrik Backman", "gender": "male", "country": "SE"}, 
+{"name": "Agustina Bazterrica", "gender": "female", "country": "AR"}, 
 {"name": "Elísabet Benavent", "gender": "female", "country": "ES"}, 
 {"name": "Lauren Beukes", "gender": "female", "country": "ZA"}, 
 {"name": "A.K. Blakemore", "gender": "female", "country": "GB"}, 
@@ -86,7 +88,8 @@
 {"name": "Silvia Moreno-Garcia", "gender": "female", "country": "MX"}, 
 {"name": "Tamsyn Muir", "gender": "female", "country": "NZ"}, 
 {"name": "Haruki Murakami", "gender": "male", "country": "JP"},
-{"name": "Cho Nam-Joo", "gender": "female", "country": "KR"}, 
+{"name": "Cho Nam-Joo", "gender": "female", "country": "KR"},
+{"name": "Fernando Navarro", "gender": "male", "country": "ES"}, 
 {"name": "Axie Oh", "gender": "female", "country": "US"},
 {"name": "Mónica Ojeda", "gender": "female", "country": "EC"}, 
 {"name": "Nnedi Okorafor", "gender": "female", "country": "US"}, 
