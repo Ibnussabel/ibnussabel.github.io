@@ -216,5 +216,6 @@
 {"id": "210223811", "cover": "1738769146i", "name": "Katabasis", "writer": "R.F. Kuang", "published": 2025, "language": "EN", "read": 2025, "rating": 5},
 {"id": "222939722", "cover": "1738270273i", "name": "Crisálida", "writer": "Fernando Navarro", "published": 2025, "language": "ES", "read": 2025, "rating": 3},
 {"id": "36696699", "cover": "1750268760i", "name": "Cadáver exquisito", "writer": "Agustina Bazterrica", "published": 2017, "language": "ES", "read": 2025, "rating": 5},
-{"id": "52791864", "cover": "1579001689l", "name": "Un poco de odio", "writer": "Joe Abercrombie", "published": 2019, "language": "EN", "read": null, "rating": null}
+{"id": "52791864", "cover": "1579001689l", "name": "Un poco de odio", "writer": "Joe Abercrombie", "published": 2019, "language": "EN", "read": 2025, "rating": 5},
+{"id": "231506328", "cover": "1756206166i", "name": "Música acuática", "writer": "T. Coraghessan Boyle", "published": 1981, "language": "EN", "read": null, "rating": null}
 ]
