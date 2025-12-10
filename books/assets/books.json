@@ -6,7 +6,7 @@
 {"id": "57286545", "cover": "1616174335l", "name": "Bestiario de Tierra y Tinta", "writer": "Clara Dies Valls", "published": 2021, "language": null, "read": 2021, "rating": 4},
 {"id": "56869429", "cover": "1611855460l", "name": "La Montaña Mágica", "writer": "Thomas Mann", "published": 1924, "language": "DE", "read": 2021, "rating": 5},
 {"id": "27976165", "cover": "1448531478l", "name": "Donde las calles no tienen nombre", "writer": "Mónica Rouanet", "published": 2015, "language": "ES", "read": 2021, "rating": 4},
-{"id": "15159488", "cover": "1534795268l", "name": "L'herència de Horst", "writer": "Teresa Roig", "published": 2017, "language": "CA", "read": 2021, "rating": 3},
+{"id": "15159488", "cover": "1534795268l", "name": "L'herència de Horst", "writer": "Teresa Roig", "published": 2007, "language": "CA", "read": 2021, "rating": 3},
 {"id": "39651837", "cover": "1522139806l", "name": "La novia gitana", "writer": "Carmen Mola", "published": 2018, "language": "ES", "read": 2021, "rating": 3},
 {"id": "44284989", "cover": "1551817480l", "name": "La Red Púrpura ", "writer": "Carmen Mola", "published": 2019, "language": "ES", "read": 2021, "rating": 4},
 {"id": "50273222", "cover": "1579946533l", "name": "La nena", "writer": "Carmen Mola", "published": 2020, "language": "ES", "read": 2021, "rating": 3},
@@ -221,5 +221,5 @@
 {"id": "53444195", "cover": "1589899313i", "name": "La vida invisible de Addie LaRue", "writer": "Victoria E. Schwab", "published": 2020, "language": "EN", "read": 2025, "rating": 5},
 {"id": "233614847", "cover": "1746877172i", "name": "Comida familiar", "writer": "Bryan Washington", "published": 2023, "language": "EN", "read": 2025, "rating": 3},
 {"id": "239290829", "cover": "1754049590i", "name": "No haureu de plorar els morts", "writer": "Carlos J. Sánchez", "published": 2025, "language": "CA", "read": 2025, "rating": 4},
-{"id": "224550978", "cover": "1738304805i", "name": "Los diablos", "writer": "Joe Abercrombie", "published": 2025, "language": "EN", "read": null, "rating": null}
+{"id": "224550978", "cover": "1738304805i", "name": "Los diablos", "writer": "Joe Abercrombie", "published": 2025, "language": "EN", "read": 2025, "rating": 3}
 ]
