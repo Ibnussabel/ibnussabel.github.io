@@ -225,5 +225,6 @@
 {"id": "55586934", "cover": "1602046916i", "name": "Tierra fresca de su tumba", "writer": "Giovanna Rivero", "published": 2020, "language": "ES", "read": 2025, "rating": 3},
 {"id": "58772401", "cover": "1629021625i", "name": "Así se pierde la guerra del tiempo", "writer": "Amal El-Mohtar", "published": 2019, "language": "EN", "read": 2025, "rating": 5},
 {"id": "230786923", "cover": "1743417431i", "name": "El jardinero y la muerte", "writer": "Georgi Gospodinov", "published": 2024, "language": "BG", "read": 2025, "rating": 3},
-{"id": "219280745", "cover": "1730987921i", "name": "Muerte a la oscuridad", "writer": "Stella A. Tack", "published": 2023, "language": "DE", "read": null, "rating": null}
+{"id": "219280745", "cover": "1730987921i", "name": "Muerte a la oscuridad", "writer": "Stella A. Tack", "published": 2023, "language": "DE", "read": 2026, "rating": 4},
+{"id": "227667685", "cover": "1740072437i", "name": "Temor a la luz", "writer": "Stella A. Tack", "published": 2024, "language": "DE", "read": null, "rating": null}
 ]
