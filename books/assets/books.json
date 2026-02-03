@@ -73,7 +73,7 @@
 {"id": "60297901", "cover": "1643894425l", "name": "Cauterio", "writer": "Lucía Lijtmaer", "published": 2022, "language": "ES", "read": 2022, "rating": 5},
 {"id": "599904", "cover": "1388337513l", "name": "Cien años de soledad", "writer": "Gabriel García Márquez", "published": 1967, "language": "ES", "read": 2022, "rating": 3},
 {"id": "53835936", "cover": "1591342881l", "name": "Bestiario del norte", "writer": "Pablo Gallo", "published": 2020, "language": "ES", "read": 2022, "rating": 5},
-{"id": "3168519", "cover": "1230061988i", "name": "La pell freda", "writer": "Albert Sánchez Pinyol", "published": 2002, "language": "CA", "read": 2022, "rating": 5},
+{"id": "3168519", "cover": "1230061988i", "name": "La pell freda", "writer": "Albert Sánchez Piñol", "published": 2002, "language": "CA", "read": 2022, "rating": 5},
 {"id": "17384199", "cover": "1361212999i", "name": "Memento mori", "writer": "César Pérez Gellida", "published": 2013, "language": "ES", "read": 2022, "rating": 2},
 {"id": "34518", "cover": "1240507367i", "name": "Mort", "writer": "Terry Pratchett", "published": 1987, "language": "EN", "read": 2022, "rating": 3},
 {"id": "56978100", "cover": "1616788834i", "name": "The Girl Who Fell Beneath the Sea", "writer": "Axie Oh", "published": 2022, "language": "EN", "read": 2022, "rating": 3},
@@ -227,6 +227,7 @@
 {"id": "230786923", "cover": "1743417431i", "name": "El jardinero y la muerte", "writer": "Georgi Gospodinov", "published": 2024, "language": "BG", "read": 2025, "rating": 3},
 {"id": "219280745", "cover": "1730987921i", "name": "Muerte a la oscuridad", "writer": "Stella A. Tack", "published": 2023, "language": "DE", "read": 2026, "rating": 4},
 {"id": "227667685", "cover": "1740072437i", "name": "Temor a la luz", "writer": "Stella A. Tack", "published": 2024, "language": "DE", "read": 2026, "rating": 4},
-{"id": "246646854", "cover": "", "name": "Guía de viajes fantásticos", "writer": "Loar Gwaien", "published": 2025, "language": "ES", "read": null, "rating": null},
-{"id": "242117585", "cover": "1759129805i", "name": "Amor a la muerte", "writer": "Stella A. Tack", "published": 2025, "language": "DE", "read": null, "rating": null}
+{"id": "246646854", "cover": "", "name": "Guía de viajes fantásticos", "writer": "Loar Gwaien", "published": 2025, "language": "ES", "read": 2026, "rating": 4},
+{"id": "242117585", "cover": "1759129805i", "name": "Amor a la muerte", "writer": "Stella A. Tack", "published": 2025, "language": "DE", "read": 2026, "rating": 3}
+{"id": "17830072", "cover": "1641389201i", "name": "Victus", "writer": "Albert Sánchez Piñol", "published": 2012, "language": "CA", "read": null, "rating": null}
 ]
