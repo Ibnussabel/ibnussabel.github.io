@@ -5,8 +5,12 @@
   <title>Llibres enriquits</title>
 </head>
 <body>
-  <h1>Resultat a la consola</h1>
+<h1>Resultat a la consola</h1>
 
-  <script src="./js/test.js"></script>
+<button id="download">Descarrega CSV</button>
+<script src="./js/test.js"></script>
+<script>
+  document.getElementById("download").onclick = () => downloadEnrichedBooksCSV();
+</script>
 </body>
 </html>

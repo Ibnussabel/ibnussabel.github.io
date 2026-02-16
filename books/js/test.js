@@ -64,3 +64,47 @@ buildEnrichedBooks()
     // console.log(JSON.stringify(enrichedBooks, null, 2));
   })
   .catch(console.error);
+
+  function csvEscape(value) {
+  if (value === null || value === undefined) return "";
+  const s = String(value);
+  if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+  return s;
+}
+
+function toCSV(rows, columns) {
+  const header = columns.join(",");
+  const lines = rows.map((row) =>
+    columns.map((col) => csvEscape(row[col])).join(",")
+  );
+  return [header, ...lines].join("\n");
+}
+
+async function downloadEnrichedBooksCSV() {
+  const enrichedBooks = await buildEnrichedBooks();
+
+  const columns = [
+    "title",
+    "writer",
+    "year",
+    "language",
+    "originalLanguageName",
+    "writerGender",
+    "writerCountryCode",
+    "writerCountryName",
+  ];
+
+  const csv = toCSV(enrichedBooks, columns);
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "books.csv";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  URL.revokeObjectURL(url);
+}
