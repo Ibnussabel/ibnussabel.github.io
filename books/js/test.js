@@ -1,6 +1,3 @@
-// Funciona al navegador o a Node.js 18+ (on ja hi ha fetch).
-// Si fas servir Node <18, instal·la node-fetch i importa'l.
-
 const URLS = {
   books: "./assets/books.json",
   writers: "./assets/writers.json",
@@ -28,83 +25,79 @@ async function buildEnrichedBooks() {
     loadJSON(URLS.countries),
   ]);
 
-  // Índexs per fer "joins" ràpids
   const writersByName = indexBy(writers, (w) => w.name);
-  const languagesByCode = indexBy(languages, (l) => l.code); // inclou code null
+  const languagesByCode = indexBy(languages, (l) => l.code);
   const countriesByCode = indexBy(countries, (c) => c.code);
 
-  const enriched = books.map((book) => {
+  return books.map((book) => {
     const writer = writersByName.get(book.writer) || null;
     const language = languagesByCode.get(book.language) || null;
     const country = writer ? (countriesByCode.get(writer.country) || null) : null;
 
     return {
       ...book,
-
-      // Idioma original
       originalLanguageName: language?.name ?? null,
-
-      // Autor
       writerGender: writer?.gender ?? null,
       writerCountryCode: writer?.country ?? null,
       writerCountryName: country?.name ?? null,
     };
   });
-
-  return enriched;
 }
 
-// Exemple d'ús:
-buildEnrichedBooks()
-  .then((enrichedBooks) => {
-    // Aquí tens el JSON final (array de llibres enriquits)
-    console.log(enrichedBooks);
-
-    // Si vols el JSON com a string:
-    // console.log(JSON.stringify(enrichedBooks, null, 2));
-  })
-  .catch(console.error);
-
-  function csvEscape(value) {
-  if (value === null || value === undefined) return "";
-  const s = String(value);
-  if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
-  return s;
+function toCellValue(v) {
+  if (v === null || v === undefined) return "";
+  if (typeof v === "object") return JSON.stringify(v);
+  return String(v);
 }
 
-function toCSV(rows, columns) {
-  const header = columns.join(",");
-  const lines = rows.map((row) =>
-    columns.map((col) => csvEscape(row[col])).join(",")
-  );
-  return [header, ...lines].join("\n");
+function renderTable(container, rows, columns) {
+  const table = document.createElement("table");
+
+  const thead = document.createElement("thead");
+  const trh = document.createElement("tr");
+  for (const col of columns) {
+    const th = document.createElement("th");
+    th.textContent = col;
+    trh.appendChild(th);
+  }
+  thead.appendChild(trh);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  for (const row of rows) {
+    const tr = document.createElement("tr");
+    for (const col of columns) {
+      const td = document.createElement("td");
+      td.textContent = toCellValue(row[col]);
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  }
+  table.appendChild(tbody);
+
+  container.innerHTML = "";
+  container.appendChild(table);
 }
 
-async function downloadEnrichedBooksCSV() {
-  const enrichedBooks = await buildEnrichedBooks();
+// ✅ S’executa automàticament quan la pàgina està carregada
+window.addEventListener("DOMContentLoaded", async () => {
+  const app = document.getElementById("app");
 
-  const columns = [
-    "title",
-    "writer",
-    "year",
-    "language",
-    "originalLanguageName",
-    "writerGender",
-    "writerCountryCode",
-    "writerCountryName",
-  ];
+  try {
+    const enrichedBooks = await buildEnrichedBooks();
 
-  const csv = toCSV(enrichedBooks, columns);
+    if (!enrichedBooks.length) {
+      app.textContent = "No hi ha llibres per mostrar.";
+      return;
+    }
 
-  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
+    // Columnes: com que has dit que tots els llibres tenen tots els camps,
+    // agafem les claus del primer objecte.
+    const columns = Object.keys(enrichedBooks[0]);
 
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "books.csv";
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-
-  URL.revokeObjectURL(url);
-}
+    renderTable(app, enrichedBooks, columns);
+  } catch (err) {
+    console.error(err);
+    app.textContent = "Error carregant les dades. Mira la consola (F12).";
+  }
+});
