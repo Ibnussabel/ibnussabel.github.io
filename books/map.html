@@ -39,7 +39,9 @@
         Passa el ratolí per sobre d'un país per veure el total de llibres.
       </p>
     </div>
+</div>
 
+<div class="row">
     <div class="card">
       <h2 style="margin:0 0 8px 0;">Taula de llibres</h2>
       <div id="app">Carregant taula…</div>
@@ -178,7 +180,7 @@ function toCellValue(key, value) {
       for (const col of TABLE_SCHEMA) {
         if (HIDDEN_COLUMNS.has(col.key)) continue;
         const td = document.createElement("td");
-        td.textContent = toCellValue(row[col.key]);
+        td.textContent = toCellValue(col.key, row[col.key]);
         tr.appendChild(td);
       }
       tbody.appendChild(tr);
