@@ -14,18 +14,17 @@
     .row { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 900px) { .row { grid-template-columns: 1.2fr 1fr; } }
     .card { border: 1px solid #eee; border-radius: 10px; padding: 12px; }
-    .muted { display: none; }
+    .muted { color: #666; margin: 0 0 8px 0; }
     .toolbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin: 6px 0 0 0; }
     .link { color: #0b57d0; cursor: pointer; text-decoration: underline; }
     .pill { font-size: 12px; background: #f3f3f3; padding: 4px 8px; border-radius: 999px; border: 1px solid #e6e6e6; }
   </style>
 
-  <!-- Google Charts (GeoChart, estil Google Sheets) -->
   <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
-  <h1>Mapa de llibres</h1>
+  <h1>Mapa de lectures</h1>
   <p class="muted">Clica un país per filtrar la taula.</p>
 
   <div class="row">
@@ -55,6 +54,21 @@
     languages: "./assets/languages.json",
     countries: "./assets/countries.json",
   };
+
+  // Columnes que NO volem mostrar a la taula
+  const HIDDEN_COLUMNS = new Set(["id", "cover", "language", "writerCountryCode"]);
+
+  // Columnes que SÍ volem mostrar i en quin ordre + capçalera en català
+  // (Això evita que surtin altres camps “extra”)
+  const TABLE_SCHEMA = [
+    { key: "title",            label: "títol" },
+    { key: "writer",           label: "autor" },
+    { key: "year",             label: "publicat" },
+    { key: "read",             label: "llegit" },
+    { key: "rating",           label: "valoració" },
+    { key: "writerGender",     label: "gènere autor" },
+    { key: "writerCountryName",label: "país autor" },
+  ];
 
   // ----------------------- Load + Join -----------------------
   async function loadJSON(url) {
@@ -97,20 +111,62 @@
   }
 
   // ----------------------- Table -----------------------
-  function toCellValue(v) {
-    if (v === null || v === undefined) return "";
-    if (typeof v === "object") return JSON.stringify(v);
-    return String(v);
+  function translateGender(value) {
+  if (value === null || value === undefined) return "no definit";
+
+  const map = {
+    male: "masculí",
+    female: "femení",
+    nb: "no binari",
+  };
+
+  return map[value] || value;
+}
+
+function renderStars(value) {
+  if (value === null || value === undefined || value === "") return "";
+  const num = Number(value);
+  if (isNaN(num)) return value;
+
+  const fullStar = "★";
+  const emptyStar = "☆";
+  const max = 5; // pots canviar-ho si el teu sistema és diferent
+
+  return fullStar.repeat(num) + emptyStar.repeat(Math.max(0, max - num));
+}
+
+function toCellValue(key, value) {
+  if (value === null || value === undefined) {
+    if (key === "writerGender") return "no definit";
+    return "";
   }
 
-  function renderTable(container, rows, columns) {
+  // Traducció del gènere
+  if (key === "writerGender") {
+    return translateGender(value);
+  }
+
+  // Valoració com estrelles
+  if (key === "rating") {
+    return renderStars(value);
+  }
+
+  if (typeof value === "object") return JSON.stringify(value);
+
+  return String(value);
+}
+
+  function renderTable(container, rows) {
     const table = document.createElement("table");
 
     const thead = document.createElement("thead");
     const trh = document.createElement("tr");
-    for (const col of columns) {
+
+    // Capçaleres en català segons l'esquema
+    for (const col of TABLE_SCHEMA) {
+      if (HIDDEN_COLUMNS.has(col.key)) continue;
       const th = document.createElement("th");
-      th.textContent = col;
+      th.textContent = col.label;
       trh.appendChild(th);
     }
     thead.appendChild(trh);
@@ -119,9 +175,10 @@
     const tbody = document.createElement("tbody");
     for (const row of rows) {
       const tr = document.createElement("tr");
-      for (const col of columns) {
+      for (const col of TABLE_SCHEMA) {
+        if (HIDDEN_COLUMNS.has(col.key)) continue;
         const td = document.createElement("td");
-        td.textContent = toCellValue(row[col]);
+        td.textContent = toCellValue(row[col.key]);
         tr.appendChild(td);
       }
       tbody.appendChild(tr);
@@ -134,8 +191,7 @@
 
   // ----------------------- Aggregation for Map -----------------------
   function aggregateByCountry(enrichedBooks) {
-    // Map code -> {count, name}
-    const map = new Map();
+    const map = new Map(); // code -> {count, name}
 
     for (const b of enrichedBooks) {
       const code = b.writerCountryCode;
@@ -143,18 +199,15 @@
 
       const prev = map.get(code) || { count: 0, name: b.writerCountryName || code };
       prev.count += 1;
-      // si en algun llibre el nom ve null, no el sobreescrius amb null
       if (!prev.name && b.writerCountryName) prev.name = b.writerCountryName;
 
       map.set(code, prev);
     }
-
     return map;
   }
 
   // ----------------------- GeoChart -----------------------
   function drawGeoChart(countryAggMap, onSelectCountry) {
-    // DataTable amb tooltip custom
     const data = new google.visualization.DataTable();
     data.addColumn("string", "Country");
     data.addColumn("number", "Books");
@@ -175,17 +228,14 @@
     const chart = new google.visualization.GeoChart(document.getElementById("geo"));
     chart.draw(data, options);
 
-    // Clicar un país → filtre
     google.visualization.events.addListener(chart, "select", () => {
       const sel = chart.getSelection();
       if (!sel || !sel.length) return;
-
       const row = sel[0].row;
       const code = data.getValue(row, 0);
       onSelectCountry(code);
     });
 
-    // Responsive
     window.addEventListener("resize", () => chart.draw(data, options));
   }
 
@@ -198,29 +248,24 @@
 
     try {
       const enrichedBooks = await buildEnrichedBooks();
+
       if (!enrichedBooks.length) {
         app.textContent = "No hi ha llibres per mostrar.";
         geo.textContent = "No hi ha dades per al mapa.";
         return;
       }
 
-      const columns = Object.keys(enrichedBooks[0]);
-
-      // Render inicial taula (tots)
       function showAll() {
-        renderTable(app, enrichedBooks, columns);
+        renderTable(app, enrichedBooks);
         filterPill.style.display = "none";
         resetLink.style.display = "none";
       }
 
-      // Render taula filtrada per país
       function showCountry(code) {
         const filtered = enrichedBooks.filter(b => b.writerCountryCode === code);
-
-        // Troba un nom “bonic” del país (si n’hi ha)
         const countryName = filtered.find(b => b.writerCountryName)?.writerCountryName || code;
 
-        renderTable(app, filtered, columns);
+        renderTable(app, filtered);
 
         filterPill.textContent = `Filtrat: ${countryName} (${filtered.length})`;
         filterPill.style.display = "";
@@ -230,7 +275,6 @@
       resetLink.addEventListener("click", showAll);
       showAll();
 
-      // Dibuixa mapa quan Google Charts estigui llest
       const countryAgg = aggregateByCountry(enrichedBooks);
 
       google.charts.load("current", { packages: ["geochart"] });
