@@ -63,9 +63,9 @@
   // Columnes que SÍ volem mostrar i en quin ordre + capçalera en català
   // (Això evita que surtin altres camps “extra”)
   const TABLE_SCHEMA = [
-    { key: "title",            label: "títol" },
+    { key: "name",            label: "títol" },
     { key: "writer",           label: "autor" },
-    { key: "year",             label: "publicat" },
+    { key: "published",             label: "publicat" },
     { key: "read",             label: "llegit" },
     { key: "rating",           label: "valoració" },
     { key: "writerGender",     label: "gènere autor" },
@@ -225,6 +225,7 @@ function toCellValue(key, value) {
     const options = {
       legend: { textStyle: { fontSize: 12 } },
       tooltip: { textStyle: { fontSize: 12 } },
+      colorAxis: { colors: ["yellow", "orange", "red"] }
     };
 
     const chart = new google.visualization.GeoChart(document.getElementById("geo"));
