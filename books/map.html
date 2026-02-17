@@ -238,37 +238,50 @@ function toCellValue(key, value) {
 
   // ----------------------- GeoChart -----------------------
   function drawGeoChart(countryAggMap, onSelectCountry) {
-    const data = new google.visualization.DataTable();
-    data.addColumn("string", "Country");
-    data.addColumn("number", "Books");
-    data.addColumn({ type: "string", role: "tooltip" });
+  const data = new google.visualization.DataTable();
+  data.addColumn("string", "Country");
+  data.addColumn("number", "Books (scaled)");
+  data.addColumn({ type: "string", role: "tooltip" });
 
-    const rows = [];
-    for (const [code, { count, name }] of countryAggMap.entries()) {
-      const tooltip = `${name} — ${count} llibre${count === 1 ? "" : "s"}`;
-      rows.push([code, count, tooltip]);
-    }
-    data.addRows(rows);
+  const rows = [];
+  let maxCount = 0;
 
-    const options = {
-      legend: { textStyle: { fontSize: 12 } },
-      tooltip: { textStyle: { fontSize: 12 } },
-      colorAxis: { colors: ["yellow", "orange", "red"] }
-    };
+  for (const [code, { count, name }] of countryAggMap.entries()) {
+    maxCount = Math.max(maxCount, count);
 
-    const chart = new google.visualization.GeoChart(document.getElementById("geo"));
-    chart.draw(data, options);
-
-    google.visualization.events.addListener(chart, "select", () => {
-      const sel = chart.getSelection();
-      if (!sel || !sel.length) return;
-      const row = sel[0].row;
-      const code = data.getValue(row, 0);
-      onSelectCountry(code);
-    });
-
-    window.addEventListener("resize", () => chart.draw(data, options));
+    const tooltip = `${name} — ${count} llibre${count === 1 ? "" : "s"}`;
+    const painted = Math.sqrt(count); // ✅ compressió suau
+    rows.push([code, painted, tooltip]);
   }
+
+  data.addRows(rows);
+
+  // ticks pensats per a rang 1..~65
+  const ticksReal = [1, 2, 5, 10, 20, 35, 50, 65].filter(t => t <= maxCount);
+  const ticksScaled = ticksReal.map(t => Math.sqrt(t));
+
+  const options = {
+    legend: { textStyle: { fontSize: 12 } },
+    tooltip: { textStyle: { fontSize: 12 } },
+    colorAxis: {
+      colors: ["yellow", "orange", "red"],
+      ticks: ticksScaled
+    }
+  };
+
+  const chart = new google.visualization.GeoChart(document.getElementById("geo"));
+  chart.draw(data, options);
+
+  google.visualization.events.addListener(chart, "select", () => {
+    const sel = chart.getSelection();
+    if (!sel || !sel.length) return;
+    const row = sel[0].row;
+    const code = data.getValue(row, 0);
+    onSelectCountry(code);
+  });
+
+  window.addEventListener("resize", () => chart.draw(data, options));
+}
 
   // ----------------------- App -----------------------
   window.addEventListener("DOMContentLoaded", async () => {
