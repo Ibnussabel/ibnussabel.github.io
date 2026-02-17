@@ -32,6 +32,11 @@
       <h2 style="margin:0 0 8px 0;">Mapa del món</h2>
       <div id="geo">Carregant mapa…</div>
       <div class="toolbar">
+        <label class="muted" for="yearSelect">Any (llegit):</label>
+        <select id="yearSelect">
+          <option value="ALL">Tots</option>
+        </select>
+        <span id="yearPill" class="pill" style="display:none;"></span>
         <span id="filterPill" class="pill" style="display:none;"></span>
         <span id="resetLink" class="link" style="display:none;">Mostra tots</span>
       </div>
@@ -205,6 +210,31 @@ function toCellValue(key, value) {
     }
     return map;
   }
+  function getReadYears(enrichedBooks) {
+    // Agafa anys únics de la columna "read" (números o strings numèrics)
+    const years = new Set();
+    for (const b of enrichedBooks) {
+      const v = b.read;
+      const n = (typeof v === "number") ? v : Number(v);
+      if (Number.isFinite(n)) years.add(n);
+    }
+    return Array.from(years).sort((a, b) => a - b);
+  }
+
+  function fillYearSelect(selectEl, years) {
+    // deixa l'opció ALL i afegeix la resta
+    selectEl.innerHTML = `<option value="ALL">Tots</option>` + years
+      .map((y) => `<option value="${y}">${y}</option>`)
+      .join("");
+  }
+
+  function applyFilters(allBooks, countryCode, readYear) {
+    return allBooks.filter((b) => {
+      const okCountry = !countryCode || b.writerCountryCode === countryCode;
+      const okYear = (readYear === "ALL") || String(b.read) === String(readYear);
+      return okCountry && okYear;
+    });
+  }
 
   // ----------------------- GeoChart -----------------------
   function drawGeoChart(countryAggMap, onSelectCountry) {
@@ -246,6 +276,9 @@ function toCellValue(key, value) {
     const geo = document.getElementById("geo");
     const filterPill = document.getElementById("filterPill");
     const resetLink = document.getElementById("resetLink");
+    const yearSelect = document.getElementById("yearSelect");
+    const yearPill = document.getElementById("yearPill");
+
 
     try {
       const enrichedBooks = await buildEnrichedBooks();
@@ -256,35 +289,74 @@ function toCellValue(key, value) {
         return;
       }
 
-      function showAll() {
-        renderTable(app, enrichedBooks);
-        filterPill.style.display = "none";
-        resetLink.style.display = "none";
-      }
+      let selectedCountry = null;       // ISO2 o null
+      let selectedReadYear = "ALL";     // "ALL" o any
 
-      function showCountry(code) {
-        const filtered = enrichedBooks.filter(b => b.writerCountryCode === code);
-        const countryName = filtered.find(b => b.writerCountryName)?.writerCountryName || code;
+      function updateUI() {
+        const filtered = applyFilters(enrichedBooks, selectedCountry, selectedReadYear);
 
+        // Taula
         renderTable(app, filtered);
 
-        filterPill.textContent = `Filtrat: ${countryName} (${filtered.length})`;
-        filterPill.style.display = "";
-        resetLink.style.display = "";
-      }
+        // Pills (any)
+        if (selectedReadYear === "ALL") {
+          yearPill.style.display = "none";
+        } else {
+          yearPill.textContent = `Any: ${selectedReadYear}`;
+          yearPill.style.display = "";
+        }
 
-      resetLink.addEventListener("click", showAll);
-      showAll();
+        // Pills (país)
+        if (!selectedCountry) {
+          filterPill.style.display = "none";
+        } else {
+          const countryName =
+            filtered.find(b => b.writerCountryName)?.writerCountryName
+            || enrichedBooks.find(b => b.writerCountryCode === selectedCountry)?.writerCountryName
+            || selectedCountry;
 
-      const countryAgg = aggregateByCountry(enrichedBooks);
+          // Comptem quants llibres del conjunt filtrat són d’aquest país (ja ho són tots si país està actiu)
+          const count = filtered.length;
+          filterPill.textContent = `País: ${countryName} (${count})`;
+          filterPill.style.display = "";
+        }
 
-      google.charts.load("current", { packages: ["geochart"] });
-      google.charts.setOnLoadCallback(() => {
-        if (countryAgg.size === 0) {
-          geo.textContent = "No hi ha codis de país per dibuixar el mapa.";
+        // Mostra/Amaga "Mostra tots"
+        const hasAnyFilter = !!selectedCountry || selectedReadYear !== "ALL";
+        resetLink.style.display = hasAnyFilter ? "" : "none";
+
+        // Mapa: redibuixa segons el filtre d'any (i país també, però el mapa té sentit sobretot per any)
+        // Si hi ha país seleccionat, el mapa quedaria amb un sol país; ho deixem igual (coherent amb el filtre combinat).
+        const agg = aggregateByCountry(filtered);
+        if (agg.size === 0) {
+          geo.textContent = "No hi ha dades per al mapa amb aquest filtre.";
           return;
         }
-        drawGeoChart(countryAgg, showCountry);
+        drawGeoChart(agg, (code) => { selectedCountry = code; updateUI(); });
+      }
+
+      function resetAll() {
+        selectedCountry = null;
+        selectedReadYear = "ALL";
+        yearSelect.value = "ALL";
+        updateUI();
+      }
+
+      // Omplim selector d'anys (des de la columna read)
+      const years = getReadYears(enrichedBooks);
+      fillYearSelect(yearSelect, years);
+
+      yearSelect.addEventListener("change", () => {
+        selectedReadYear = yearSelect.value; // "ALL" o any (string)
+        updateUI();
+      });
+
+      resetLink.addEventListener("click", resetAll);
+
+      // Carrega Google Charts i dibuixa per primer cop
+      google.charts.load("current", { packages: ["geochart"] });
+      google.charts.setOnLoadCallback(() => {
+        updateUI(); // primer render (taula + mapa)
       });
 
     } catch (err) {
