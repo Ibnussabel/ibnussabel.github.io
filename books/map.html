@@ -58,18 +58,16 @@
   };
 
   // Columnes que NO volem mostrar a la taula
-  const HIDDEN_COLUMNS = new Set(["id", "cover", "language", "writerCountryCode"]);
+  const HIDDEN_COLUMNS = new Set(["id", "cover", "language", "writerCountryCode", "writerGender"]);
 
   // Columnes que SÍ volem mostrar i en quin ordre + capçalera en català
-  // (Això evita que surtin altres camps “extra”)
   const TABLE_SCHEMA = [
-    { key: "name",            label: "títol" },
+    { key: "name",             label: "títol" },
     { key: "writer",           label: "autor" },
-    { key: "published",             label: "publicat" },
+    { key: "published",        label: "publicat" },
     { key: "read",             label: "llegit" },
     { key: "rating",           label: "valoració" },
-    { key: "writerGender",     label: "gènere autor" },
-    { key: "writerCountryName",label: "país autor" },
+    { key: "writerCountryName",label: "país autor" }
   ];
 
   // ----------------------- Load + Join -----------------------
@@ -132,7 +130,7 @@ function renderStars(value) {
 
   const fullStar = "★";
   const emptyStar = "☆";
-  const max = 5; // pots canviar-ho si el teu sistema és diferent
+  const max = 5; 
 
   return fullStar.repeat(num) + emptyStar.repeat(Math.max(0, max - num));
 }
