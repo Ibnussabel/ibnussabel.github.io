@@ -250,7 +250,7 @@ function toCellValue(key, value) {
     maxCount = Math.max(maxCount, count);
 
     const tooltip = `${name} — ${count} llibre${count === 1 ? "" : "s"}`;
-    const painted = Math.sqrt(count); // ✅ compressió suau
+    const painted = Math.pow(count, 0.4);
     rows.push([code, painted, tooltip]);
   }
 
@@ -261,11 +261,10 @@ function toCellValue(key, value) {
   const ticksScaled = ticksReal.map(t => Math.sqrt(t));
 
   const options = {
-    legend: { textStyle: { fontSize: 12 } },
+    legend: "none",
     tooltip: { textStyle: { fontSize: 12 } },
     colorAxis: {
-      colors: ["yellow", "orange", "red"],
-      ticks: ticksScaled
+      colors: ["yellow", "orange", "red"]
     }
   };
 
