@@ -7,6 +7,7 @@
 {"code": "BD", "name": "Bangladesh"}, 
 {"code": "BE", "name": "Bèlgica"}, 
 {"code": "BG", "name": "Bulgària"}, 
+{"code": "BI", "name": "Burundi"}, 
 {"code": "BO", "name": "Bolívia"}, 
 {"code": "BY", "name": "Bielorrússia"}, 
 {"code": "CA", "name": "Canadà"}, 
@@ -46,6 +47,7 @@
 {"code": "SL", "name": "Sierra Leone"}, 
 {"code": "UA", "name": "Ucraïna"}, 
 {"code": "US", "name": "Estats Units"}, 
+{"code": "TR", "name": "Turquia"}, 
 {"code": "TW", "name": "República de la Xina"}, 
 {"code": "ZA", "name": "Sud-àfrica"}
 ]

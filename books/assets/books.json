@@ -231,5 +231,7 @@
 {"id": "242117585", "cover": "1759129805i", "name": "Amor a la muerte", "writer": "Stella A. Tack", "published": 2025, "language": "DE", "read": 2026, "rating": 3},
 {"id": "17830072", "cover": "1641389201i", "name": "Victus", "writer": "Albert Sánchez Piñol", "published": 2012, "language": "CA", "read": 2026, "rating": 5},
 {"id": "75526", "cover": "1739057584i", "name": "Estupor y temblores", "writer": "Amélie Nothomb", "published": 1999, "language": "FR", "read": 2026, "rating": 3},
-{"id": "7056969", "cover": "1455845332i", "name": "El hombre que amaba a los perros", "writer": "Leonardo Padura", "published": 2009, "language": "ES", "read": null, "rating": null}
+{"id": "7056969", "cover": "1455845332i", "name": "El hombre que amaba a los perros", "writer": "Leonardo Padura", "published": 2009, "language": "ES", "read": 2026, "rating": 3},
+{"id": "38492991", "cover": "1518461017i", "name": "Pequeño país", "writer": "Gaël Faye", "published": 2016, "language": "FR", "read": null, "rating": null},
+{"id": "11698", "cover": "1348936899i", "name": "Me llamo rojo", "writer": "Orhan Pamuk", "published": 1998, "language": "TR", "read": null, "rating": null}
 ]
