@@ -78,7 +78,7 @@
 
   <body>
     <h1>Mapa de lectures</h1>
-    <p class="muted">Clica un país per filtrar la taula.</p>
+    <p id="hint" class="muted">Clica un país per filtrar la taula.</p>
 
     <div class="row">
       <div class="card">
@@ -99,9 +99,7 @@
 
           <span id="yearPill" class="pill" style="display: none"></span>
           <span id="filterPill" class="pill" style="display: none"></span>
-          <span id="resetLink" class="link" style="display: none"
-            >Mostra tots</span
-          >
+          <span id="resetLink" class="link" style="display: none">Mostra tots</span>
         </div>
       </div>
     </div>
@@ -123,6 +121,7 @@
 
       async function loadJSON(url) {
         const r = await fetch(url);
+        if (!r.ok) throw new Error(`Error carregant ${url}: ${r.status} ${r.statusText}`);
         return r.json();
       }
 
@@ -162,154 +161,164 @@
         let html =
           "<table><thead><tr><th>Títol</th><th>Autor</th><th>Any</th><th>País</th></tr></thead><tbody>";
         rows.forEach((r) => {
-          html += `<tr><td>${r.name}</td><td>${r.writer}</td><td>${r.read ?? ""}</td><td>${r.writerCountryName ?? ""}</td></tr>`;
+          html += `<tr><td>${escapeHtml(r.name ?? "")}</td><td>${escapeHtml(r.writer ?? "")}</td><td>${escapeHtml(r.read ?? "")}</td><td>${escapeHtml(r.writerCountryName ?? "")}</td></tr>`;
         });
         html += "</tbody></table>";
         container.innerHTML = html;
       }
 
-      function aggregateByCountry(books) {
-        const m = new Map();
-        books.forEach((b) => {
-          if (!b.writerCountryCode) return;
-          const prev = m.get(b.writerCountryCode) || {
-            count: 0,
-            name: b.writerCountryName,
-          };
-          prev.count++;
-          m.set(b.writerCountryCode, prev);
-        });
-        return m;
+      function escapeHtml(s) {
+        return String(s)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
       }
 
-      // UN M49 codes que fa servir GeoChart per continents/subcontinents
+      // ---------- Any ----------
+      function getReadYears(books) {
+        const years = new Set();
+        for (const b of books) {
+          const v = b.read;
+          const n = typeof v === "number" ? v : Number(v);
+          if (Number.isFinite(n)) years.add(String(n));
+        }
+        return Array.from(years).sort((a, b) => Number(a) - Number(b));
+      }
+
+      function fillYearSelect(selectEl, years) {
+        selectEl.innerHTML =
+          `<option value="ALL">Tots</option>` +
+          years.map((y) => `<option value="${y}">${y}</option>`).join("");
+      }
+
+      // ---------- UN M49 + noms ----------
       const CONTINENT_BY_ISO2 = {
-        AF: "142", // Asia
-        AR: "019", // Amèrica
-        AT: "150", // Europa
-        AU: "009", // Oceania
-        BA: "150", // Europa
-        BD: "142", // Asia
-        BE: "150", // Europa
-        BG: "150", // Europa
-        BI: "002", // Àfrica
-        BO: "019", // Amèrica
-        BY: "150", // Europa
-        CA: "019", // Amèrica
-        CG: "002", // Àfrica
-        CH: "150", // Europa
-        CN: "142", // Asia
-        CO: "019", // Amèrica
-        CU: "019", // Amèrica
-        DE: "150", // Europa
-        DZ: "002", // Àfrica
-        EC: "019", // Amèrica
-        ES: "150", // Europa
-        FI: "150", // Europa
-        FR: "150", // Europa
-        GB: "150", // Europa
-        GE: "142", // Asia
-        GP: "019", // Amèrica
-        GR: "150", // Europa
-        HT: "019", // Amèrica
-        HU: "150", // Europa
-        IE: "150", // Europa
-        IL: "142", // Asia
-        IN: "142", // Asia
-        IT: "150", // Europa
-        JP: "142", // Asia
-        KR: "142", // Asia
-        MX: "019", // Amèrica
-        MY: "142", // Asia
-        NG: "002", // Àfrica
-        NO: "150", // Europa
-        NZ: "009", // Oceania
-        PL: "150", // Europa
-        PS: "142", // Asia
-        RO: "150", // Europa
-        RU: "150", // Europa
-        SE: "150", // Europa
-        SL: "002", // Àfrica
-        TR: "142", // Asia
-        TW: "142", // Asia
-        UA: "150", // Europa
-        US: "019", // Amèrica
-        ZA: "002", // Àfrica
+        AF: "142",
+        AR: "019",
+        AT: "150",
+        AU: "009",
+        BA: "150",
+        BD: "142",
+        BE: "150",
+        BG: "150",
+        BI: "002",
+        BO: "019",
+        BY: "150",
+        CA: "019",
+        CG: "002",
+        CH: "150",
+        CN: "142",
+        CO: "019",
+        CU: "019",
+        DE: "150",
+        DZ: "002",
+        EC: "019",
+        ES: "150",
+        FI: "150",
+        FR: "150",
+        GB: "150",
+        GE: "142",
+        GP: "019",
+        GR: "150",
+        HT: "019",
+        HU: "150",
+        IE: "150",
+        IL: "142",
+        IN: "142",
+        IT: "150",
+        JP: "142",
+        KR: "142",
+        MX: "019",
+        MY: "142",
+        NG: "002",
+        NO: "150",
+        NZ: "009",
+        PL: "150",
+        PS: "142",
+        RO: "150",
+        RU: "150",
+        SE: "150",
+        SL: "002",
+        TR: "142",
+        TW: "142",
+        UA: "150",
+        US: "019",
+        ZA: "002",
       };
 
       const SUBCONTINENT_BY_ISO2 = {
         // Asia
-        AF: "034", // Àsia meridional
-        BD: "034", // Àsia meridional
-        IN: "034", // Àsia meridional
-        CN: "030", // Àsia oriental
-        JP: "030", // Àsia oriental
-        KR: "030", // Àsia oriental
-        TW: "030", // Àsia oriental
-        MY: "035", // Àsia sud-oriental
-        GE: "145", // Àsia occidental
-        IL: "145", // Àsia occidental
-        PS: "145", // Àsia occidental
-        TR: "145", // Àsia occidental
+        AF: "034",
+        BD: "034",
+        IN: "034",
+        CN: "030",
+        JP: "030",
+        KR: "030",
+        TW: "030",
+        MY: "035",
+        GE: "145",
+        IL: "145",
+        PS: "145",
+        TR: "145",
 
         // Europe
-        AT: "155", // Europa occidental
-        BE: "155", // Europa occidental
-        CH: "155", // Europa occidental
-        DE: "155", // Europa occidental
-        FR: "155", // Europa occidental
-        ES: "039", // Europa meridional
-        IT: "039", // Europa meridional
-        GR: "039", // Europa meridional
-        BA: "039", // Europa meridional
-        BG: "151", // Europa oriental
-        BY: "151", // Europa oriental
-        HU: "151", // Europa oriental
-        PL: "151", // Europa oriental
-        RO: "151", // Europa oriental
-        RU: "151", // Europa oriental
-        UA: "151", // Europa oriental
-        FI: "154", // Europa del nord
-        GB: "154", // Europa del nord
-        IE: "154", // Europa del nord
-        NO: "154", // Europa del nord
-        SE: "154", // Europa del nord
+        AT: "155",
+        BE: "155",
+        CH: "155",
+        DE: "155",
+        FR: "155",
+        ES: "039",
+        IT: "039",
+        GR: "039",
+        BA: "039",
+        BG: "151",
+        BY: "151",
+        HU: "151",
+        PL: "151",
+        RO: "151",
+        RU: "151",
+        UA: "151",
+        FI: "154",
+        GB: "154",
+        IE: "154",
+        NO: "154",
+        SE: "154",
 
         // Africa
-        DZ: "015", // Àfrica del nord
-        BI: "014", // Àfrica oriental
-        CG: "017", // Àfrica central
-        NG: "011", // Àfrica occidental
-        SL: "011", // Àfrica occidental
-        ZA: "018", // Àfrica austral
+        DZ: "015",
+        BI: "014",
+        CG: "017",
+        NG: "011",
+        SL: "011",
+        ZA: "018",
 
         // Americas
-        US: "021", // Amèrica del nord
-        CA: "021", // Amèrica del nord
-        MX: "013", // Amèrica central
-        AR: "005", // Amèrica del sud
-        BO: "005", // Amèrica del sud
-        CO: "005", // Amèrica del sud
-        EC: "005", // Amèrica del sud
-        CU: "029", // Carib
-        HT: "029", // Carib
-        GP: "029", // Carib
+        US: "021",
+        CA: "021",
+        MX: "013",
+        AR: "005",
+        BO: "005",
+        CO: "005",
+        EC: "005",
+        CU: "029",
+        HT: "029",
+        GP: "029",
 
         // Oceania
-        AU: "053", // Austràlia i Nova Zelanda
-        NZ: "053", // Austràlia i Nova Zelanda
+        AU: "053",
+        NZ: "053",
       };
 
-      // Noms per continents (M49)
       const M49_CONTINENT_NAME = {
         "002": "Àfrica",
         "009": "Oceania",
         "019": "Amèrica",
-        142: "Àsia",
-        150: "Europa",
+        "142": "Àsia",
+        "150": "Europa",
       };
 
-      // Noms per subcontinents (M49)
       const M49_SUBCONTINENT_NAME = {
         "014": "Àfrica oriental",
         "015": "Àfrica del nord",
@@ -319,16 +328,16 @@
         "029": "Carib",
         "021": "Amèrica del nord",
         "013": "Amèrica central",
-        419: "Amèrica Llatina i el Carib",
+        "419": "Amèrica Llatina i el Carib",
         "005": "Amèrica del sud",
         "030": "Àsia oriental",
         "034": "Àsia meridional",
         "035": "Àsia sud-oriental",
-        143: "Àsia central",
-        145: "Àsia occidental",
-        151: "Europa oriental",
-        154: "Europa del nord",
-        155: "Europa occidental",
+        "143": "Àsia central",
+        "145": "Àsia occidental",
+        "151": "Europa oriental",
+        "154": "Europa del nord",
+        "155": "Europa occidental",
         "039": "Europa meridional",
         "053": "Austràlia i Nova Zelanda",
         "054": "Melanèsia",
@@ -336,22 +345,50 @@
         "061": "Polinèsia",
       };
 
+      function getRegionNameForSelection(selectedView, selectedRegionCode, books) {
+        if (!selectedRegionCode) return null;
+
+        if (selectedView === "countries") {
+          // intenta trobar el nom al dataset
+          const found =
+            books.find((b) => b.writerCountryCode === selectedRegionCode && b.writerCountryName)?.writerCountryName;
+          return found || selectedRegionCode;
+        }
+
+        if (selectedView === "continents") {
+          return M49_CONTINENT_NAME[selectedRegionCode] || selectedRegionCode;
+        }
+
+        return M49_SUBCONTINENT_NAME[selectedRegionCode] || selectedRegionCode;
+      }
+
+      // ---------- Agregació ----------
+      function aggregateByCountry(books) {
+        const m = new Map();
+        books.forEach((b) => {
+          if (!b.writerCountryCode) return;
+          const prev = m.get(b.writerCountryCode) || { count: 0, name: b.writerCountryName ?? b.writerCountryCode };
+          prev.count++;
+          m.set(b.writerCountryCode, prev);
+        });
+        return m;
+      }
+
       function aggregateByGeoLevel(books, level) {
         if (level === "countries") return aggregateByCountry(books);
 
-        const dict =
-          level === "continents" ? CONTINENT_BY_ISO2 : SUBCONTINENT_BY_ISO2;
-
-        const nameMap =
-          level === "continents" ? M49_CONTINENT_NAME : M49_SUBCONTINENT_NAME;
+        const dict = level === "continents" ? CONTINENT_BY_ISO2 : SUBCONTINENT_BY_ISO2;
+        const nameMap = level === "continents" ? M49_CONTINENT_NAME : M49_SUBCONTINENT_NAME;
 
         const m = new Map();
 
         books.forEach((b) => {
           const iso = b.writerCountryCode;
-          if (!iso || !dict[iso]) return;
+          if (!iso) return;
 
           const code = dict[iso];
+          if (!code) return;
+
           const humanName = nameMap[code] || code;
 
           const prev = m.get(code) || { count: 0, name: humanName };
@@ -362,6 +399,19 @@
         return m;
       }
 
+      // ---------- Filtre (clic) ----------
+      function bookMatchesSelection(b, selectedView, selectedRegionCode) {
+        if (!selectedRegionCode) return true;
+
+        const iso = b.writerCountryCode;
+        if (!iso) return false;
+
+        if (selectedView === "countries") return iso === selectedRegionCode;
+        if (selectedView === "continents") return CONTINENT_BY_ISO2[iso] === selectedRegionCode;
+        return SUBCONTINENT_BY_ISO2[iso] === selectedRegionCode;
+      }
+
+      // ---------- GeoChart ----------
       function drawGeoChart(agg, onSelect, viewLevel) {
         const data = new google.visualization.DataTable();
         data.addColumn("string", "Region");
@@ -379,70 +429,139 @@
           legend: "none",
           backgroundColor: "#E8FAFF",
           datalessRegionColor: "#F1EED8",
+          tooltip: { textStyle: { fontSize: 12 } },
           colorAxis: { colors: ["#FFE5B4", "#FFB26B", "#E36414"] },
-          resolution: viewLevel,
+          resolution: viewLevel, // 'countries' | 'continents' | 'subcontinents'
         };
 
-        const chart = new google.visualization.GeoChart(
-          document.getElementById("geo"),
-        );
+        const chart = new google.visualization.GeoChart(document.getElementById("geo"));
         chart.draw(data, options);
 
         google.visualization.events.addListener(chart, "select", () => {
-          if (viewLevel !== "countries") return;
           const sel = chart.getSelection();
           if (!sel.length) return;
-          const code = data.getValue(sel[0].row, 0);
+          const code = data.getValue(sel[0].row, 0); // ISO2 o M49 segons viewLevel
           onSelect(code);
         });
+
+        // Redibuix en resize
+        window.addEventListener("resize", () => chart.draw(data, options), { passive: true });
       }
 
+      // ---------- App ----------
       window.addEventListener("DOMContentLoaded", async () => {
         const app = document.getElementById("app");
         const geo = document.getElementById("geo");
         const yearSelect = document.getElementById("yearSelect");
         const viewSelect = document.getElementById("viewSelect");
         const resetLink = document.getElementById("resetLink");
+        const yearPill = document.getElementById("yearPill");
+        const filterPill = document.getElementById("filterPill");
+        const hint = document.getElementById("hint");
 
-        const books = await buildEnrichedBooks();
+        let books;
+        try {
+          books = await buildEnrichedBooks();
+        } catch (e) {
+          console.error(e);
+          app.textContent = "Error carregant dades. Mira la consola (F12).";
+          geo.textContent = "No s'ha pogut carregar el mapa.";
+          return;
+        }
 
-        let selectedCountry = null;
-        let selectedView = viewSelect.value;
+        // Omple anys
+        const years = getReadYears(books);
+        fillYearSelect(yearSelect, years);
 
-        function update() {
-          const filtered = selectedCountry
-            ? books.filter((b) => b.writerCountryCode === selectedCountry)
-            : books;
+        let selectedView = viewSelect.value;     // countries | continents | subcontinents
+        let selectedRegionCode = null;           // ISO2 si countries, M49 si altres
+        let selectedYear = yearSelect.value;     // ALL o any
 
+        function updateHint() {
+          const label =
+            selectedView === "countries" ? "país" :
+            selectedView === "continents" ? "continent" :
+            "subcontinent";
+          hint.textContent = `Clica un ${label} per filtrar la taula.`;
+        }
+
+        function resetAll() {
+          selectedRegionCode = null;
+          selectedYear = "ALL";
+          yearSelect.value = "ALL";
+          updateUI();
+        }
+
+        function updateUI() {
+          updateHint();
+
+          // Filtre per any
+          const yearFiltered =
+            selectedYear === "ALL"
+              ? books
+              : books.filter((b) => String(b.read) === String(selectedYear));
+
+          // Filtre per selecció (país/continent/subcontinent)
+          const filtered =
+            selectedRegionCode
+              ? yearFiltered.filter((b) => bookMatchesSelection(b, selectedView, selectedRegionCode))
+              : yearFiltered;
+
+          // Taula
           renderTable(app, filtered);
 
+          // Pills
+          if (selectedYear === "ALL") {
+            yearPill.style.display = "none";
+          } else {
+            yearPill.textContent = `Any: ${selectedYear}`;
+            yearPill.style.display = "";
+          }
+
+          if (!selectedRegionCode) {
+            filterPill.style.display = "none";
+          } else {
+            const regionName = getRegionNameForSelection(selectedView, selectedRegionCode, books);
+            filterPill.textContent = `${regionName} (${filtered.length})`;
+            filterPill.style.display = "";
+          }
+
+          // Mostra/Amaga reset
+          const hasAnyFilter = !!selectedRegionCode || selectedYear !== "ALL";
+          resetLink.style.display = hasAnyFilter ? "" : "none";
+
+          // Mapa: el mapa reflecteix els filtres actuals (any + selecció)
           const agg = aggregateByGeoLevel(filtered, selectedView);
+          if (agg.size === 0) {
+            geo.textContent = "No hi ha dades per al mapa amb aquest filtre.";
+            return;
+          }
 
           drawGeoChart(
             agg,
             (code) => {
-              selectedCountry = code;
-              update();
+              selectedRegionCode = code;
+              updateUI();
             },
-            selectedView,
+            selectedView
           );
-
-          resetLink.style.display = selectedCountry ? "" : "none";
         }
 
         viewSelect.addEventListener("change", () => {
           selectedView = viewSelect.value;
-          selectedCountry = null;
-          update();
+          selectedRegionCode = null; // perquè el codi canvia (ISO2 vs M49)
+          updateUI();
         });
 
-        resetLink.addEventListener("click", () => {
-          selectedCountry = null;
-          update();
+        yearSelect.addEventListener("change", () => {
+          selectedYear = yearSelect.value;
+          updateUI();
         });
+
+        resetLink.addEventListener("click", resetAll);
 
         google.charts.load("current", { packages: ["geochart"] });
-        google.charts.setOnLoadCallback(update);
+        google.charts.setOnLoadCallback(updateUI);
       });
     </script>
   </body>
