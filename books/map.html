@@ -1,208 +1,331 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ca">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Llibres per país</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Llibres per país</title>
 
-<style>
-body { font-family: system-ui, Arial, sans-serif; margin: 16px; }
-#geo { width: 100%; height: 520px; border: 1px solid #eee; border-radius: 10px; }
-table { border-collapse: collapse; width: 100%; margin-top: 12px; }
-th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
-th { position: sticky; top: 0; background: #f6f6f6; text-align: left; }
-.row { display: grid; grid-template-columns: 1fr; gap: 16px; }
-@media (min-width: 900px) { .row { grid-template-columns: 1.2fr 1fr; } }
-.card { border: 1px solid #eee; border-radius: 10px; padding: 12px; }
-.muted { color: #666; margin: 0 0 8px 0; }
-.toolbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin: 6px 0 0 0; }
-.link { color: #0b57d0; cursor: pointer; text-decoration: underline; }
-.pill { font-size: 12px; background: #f3f3f3; padding: 4px 8px; border-radius: 999px; border: 1px solid #e6e6e6; }
-</style>
+    <style>
+      body {
+        font-family: system-ui, Arial, sans-serif;
+        margin: 16px;
+      }
+      #geo {
+        width: 100%;
+        height: 520px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 12px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        vertical-align: top;
+      }
+      th {
+        position: sticky;
+        top: 0;
+        background: #f6f6f6;
+        text-align: left;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      @media (min-width: 900px) {
+        .row {
+          grid-template-columns: 1.2fr 1fr;
+        }
+      }
+      .card {
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 12px;
+      }
+      .muted {
+        color: #666;
+        margin: 0 0 8px 0;
+      }
+      .toolbar {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 6px 0 0 0;
+      }
+      .link {
+        color: #0b57d0;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .pill {
+        font-size: 12px;
+        background: #f3f3f3;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid #e6e6e6;
+      }
+    </style>
 
-<script src="https://www.gstatic.com/charts/loader.js"></script>
-</head>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
 
-<body>
-<h1>Mapa de lectures</h1>
-<p class="muted">Clica un país per filtrar la taula.</p>
+  <body>
+    <h1>Mapa de lectures</h1>
+    <p class="muted">Clica un país per filtrar la taula.</p>
 
-<div class="row">
-<div class="card">
-<h2>Mapa del món</h2>
-<div id="geo">Carregant mapa…</div>
+    <div class="row">
+      <div class="card">
+        <h2>Mapa del món</h2>
+        <div id="geo">Carregant mapa…</div>
 
-<div class="toolbar">
-<label class="muted">Any:</label>
-<select id="yearSelect"><option value="ALL">Tots</option></select>
+        <div class="toolbar">
+          <label class="muted">Any:</label>
+          <select id="yearSelect">
+            <option value="ALL">Tots</option>
+          </select>
 
-<label class="muted">Vista:</label>
-<select id="viewSelect">
-<option value="countries">Països</option>
-<option value="subcontinents">Subcontinents</option>
-<option value="continents">Continents</option>
-</select>
+          <label class="muted">Vista:</label>
+          <select id="viewSelect">
+            <option value="countries">Països</option>
+            <option value="subcontinents">Subcontinents</option>
+            <option value="continents">Continents</option>
+          </select>
 
-<span id="yearPill" class="pill" style="display:none;"></span>
-<span id="filterPill" class="pill" style="display:none;"></span>
-<span id="resetLink" class="link" style="display:none;">Mostra tots</span>
-</div>
-</div>
-</div>
+          <span id="yearPill" class="pill" style="display: none"></span>
+          <span id="filterPill" class="pill" style="display: none"></span>
+          <span id="resetLink" class="link" style="display: none"
+            >Mostra tots</span
+          >
+        </div>
+      </div>
+    </div>
 
-<div class="row">
-<div class="card">
-<h2>Taula de llibres</h2>
-<div id="app">Carregant taula…</div>
-</div>
-</div>
+    <div class="row">
+      <div class="card">
+        <h2>Taula de llibres</h2>
+        <div id="app">Carregant taula…</div>
+      </div>
+    </div>
 
-<script>
-const URLS = {
-books: "./assets/books.json",
-writers: "./assets/writers.json",
-languages: "./assets/languages.json",
-countries: "./assets/countries.json",
-};
+    <script>
+      const URLS = {
+        books: "./assets/books.json",
+        writers: "./assets/writers.json",
+        languages: "./assets/languages.json",
+        countries: "./assets/countries.json",
+      };
 
-async function loadJSON(url){
-const r = await fetch(url);
-return r.json();
-}
+      async function loadJSON(url) {
+        const r = await fetch(url);
+        return r.json();
+      }
 
-function indexBy(arr,keyFn){
-const m=new Map();
-arr.forEach(i=>m.set(keyFn(i),i));
-return m;
-}
+      function indexBy(arr, keyFn) {
+        const m = new Map();
+        arr.forEach((i) => m.set(keyFn(i), i));
+        return m;
+      }
 
-async function buildEnrichedBooks(){
-const [books,writers,languages,countries]=await Promise.all([
-loadJSON(URLS.books),
-loadJSON(URLS.writers),
-loadJSON(URLS.languages),
-loadJSON(URLS.countries),
-]);
+      async function buildEnrichedBooks() {
+        const [books, writers, languages, countries] = await Promise.all([
+          loadJSON(URLS.books),
+          loadJSON(URLS.writers),
+          loadJSON(URLS.languages),
+          loadJSON(URLS.countries),
+        ]);
 
-const writersByName=indexBy(writers,w=>w.name);
-const countriesByCode=indexBy(countries,c=>c.code);
+        const writersByName = indexBy(writers, (w) => w.name);
+        const countriesByCode = indexBy(countries, (c) => c.code);
 
-return books.map(book=>{
-const writer=writersByName.get(book.writer);
-const country=writer?countriesByCode.get(writer.country):null;
-return{
-...book,
-writerCountryCode: writer?.country ?? null,
-writerCountryName: country?.name ?? null
-};
-});
-}
+        return books.map((book) => {
+          const writer = writersByName.get(book.writer);
+          const country = writer ? countriesByCode.get(writer.country) : null;
+          return {
+            ...book,
+            writerCountryCode: writer?.country ?? null,
+            writerCountryName: country?.name ?? null,
+          };
+        });
+      }
 
-function renderTable(container,rows){
-if(!rows.length){container.innerHTML="No hi ha dades";return;}
-let html="<table><thead><tr><th>Títol</th><th>Autor</th><th>Any</th><th>País</th></tr></thead><tbody>";
-rows.forEach(r=>{
-html+=`<tr><td>${r.name}</td><td>${r.writer}</td><td>${r.read??""}</td><td>${r.writerCountryName??""}</td></tr>`;
-});
-html+="</tbody></table>";
-container.innerHTML=html;
-}
+      function renderTable(container, rows) {
+        if (!rows.length) {
+          container.innerHTML = "No hi ha dades";
+          return;
+        }
+        let html =
+          "<table><thead><tr><th>Títol</th><th>Autor</th><th>Any</th><th>País</th></tr></thead><tbody>";
+        rows.forEach((r) => {
+          html += `<tr><td>${r.name}</td><td>${r.writer}</td><td>${r.read ?? ""}</td><td>${r.writerCountryName ?? ""}</td></tr>`;
+        });
+        html += "</tbody></table>";
+        container.innerHTML = html;
+      }
 
-function aggregateByCountry(books){
-const m=new Map();
-books.forEach(b=>{
-if(!b.writerCountryCode)return;
-const prev=m.get(b.writerCountryCode)||{count:0,name:b.writerCountryName};
-prev.count++;
-m.set(b.writerCountryCode,prev);
-});
-return m;
-}
+      function aggregateByCountry(books) {
+        const m = new Map();
+        books.forEach((b) => {
+          if (!b.writerCountryCode) return;
+          const prev = m.get(b.writerCountryCode) || {
+            count: 0,
+            name: b.writerCountryName,
+          };
+          prev.count++;
+          m.set(b.writerCountryCode, prev);
+        });
+        return m;
+      }
 
-const CONTINENT_BY_ISO2={ES:"150",FR:"150",IT:"150",PT:"150",DE:"150",US:"019",CA:"019",BR:"019",AR:"019",AU:"009",NZ:"009",CN:"142",JP:"142",IN:"142",MX:"019",GB:"150"};
-const SUBCONTINENT_BY_ISO2={ES:"039",IT:"039",PT:"039",FR:"155",DE:"155",GB:"154",US:"021",CA:"021",BR:"419",AR:"419",MX:"419",CN:"030",JP:"030",IN:"034",AU:"053",NZ:"053"};
+      // UN M49 codes que fa servir GeoChart per continents/subcontinents
+      // (ve la llista completa a la doc) :contentReference[oaicite:1]{index=1}
+      const CONTINENT_BY_ISO2 = {
+        // Europe
+        ES:"150", FR:"150", IT:"150", PT:"150", DE:"150", GB:"150", IE:"150", NL:"150", BE:"150", LU:"150",
+        CH:"150", AT:"150", SE:"150", NO:"150", DK:"150", FI:"150", IS:"150", PL:"150", CZ:"150", SK:"150",
+        HU:"150", RO:"150", BG:"150", GR:"150", HR:"150", SI:"150", RS:"150", BA:"150", ME:"150", MK:"150",
+        AL:"150", EE:"150", LV:"150", LT:"150", UA:"150", BY:"150", MD:"150", RU:"150",
+        // Africa
+        MA:"002", DZ:"002", TN:"002", LY:"002", EG:"002", SD:"002", SS:"002", ET:"002", KE:"002", NG:"002",
+        ZA:"002", GH:"002", SN:"002", CI:"002", CM:"002", UG:"002", TZ:"002", AO:"002", MZ:"002",
+        // Asia
+        TR:"142", SA:"142", AE:"142", IL:"142", IQ:"142", IR:"142", IN:"142", PK:"142", CN:"142", JP:"142",
+        KR:"142", ID:"142", TH:"142", VN:"142",
+        // Americas
+        US:"019", CA:"019", MX:"019", BR:"019", AR:"019", CL:"019", CO:"019", PE:"019",
+        // Oceania
+        AU:"009", NZ:"009"
+      };
 
-function aggregateByGeoLevel(books,level){
-if(level==="countries")return aggregateByCountry(books);
-const dict=level==="continents"?CONTINENT_BY_ISO2:SUBCONTINENT_BY_ISO2;
-const m=new Map();
-books.forEach(b=>{
-const iso=b.writerCountryCode;
-if(!iso||!dict[iso])return;
-const code=dict[iso];
-const prev=m.get(code)||{count:0,name:code};
-prev.count++;
-m.set(code,prev);
-});
-return m;
-}
+      // Subcontinents (M49)
+      const SUBCONTINENT_BY_ISO2 = {
+        // Southern Europe
+        ES:"039", PT:"039", IT:"039", GR:"039", AD:"039", MT:"039",
+        // Western Europe
+        FR:"155", DE:"155", NL:"155", BE:"155", LU:"155", CH:"155", AT:"155",
+        // Northern Europe
+        GB:"154", IE:"154", SE:"154", NO:"154", DK:"154", FI:"154", IS:"154",
+        // Eastern Europe
+        PL:"151", CZ:"151", SK:"151", HU:"151", RO:"151", BG:"151", UA:"151", BY:"151", MD:"151", RU:"151",
+        // Northern Africa
+        MA:"015", DZ:"015", TN:"015", LY:"015", EG:"015", SD:"015", SS:"015",
+        // Sub-Saharan Africa (exemples)
+        NG:"202", GH:"202", SN:"202", CI:"202", CM:"202", KE:"202", UG:"202", TZ:"202", ZA:"202",
+        // Western Asia
+        TR:"145", SA:"145", AE:"145", IL:"145", IQ:"145", IR:"145",
+        // Southern Asia
+        IN:"034", PK:"034",
+        // Eastern Asia
+        CN:"030", JP:"030", KR:"030",
+        // South-eastern Asia
+        ID:"035", TH:"035", VN:"035",
+        // Northern America
+        US:"021", CA:"021",
+        // Latin America & Caribbean (exemples)
+        MX:"419", BR:"419", AR:"419", CL:"419", CO:"419", PE:"419",
+        // Australia & New Zealand
+        AU:"053", NZ:"053"
+      };
 
-function drawGeoChart(agg,onSelect,viewLevel){
-const data=new google.visualization.DataTable();
-data.addColumn("string","Region");
-data.addColumn("number","Books");
-data.addColumn({type:"string",role:"tooltip"});
+      function aggregateByGeoLevel(books, level) {
+        if (level === "countries") return aggregateByCountry(books);
+        const dict =
+          level === "continents" ? CONTINENT_BY_ISO2 : SUBCONTINENT_BY_ISO2;
+        const m = new Map();
+        books.forEach((b) => {
+          const iso = b.writerCountryCode;
+          if (!iso || !dict[iso]) return;
+          const code = dict[iso];
+          const prev = m.get(code) || { count: 0, name: code };
+          prev.count++;
+          m.set(code, prev);
+        });
+        return m;
+      }
 
-const rows=[];
-agg.forEach((v,k)=>{
-rows.push([k,Math.pow(v.count,0.4),`${v.count} llibres`]);
-});
-data.addRows(rows);
+      function drawGeoChart(agg, onSelect, viewLevel) {
+        const data = new google.visualization.DataTable();
+        data.addColumn("string", "Region");
+        data.addColumn("number", "Books");
+        data.addColumn({ type: "string", role: "tooltip" });
 
-const options={
-legend:"none",
-backgroundColor:"#E8FAFF",
-datalessRegionColor:"#F1EED8",
-colorAxis:{colors:["#FFE5B4","#FFB26B","#E36414"]},
-resolution:viewLevel
-};
+        const rows = [];
+        agg.forEach((v, k) => {
+          rows.push([k, Math.pow(v.count, 0.4), `${v.count} llibres`]);
+        });
+        data.addRows(rows);
 
-const chart=new google.visualization.GeoChart(document.getElementById("geo"));
-chart.draw(data,options);
+        const options = {
+          legend: "none",
+          backgroundColor: "#E8FAFF",
+          datalessRegionColor: "#F1EED8",
+          colorAxis: { colors: ["#FFE5B4", "#FFB26B", "#E36414"] },
+          resolution: viewLevel,
+        };
 
-google.visualization.events.addListener(chart,"select",()=>{
-if(viewLevel!=="countries")return;
-const sel=chart.getSelection();
-if(!sel.length)return;
-const code=data.getValue(sel[0].row,0);
-onSelect(code);
-});
-}
+        const chart = new google.visualization.GeoChart(
+          document.getElementById("geo"),
+        );
+        chart.draw(data, options);
 
-window.addEventListener("DOMContentLoaded",async()=>{
-const app=document.getElementById("app");
-const geo=document.getElementById("geo");
-const yearSelect=document.getElementById("yearSelect");
-const viewSelect=document.getElementById("viewSelect");
-const resetLink=document.getElementById("resetLink");
+        google.visualization.events.addListener(chart, "select", () => {
+          if (viewLevel !== "countries") return;
+          const sel = chart.getSelection();
+          if (!sel.length) return;
+          const code = data.getValue(sel[0].row, 0);
+          onSelect(code);
+        });
+      }
 
-const books=await buildEnrichedBooks();
+      window.addEventListener("DOMContentLoaded", async () => {
+        const app = document.getElementById("app");
+        const geo = document.getElementById("geo");
+        const yearSelect = document.getElementById("yearSelect");
+        const viewSelect = document.getElementById("viewSelect");
+        const resetLink = document.getElementById("resetLink");
 
-let selectedCountry=null;
-let selectedView=viewSelect.value;
+        const books = await buildEnrichedBooks();
 
-function update(){
-const filtered=selectedCountry?books.filter(b=>b.writerCountryCode===selectedCountry):books;
-renderTable(app,filtered);
-const agg=aggregateByGeoLevel(filtered,selectedView);
-drawGeoChart(agg,(code)=>{selectedCountry=code;update();},selectedView);
-resetLink.style.display=selectedCountry?"":"none";
-}
+        let selectedCountry = null;
+        let selectedView = viewSelect.value;
 
-viewSelect.addEventListener("change",()=>{
-selectedView=viewSelect.value;
-selectedCountry=null;
-update();
-});
+        function update() {
+          const filtered = selectedCountry
+            ? books.filter((b) => b.writerCountryCode === selectedCountry)
+            : books;
+          renderTable(app, filtered);
+          const agg = aggregateByGeoLevel(filtered, selectedView);
+          drawGeoChart(
+            agg,
+            (code) => {
+              selectedCountry = code;
+              update();
+            },
+            selectedView,
+          );
+          resetLink.style.display = selectedCountry ? "" : "none";
+        }
 
-resetLink.addEventListener("click",()=>{
-selectedCountry=null;
-update();
-});
+        viewSelect.addEventListener("change", () => {
+          selectedView = viewSelect.value;
+          selectedCountry = null;
+          update();
+        });
 
-google.charts.load("current",{packages:["geochart"]});
-google.charts.setOnLoadCallback(update);
-});
-</script>
-</body>
+        resetLink.addEventListener("click", () => {
+          selectedCountry = null;
+          update();
+        });
+
+        google.charts.load("current", { packages: ["geochart"] });
+        google.charts.setOnLoadCallback(update);
+      });
+    </script>
+  </body>
 </html>
