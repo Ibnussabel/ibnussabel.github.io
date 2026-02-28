@@ -267,7 +267,8 @@ function toCellValue(key, value) {
     tooltip: { textStyle: { fontSize: 12 } },
     colorAxis: {
       colors: ["#FFE5B4", "#FFB26B", "#E36414"]
-    }
+    },
+    magnifyingGlass: { enable: true, zoomFactor: 7.5 }
   };
 
   const chart = new google.visualization.GeoChart(document.getElementById("geo"));
