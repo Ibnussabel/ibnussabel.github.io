@@ -184,179 +184,120 @@
 
       // UN M49 codes que fa servir GeoChart per continents/subcontinents
       const CONTINENT_BY_ISO2 = {
-        // Europe
-        ES: "150",
-        FR: "150",
-        IT: "150",
-        PT: "150",
-        DE: "150",
-        GB: "150",
-        IE: "150",
-        NL: "150",
-        BE: "150",
-        LU: "150",
-        CH: "150",
-        AT: "150",
-        SE: "150",
-        NO: "150",
-        DK: "150",
-        FI: "150",
-        IS: "150",
-        PL: "150",
-        CZ: "150",
-        SK: "150",
-        HU: "150",
-        RO: "150",
-        BG: "150",
-        GR: "150",
-        HR: "150",
-        SI: "150",
-        RS: "150",
-        BA: "150",
-        ME: "150",
-        MK: "150",
-        AL: "150",
-        EE: "150",
-        LV: "150",
-        LT: "150",
-        UA: "150",
-        BY: "150",
-        MD: "150",
-        RU: "150",
-        // Africa
-        MA: "002",
-        DZ: "002",
-        TN: "002",
-        LY: "002",
-        EG: "002",
-        SD: "002",
-        SS: "002",
-        ET: "002",
-        KE: "002",
-        NG: "002",
-        ZA: "002",
-        GH: "002",
-        SN: "002",
-        CI: "002",
-        CM: "002",
-        UG: "002",
-        TZ: "002",
-        AO: "002",
-        MZ: "002",
-        // Asia
-        TR: "142",
-        SA: "142",
-        AE: "142",
-        IL: "142",
-        IQ: "142",
-        IR: "142",
-        IN: "142",
-        PK: "142",
-        CN: "142",
-        JP: "142",
-        KR: "142",
-        ID: "142",
-        TH: "142",
-        VN: "142",
-        // Americas
-        US: "019",
-        CA: "019",
-        MX: "019",
-        BR: "019",
-        AR: "019",
-        CL: "019",
-        CO: "019",
-        PE: "019",
-        // Oceania
-        AU: "009",
-        NZ: "009",
+        AF: "142", // Asia
+        AR: "019", // Amèrica
+        AT: "150", // Europa
+        AU: "009", // Oceania
+        BA: "150", // Europa
+        BD: "142", // Asia
+        BE: "150", // Europa
+        BG: "150", // Europa
+        BI: "002", // Àfrica
+        BO: "019", // Amèrica
+        BY: "150", // Europa
+        CA: "019", // Amèrica
+        CG: "002", // Àfrica
+        CH: "150", // Europa
+        CN: "142", // Asia
+        CO: "019", // Amèrica
+        CU: "019", // Amèrica
+        DE: "150", // Europa
+        DZ: "002", // Àfrica
+        EC: "019", // Amèrica
+        ES: "150", // Europa
+        FI: "150", // Europa
+        FR: "150", // Europa
+        GB: "150", // Europa
+        GE: "142", // Asia
+        GP: "019", // Amèrica
+        GR: "150", // Europa
+        HT: "019", // Amèrica
+        HU: "150", // Europa
+        IE: "150", // Europa
+        IL: "142", // Asia
+        IN: "142", // Asia
+        IT: "150", // Europa
+        JP: "142", // Asia
+        KR: "142", // Asia
+        MX: "019", // Amèrica
+        MY: "142", // Asia
+        NG: "002", // Àfrica
+        NO: "150", // Europa
+        NZ: "009", // Oceania
+        PL: "150", // Europa
+        PS: "142", // Asia
+        RO: "150", // Europa
+        RU: "150", // Europa
+        SE: "150", // Europa
+        SL: "002", // Àfrica
+        TR: "142", // Asia
+        TW: "142", // Asia
+        UA: "150", // Europa
+        US: "019", // Amèrica
+        ZA: "002", // Àfrica
       };
 
-      // Subcontinents (M49)
       const SUBCONTINENT_BY_ISO2 = {
-        // Southern Europe
-        ES: "039",
-        PT: "039",
-        IT: "039",
-        GR: "039",
-        AD: "039",
-        MT: "039",
-        // Western Europe
-        FR: "155",
-        DE: "155",
-        NL: "155",
-        BE: "155",
-        LU: "155",
-        CH: "155",
-        AT: "155",
-        // Northern Europe
-        GB: "154",
-        IE: "154",
-        SE: "154",
-        NO: "154",
-        DK: "154",
-        FI: "154",
-        IS: "154",
-        // Eastern Europe
-        PL: "151",
-        CZ: "151",
-        SK: "151",
-        HU: "151",
-        RO: "151",
-        BG: "151",
-        UA: "151",
-        BY: "151",
-        MD: "151",
-        RU: "151",
-        // Northern Africa
-        MA: "015",
-        DZ: "015",
-        TN: "015",
-        LY: "015",
-        EG: "015",
-        SD: "015",
-        SS: "015",
-        // Sub-Saharan Africa (exemples)
-        NG: "202",
-        GH: "202",
-        SN: "202",
-        CI: "202",
-        CM: "202",
-        KE: "202",
-        UG: "202",
-        TZ: "202",
-        ZA: "202",
-        // Western Asia
-        TR: "145",
-        SA: "145",
-        AE: "145",
-        IL: "145",
-        IQ: "145",
-        IR: "145",
-        // Southern Asia
-        IN: "034",
-        PK: "034",
-        // Eastern Asia
-        CN: "030",
-        JP: "030",
-        KR: "030",
-        // South-eastern Asia
-        ID: "035",
-        TH: "035",
-        VN: "035",
-        // Northern America
-        US: "021",
-        CA: "021",
-        // Latin America & Caribbean (exemples)
-        MX: "419",
-        BR: "419",
-        AR: "419",
-        CL: "419",
-        CO: "419",
-        PE: "419",
-        // Australia & New Zealand
-        AU: "053",
-        NZ: "053",
+        // Asia
+        AF: "034", // Àsia meridional
+        BD: "034", // Àsia meridional
+        IN: "034", // Àsia meridional
+        CN: "030", // Àsia oriental
+        JP: "030", // Àsia oriental
+        KR: "030", // Àsia oriental
+        TW: "030", // Àsia oriental
+        MY: "035", // Àsia sud-oriental
+        GE: "145", // Àsia occidental
+        IL: "145", // Àsia occidental
+        PS: "145", // Àsia occidental
+        TR: "145", // Àsia occidental
+
+        // Europe
+        AT: "155", // Europa occidental
+        BE: "155", // Europa occidental
+        CH: "155", // Europa occidental
+        DE: "155", // Europa occidental
+        FR: "155", // Europa occidental
+        ES: "039", // Europa meridional
+        IT: "039", // Europa meridional
+        GR: "039", // Europa meridional
+        BA: "039", // Europa meridional
+        BG: "151", // Europa oriental
+        BY: "151", // Europa oriental
+        HU: "151", // Europa oriental
+        PL: "151", // Europa oriental
+        RO: "151", // Europa oriental
+        RU: "151", // Europa oriental
+        UA: "151", // Europa oriental
+        FI: "154", // Europa del nord
+        GB: "154", // Europa del nord
+        IE: "154", // Europa del nord
+        NO: "154", // Europa del nord
+        SE: "154", // Europa del nord
+
+        // Africa
+        DZ: "015", // Àfrica del nord
+        BI: "014", // Àfrica oriental
+        CG: "017", // Àfrica central
+        NG: "011", // Àfrica occidental
+        SL: "011", // Àfrica occidental
+        ZA: "018", // Àfrica austral
+
+        // Americas
+        US: "021", // Amèrica del nord
+        CA: "021", // Amèrica del nord
+        MX: "013", // Amèrica central
+        AR: "005", // Amèrica del sud
+        BO: "005", // Amèrica del sud
+        CO: "005", // Amèrica del sud
+        EC: "005", // Amèrica del sud
+        CU: "029", // Carib
+        HT: "029", // Carib
+        GP: "029", // Carib
+
+        // Oceania
+        AU: "053", // Austràlia i Nova Zelanda
+        NZ: "053", // Austràlia i Nova Zelanda
       };
 
       // Noms per continents (M49)
@@ -364,8 +305,8 @@
         "002": "Àfrica",
         "009": "Oceania",
         "019": "Amèrica",
-        "142": "Àsia",
-        "150": "Europa",
+        142: "Àsia",
+        150: "Europa",
       };
 
       // Noms per subcontinents (M49)
@@ -378,16 +319,16 @@
         "029": "Carib",
         "021": "Amèrica del nord",
         "013": "Amèrica central",
-        "419": "Amèrica Llatina i el Carib",
+        419: "Amèrica Llatina i el Carib",
         "005": "Amèrica del sud",
         "030": "Àsia oriental",
         "034": "Àsia meridional",
         "035": "Àsia sud-oriental",
-        "143": "Àsia central",
-        "145": "Àsia occidental",
-        "151": "Europa oriental",
-        "154": "Europa del nord",
-        "155": "Europa occidental",
+        143: "Àsia central",
+        145: "Àsia occidental",
+        151: "Europa oriental",
+        154: "Europa del nord",
+        155: "Europa occidental",
         "039": "Europa meridional",
         "053": "Austràlia i Nova Zelanda",
         "054": "Melanèsia",
