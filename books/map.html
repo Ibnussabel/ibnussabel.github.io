@@ -183,68 +183,241 @@
       }
 
       // UN M49 codes que fa servir GeoChart per continents/subcontinents
-      // (ve la llista completa a la doc) :contentReference[oaicite:1]{index=1}
       const CONTINENT_BY_ISO2 = {
         // Europe
-        ES:"150", FR:"150", IT:"150", PT:"150", DE:"150", GB:"150", IE:"150", NL:"150", BE:"150", LU:"150",
-        CH:"150", AT:"150", SE:"150", NO:"150", DK:"150", FI:"150", IS:"150", PL:"150", CZ:"150", SK:"150",
-        HU:"150", RO:"150", BG:"150", GR:"150", HR:"150", SI:"150", RS:"150", BA:"150", ME:"150", MK:"150",
-        AL:"150", EE:"150", LV:"150", LT:"150", UA:"150", BY:"150", MD:"150", RU:"150",
+        ES: "150",
+        FR: "150",
+        IT: "150",
+        PT: "150",
+        DE: "150",
+        GB: "150",
+        IE: "150",
+        NL: "150",
+        BE: "150",
+        LU: "150",
+        CH: "150",
+        AT: "150",
+        SE: "150",
+        NO: "150",
+        DK: "150",
+        FI: "150",
+        IS: "150",
+        PL: "150",
+        CZ: "150",
+        SK: "150",
+        HU: "150",
+        RO: "150",
+        BG: "150",
+        GR: "150",
+        HR: "150",
+        SI: "150",
+        RS: "150",
+        BA: "150",
+        ME: "150",
+        MK: "150",
+        AL: "150",
+        EE: "150",
+        LV: "150",
+        LT: "150",
+        UA: "150",
+        BY: "150",
+        MD: "150",
+        RU: "150",
         // Africa
-        MA:"002", DZ:"002", TN:"002", LY:"002", EG:"002", SD:"002", SS:"002", ET:"002", KE:"002", NG:"002",
-        ZA:"002", GH:"002", SN:"002", CI:"002", CM:"002", UG:"002", TZ:"002", AO:"002", MZ:"002",
+        MA: "002",
+        DZ: "002",
+        TN: "002",
+        LY: "002",
+        EG: "002",
+        SD: "002",
+        SS: "002",
+        ET: "002",
+        KE: "002",
+        NG: "002",
+        ZA: "002",
+        GH: "002",
+        SN: "002",
+        CI: "002",
+        CM: "002",
+        UG: "002",
+        TZ: "002",
+        AO: "002",
+        MZ: "002",
         // Asia
-        TR:"142", SA:"142", AE:"142", IL:"142", IQ:"142", IR:"142", IN:"142", PK:"142", CN:"142", JP:"142",
-        KR:"142", ID:"142", TH:"142", VN:"142",
+        TR: "142",
+        SA: "142",
+        AE: "142",
+        IL: "142",
+        IQ: "142",
+        IR: "142",
+        IN: "142",
+        PK: "142",
+        CN: "142",
+        JP: "142",
+        KR: "142",
+        ID: "142",
+        TH: "142",
+        VN: "142",
         // Americas
-        US:"019", CA:"019", MX:"019", BR:"019", AR:"019", CL:"019", CO:"019", PE:"019",
+        US: "019",
+        CA: "019",
+        MX: "019",
+        BR: "019",
+        AR: "019",
+        CL: "019",
+        CO: "019",
+        PE: "019",
         // Oceania
-        AU:"009", NZ:"009"
+        AU: "009",
+        NZ: "009",
       };
 
       // Subcontinents (M49)
       const SUBCONTINENT_BY_ISO2 = {
         // Southern Europe
-        ES:"039", PT:"039", IT:"039", GR:"039", AD:"039", MT:"039",
+        ES: "039",
+        PT: "039",
+        IT: "039",
+        GR: "039",
+        AD: "039",
+        MT: "039",
         // Western Europe
-        FR:"155", DE:"155", NL:"155", BE:"155", LU:"155", CH:"155", AT:"155",
+        FR: "155",
+        DE: "155",
+        NL: "155",
+        BE: "155",
+        LU: "155",
+        CH: "155",
+        AT: "155",
         // Northern Europe
-        GB:"154", IE:"154", SE:"154", NO:"154", DK:"154", FI:"154", IS:"154",
+        GB: "154",
+        IE: "154",
+        SE: "154",
+        NO: "154",
+        DK: "154",
+        FI: "154",
+        IS: "154",
         // Eastern Europe
-        PL:"151", CZ:"151", SK:"151", HU:"151", RO:"151", BG:"151", UA:"151", BY:"151", MD:"151", RU:"151",
+        PL: "151",
+        CZ: "151",
+        SK: "151",
+        HU: "151",
+        RO: "151",
+        BG: "151",
+        UA: "151",
+        BY: "151",
+        MD: "151",
+        RU: "151",
         // Northern Africa
-        MA:"015", DZ:"015", TN:"015", LY:"015", EG:"015", SD:"015", SS:"015",
+        MA: "015",
+        DZ: "015",
+        TN: "015",
+        LY: "015",
+        EG: "015",
+        SD: "015",
+        SS: "015",
         // Sub-Saharan Africa (exemples)
-        NG:"202", GH:"202", SN:"202", CI:"202", CM:"202", KE:"202", UG:"202", TZ:"202", ZA:"202",
+        NG: "202",
+        GH: "202",
+        SN: "202",
+        CI: "202",
+        CM: "202",
+        KE: "202",
+        UG: "202",
+        TZ: "202",
+        ZA: "202",
         // Western Asia
-        TR:"145", SA:"145", AE:"145", IL:"145", IQ:"145", IR:"145",
+        TR: "145",
+        SA: "145",
+        AE: "145",
+        IL: "145",
+        IQ: "145",
+        IR: "145",
         // Southern Asia
-        IN:"034", PK:"034",
+        IN: "034",
+        PK: "034",
         // Eastern Asia
-        CN:"030", JP:"030", KR:"030",
+        CN: "030",
+        JP: "030",
+        KR: "030",
         // South-eastern Asia
-        ID:"035", TH:"035", VN:"035",
+        ID: "035",
+        TH: "035",
+        VN: "035",
         // Northern America
-        US:"021", CA:"021",
+        US: "021",
+        CA: "021",
         // Latin America & Caribbean (exemples)
-        MX:"419", BR:"419", AR:"419", CL:"419", CO:"419", PE:"419",
+        MX: "419",
+        BR: "419",
+        AR: "419",
+        CL: "419",
+        CO: "419",
+        PE: "419",
         // Australia & New Zealand
-        AU:"053", NZ:"053"
+        AU: "053",
+        NZ: "053",
+      };
+
+      // Noms per continents (M49)
+      const M49_CONTINENT_NAME = {
+        "002": "Àfrica",
+        "009": "Oceania",
+        "019": "Amèrica",
+        "142": "Àsia",
+        "150": "Europa",
+      };
+
+      // Noms per subcontinents (M49)
+      const M49_SUBCONTINENT_NAME = {
+        "014": "Àfrica oriental",
+        "015": "Àfrica del nord",
+        "017": "Àfrica central",
+        "018": "Àfrica austral",
+        "011": "Àfrica occidental",
+        "029": "Carib",
+        "021": "Amèrica del nord",
+        "013": "Amèrica central",
+        "419": "Amèrica Llatina i el Carib",
+        "005": "Amèrica del sud",
+        "030": "Àsia oriental",
+        "034": "Àsia meridional",
+        "035": "Àsia sud-oriental",
+        "143": "Àsia central",
+        "145": "Àsia occidental",
+        "151": "Europa oriental",
+        "154": "Europa del nord",
+        "155": "Europa occidental",
+        "039": "Europa meridional",
+        "053": "Austràlia i Nova Zelanda",
+        "054": "Melanèsia",
+        "057": "Micronèsia",
+        "061": "Polinèsia",
       };
 
       function aggregateByGeoLevel(books, level) {
         if (level === "countries") return aggregateByCountry(books);
+
         const dict =
           level === "continents" ? CONTINENT_BY_ISO2 : SUBCONTINENT_BY_ISO2;
+
+        const nameMap =
+          level === "continents" ? M49_CONTINENT_NAME : M49_SUBCONTINENT_NAME;
+
         const m = new Map();
+
         books.forEach((b) => {
           const iso = b.writerCountryCode;
           if (!iso || !dict[iso]) return;
+
           const code = dict[iso];
-          const prev = m.get(code) || { count: 0, name: code };
+          const humanName = nameMap[code] || code;
+
+          const prev = m.get(code) || { count: 0, name: humanName };
           prev.count++;
           m.set(code, prev);
         });
+
         return m;
       }
 
@@ -256,7 +429,8 @@
 
         const rows = [];
         agg.forEach((v, k) => {
-          rows.push([k, Math.pow(v.count, 0.4), `${v.count} llibres`]);
+          const tooltip = `${v.name} — ${v.count} llibre${v.count === 1 ? "" : "s"}`;
+          rows.push([k, Math.pow(v.count, 0.4), tooltip]);
         });
         data.addRows(rows);
 
@@ -298,8 +472,11 @@
           const filtered = selectedCountry
             ? books.filter((b) => b.writerCountryCode === selectedCountry)
             : books;
+
           renderTable(app, filtered);
+
           const agg = aggregateByGeoLevel(filtered, selectedView);
+
           drawGeoChart(
             agg,
             (code) => {
@@ -308,6 +485,7 @@
             },
             selectedView,
           );
+
           resetLink.style.display = selectedCountry ? "" : "none";
         }
 
