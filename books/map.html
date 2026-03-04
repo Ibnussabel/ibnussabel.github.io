@@ -161,7 +161,7 @@
         let html =
           "<table><thead><tr><th>Títol</th><th>Autor</th><th>Any</th><th>País</th></tr></thead><tbody>";
         rows.forEach((r) => {
-          html += `<tr><td>${escapeHtml(r.name ?? "")}</td><td>${escapeHtml(r.writer ?? "")}</td><td>${escapeHtml(r.read ?? "")}</td><td>${escapeHtml(r.writerCountryName ?? "")}</td></tr>`;
+          html += `<tr><td>${escapeHtml(r.name ?? "")}</td><td>${escapeHtml(r.writer ?? "")}</td><td>${escapeHtml(r.published ?? "")}</td><td>${escapeHtml(r.writerCountryName ?? "")}</td></tr>`;
         });
         html += "</tbody></table>";
         container.innerHTML = html;
