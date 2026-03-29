@@ -233,6 +233,8 @@
 {"id": "75526", "cover": "1739057584i", "name": "Estupor y temblores", "writer": "Amélie Nothomb", "published": 1999, "language": "FR", "read": 2026, "rating": 3},
 {"id": "7056969", "cover": "1455845332i", "name": "El hombre que amaba a los perros", "writer": "Leonardo Padura", "published": 2009, "language": "ES", "read": 2026, "rating": 3},
 {"id": "38492991", "cover": "1518461017i", "name": "Pequeño país", "writer": "Gaël Faye", "published": 2016, "language": "FR", "read": 2026, "rating": 4},
-{"id": "205317379", "cover": "1712867888i", "name": "Las raíces recuerdan tu nombre", "writer": "Aitziber Saldias", "published": 2024, "language": "ES", "read": null, "rating": null},
-{"id": "11698", "cover": "1348936899i", "name": "Me llamo rojo", "writer": "Orhan Pamuk", "published": 1998, "language": "TR", "read": null, "rating": null}
+{"id": "205317379", "cover": "1712867888i", "name": "Las raíces recuerdan tu nombre", "writer": "Aitziber Saldias", "published": 2024, "language": "ES", "read": 2026, "rating": 3},
+{"id": "11698", "cover": "1348936899i", "name": "Me llamo rojo", "writer": "Orhan Pamuk", "published": 1998, "language": "TR", "read": 2026, "rating": 3},
+{"id": "67990235", "cover": "1671052499i", "name": "Mi marido", "writer": "Rumena Bužarovska", "published": 2014, "language": "MK", "read": 2026, "rating": 4},
+{"id": "47668", "cover": "1307808756i", "name": "Ensayo sobre la ceguera", "writer": "José Saramago", "published": 1995, "language": "PT", "read": null, "rating": null}
 ]
