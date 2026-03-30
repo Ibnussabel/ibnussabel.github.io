@@ -33,7 +33,7 @@
 {"code": "IN", "name": "Bharat"}, 
 {"code": "IT", "name": "Itàlia"}, 
 {"code": "JP", "name": "Japó"}, 
-{"code": "MK", "name": "MAcedònia"}, 
+{"code": "MK", "name": "Macedònia"}, 
 {"code": "MX", "name": "Mèxic"}, 
 {"code": "MY", "name": "Malàisia"}, 
 {"code": "KR", "name": "Corea del Sud"}, 
@@ -51,5 +51,6 @@
 {"code": "US", "name": "Estats Units"}, 
 {"code": "TR", "name": "Turquia"}, 
 {"code": "TW", "name": "República de la Xina"}, 
+{"code": "VN", "name": "Vietnam"}, 
 {"code": "ZA", "name": "Sud-àfrica"}
 ]

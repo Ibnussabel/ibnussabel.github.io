@@ -236,5 +236,6 @@
 {"id": "205317379", "cover": "1712867888i", "name": "Las raíces recuerdan tu nombre", "writer": "Aitziber Saldias", "published": 2024, "language": "ES", "read": 2026, "rating": 3},
 {"id": "11698", "cover": "1348936899i", "name": "Me llamo rojo", "writer": "Orhan Pamuk", "published": 1998, "language": "TR", "read": 2026, "rating": 3},
 {"id": "67990235", "cover": "1671052499i", "name": "Mi marido", "writer": "Rumena Bužarovska", "published": 2014, "language": "MK", "read": 2026, "rating": 4},
-{"id": "47668", "cover": "1307808756i", "name": "Ensayo sobre la ceguera", "writer": "José Saramago", "published": 1995, "language": "PT", "read": null, "rating": null}
+{"id": "47668", "cover": "1307808756i", "name": "Ensayo sobre la ceguera", "writer": "José Saramago", "published": 1995, "language": "PT", "read": null, "rating": null},
+{"id": "252348", "cover": "1173154864i", "name": "El dolor de la guerra", "writer": "Bao Ninh", "published": 1991, "language": "VI", "read": null, "rating": null}
 ]
