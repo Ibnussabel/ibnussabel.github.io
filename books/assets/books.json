@@ -238,5 +238,6 @@
 {"id": "67990235", "cover": "1671052499i", "name": "Mi marido", "writer": "Rumena Bužarovska", "published": 2014, "language": "MK", "read": 2026, "rating": 4},
 {"id": "47668", "cover": "1307808756i", "name": "Ensayo sobre la ceguera", "writer": "José Saramago", "published": 1995, "language": "PT", "read": 2026, "rating": 5},
 {"id": "252348", "cover": "1173154864i", "name": "El dolor de la guerra", "writer": "Bao Ninh", "published": 1991, "language": "VI", "read": 2026, "rating": 3},
+{"id": "49988313", "cover": "1563822054l", "name": "Frankenstein en Bagdad", "writer": "Ahmed Saadawi", "published": 2013, "language": "AR", "read": null, "rating": null},
 {"id": "55588138", "cover": "1602062949i", "name": "L'abisso", "writer": "Luca Tarenzi", "published": 2020, "language": "IT", "read": null, "rating": null}
 ]
