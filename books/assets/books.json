@@ -240,6 +240,7 @@
 {"id": "252348", "cover": "1173154864i", "name": "El dolor de la guerra", "writer": "Bao Ninh", "published": 1991, "language": "VI", "read": 2026, "rating": 3},
 {"id": "49988313", "cover": "1563822054l", "name": "Frankenstein en Bagdad", "writer": "Ahmed Saadawi", "published": 2013, "language": "AR", "read": 2026, "rating": 4},
 {"id": "245799495", "cover": "1767093030i", "name": "El préstamo", "writer": "Rebecca Makkai", "published": 2011, "language": "EN", "read": 2026, "rating": 5},
+{"id": "59186", "cover": "1505192485i", "name": "La metamorfosis", "writer": "Franz Kafka", "published": 1912, "language": "DE", "read": 2026, "rating": 4},
 {"id": "32703696", "cover": "1476844394i", "name": "The Gray House", "writer": "Mariam Petrosyan", "published": 2009, "language": "RU", "read": null, "rating": null},
 {"id": "68005500", "cover": "1682451044i", "name": "The Centre", "writer": "Ayesha Manazir Siddiqi", "published": 2023, "language": "EN", "read": null, "rating": null},
 {"id": "50054007", "cover": "1564723215l", "name": "Lleopard Negre, Llop Vermell", "writer": "Marlon James", "published": 2019, "language": "EN", "read": null, "rating": null},
