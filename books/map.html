@@ -113,10 +113,10 @@
 
     <script>
       const URLS = {
-        books: "./assets/books.json",
-        writers: "./assets/writers.json",
-        languages: "./assets/languages.json",
-        countries: "./assets/countries.json",
+        books: "./assets/books.json?v=" + Date.now(),
+        writers: "./assets/writers.json?v=" + Date.now(),
+        languages: "./assets/languages.json?v=" + Date.now(),
+        countries: "./assets/countries.json?v=" + Date.now(),
       };
 
       async function loadJSON(url) {
