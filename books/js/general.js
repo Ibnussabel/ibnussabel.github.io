@@ -321,22 +321,22 @@ const fullSummary = () => {
   }
 }
 
-fetch('./assets/writers.json')
+fetch('./assets/writers.json?v=' + Date.now())
   .then(response => response.json())
   .then(data => {
     writers = JSON.parse(JSON.stringify(data));
 
-  fetch('./assets/countries.json')
+  fetch('./assets/countries.json?v=' + Date.now())
     .then(response => response.json())
     .then(data => {
       countries = JSON.parse(JSON.stringify(data));
       
-    fetch('./assets/languages.json')
+    fetch('./assets/languages.json?v=' + Date.now())
       .then(response => response.json())
       .then(data => {
         languages = JSON.parse(JSON.stringify(data));
 
-      fetch('./assets/books.json')
+      fetch('./assets/books.json?v=' + Date.now())
         .then(response => response.json())
         .then(data => {
           books = JSON.parse(JSON.stringify(data));
