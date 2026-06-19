@@ -243,7 +243,7 @@
 {"id": "59186", "cover": "1505192485i", "name": "La metamorfosis", "writer": "Franz Kafka", "published": 1912, "language": "DE", "read": 2026, "rating": 4},
 {"id": "32703696", "cover": "1476844394i", "name": "The Gray House", "writer": "Mariam Petrosyan", "published": 2009, "language": "RU", "read": 2026, "rating": 3},
 {"id": "68005500", "cover": "1682451044i", "name": "The Centre", "writer": "Ayesha Manazir Siddiqi", "published": 2023, "language": "EN", "read": 2026, "rating": 3},
-{"id": "50054007", "cover": "1564723215l", "name": "Lleopard Negre, Llop Vermell", "writer": "Marlon James", "published": 2019, "language": "EN", "read": null, "rating": null},
+{"id": "50054007", "cover": "1564723215l", "name": "Lleopard Negre, Llop Vermell", "writer": "Marlon James", "published": 2019, "language": "EN", "read": 2026, "rating": 3},
 {"id": "604216", "cover": "1697354194i", "name": "Un día más largo que un siglo", "writer": "Chingiz Aitmatov", "published": 1980, "language": "RU", "read": 2026, "rating": 3},
 {"id": "36697912", "cover": "1512148667i", "name": "Mujeres sin hombres", "writer": "Shahrnush Parsipur", "published": 1973, "language": "FA", "read": null, "rating": null},
 {"id": "184214451", "cover": "1689506808i", "name": "Las siete lunas de Maali Almeida", "writer": "Shehan Karunatilaka", "published": 2022, "language": "EN", "read": null, "rating": null},
