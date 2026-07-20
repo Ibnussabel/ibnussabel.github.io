@@ -248,7 +248,10 @@
 {"id": "36697912", "cover": "1512148667i", "name": "Mujeres sin hombres", "writer": "Shahrnush Parsipur", "published": 1973, "language": "FA", "read": 2026, "rating": 4},
 {"id": "184214451", "cover": "1689506808i", "name": "Las siete lunas de Maali Almeida", "writer": "Shehan Karunatilaka", "published": 2022, "language": "EN", "read": 2026, "rating": 4},
 {"id": "235672154", "cover": "1749069126i", "name": "El río tiene raíces", "writer": "Amal El-Mohtar", "published": 2025, "language": "EN", "read": 2026, "rating": 5},
-{"id": "215717719", "cover": "1719812848i", "name": "Salir del camino", "writer": "Varios autores", "published": 2024, "language": "ES", "read": null, "rating": null},
+{"id": "215717719", "cover": "1719812848i", "name": "Salir del camino", "writer": "Varios autores", "published": 2024, "language": "ES", "read": 2026, "rating": 3},
 {"id": "55306541", "cover": "1608896231i", "name": "Les impatientes", "writer": "Djaïli Amadou Amal", "published": 2017, "language": "FR", "read": null, "rating": null},
+{"id": "23286828", "cover": "1412026037i", "name": "Kintu", "writer": "Jennifer Nansubuga Makumbi", "published": 2014, "language": "EN", "read": null, "rating": null},
+{"id": "51196859", "cover": "1566268390i", "name": "How to Pronounce Knife", "writer": "Souvankham Thammavongsa", "published": 2020, "language": "EN", "read": null, "rating": null},
+{"id": "36347839", "cover": "1507052120i", "name": "La bellesa és una ferida", "writer": "Eka Kurniawan", "published": 2002, "language": "ID", "read": null, "rating": null},
 {"id": "55588138", "cover": "1602062949i", "name": "L'abisso", "writer": "Luca Tarenzi", "published": 2020, "language": "IT", "read": null, "rating": null}
 ]
