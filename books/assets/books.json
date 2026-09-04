@@ -253,7 +253,7 @@
 {"id": "23286828", "cover": "1412026037i", "name": "Kintu", "writer": "Jennifer Nansubuga Makumbi", "published": 2014, "language": "EN", "read": 2026, "rating": 3},
 {"id": "51196859", "cover": "1566268390i", "name": "How to Pronounce Knife", "writer": "Souvankham Thammavongsa", "published": 2020, "language": "EN", "read": 2026, "rating": 4},
 {"id": "123364621", "cover": "1679435038i", "name": "La malnacida", "writer": "Beatrice Salvioni", "published": 2023, "language": "IT", "read": 2026, "rating": 5},
-{"id": "36347839", "cover": "1507052120i", "name": "La bellesa és una ferida", "writer": "Eka Kurniawan", "published": 2002, "language": "ID", "read": null, "rating": null},
+{"id": "36347839", "cover": "1507052120i", "name": "La bellesa és una ferida", "writer": "Eka Kurniawan", "published": 2002, "language": "ID", "read": 2026, "rating": 3},
 {"id": "42945987", "cover": "1543099784i", "name": "Maiba", "writer": "Russell Soaba", "published": 1979, "language": "EN", "read": null, "rating": null},
 {"id": "56919", "cover": "1744201561i", "name": "La tregua", "writer": "Mario Benedetti", "published": 1960, "language": "ES", "read": null, "rating": null},
 {"id": "6468156", "cover": "1294708171i", "name": "La señorita Smila y su especial percepción de la nieve", "writer": "Peter Høeg", "published": 1992, "language": "DA", "read": null, "rating": null},
