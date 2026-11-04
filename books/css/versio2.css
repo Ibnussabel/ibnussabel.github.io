@@ -1,0 +1,303 @@
+:root {
+    --background: #f3efe6;
+    --paper: #faf8f2;
+    --wood: #a87950;
+    --wood-light: #c49a70;
+    --text: #39332c;
+    --muted: #81776b;
+    --accent: #b45b3e;
+    --shelf-shadow: #8c6446;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 2rem;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16px;
+}
+
+/* CAPÇALERA */
+
+h1 {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    margin: 0 0 2.5rem;
+    padding: 1rem 0 1.5rem;
+    border-bottom: 1px solid #d9cbbb;
+}
+
+h1 span {
+    display: block;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* PRESTATGERIA */
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fill, minmax(125px, 1fr));
+    column-gap: 1.3rem;
+    row-gap: 2.8rem;
+    align-items: end;
+}
+
+/* CADA LLIBRE */
+
+article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 0.35rem 1.1rem;
+    transform: translateY(12px);
+    opacity: 0;
+    animation: appear 0.5s ease forwards;
+    transition: transform 0.25s ease;
+}
+
+article:hover {
+    transform: translateY(-7px);
+    z-index: 2;
+}
+
+/* PETITA BALDA INDIVIDUAL */
+
+article::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    right: -5px;
+    height: 9px;
+    border-radius: 2px;
+    background: linear-gradient(
+        to bottom,
+        var(--wood-light),
+        var(--wood),
+        var(--shelf-shadow)
+    );
+    box-shadow:
+        0 3px 5px rgba(70, 45, 25, 0.18);
+}
+
+/* PORTADES */
+
+img.cover {
+    display: block;
+    height: 165px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow:
+        2px 3px 7px rgba(0, 0, 0, 0.20),
+        0 0 1px rgba(0, 0, 0, 0.2);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+article:hover img.cover {
+    transform: scale(1.06);
+    box-shadow:
+        4px 7px 14px rgba(0, 0, 0, 0.23);
+}
+
+/* INFORMACIÓ DEL LLIBRE */
+
+article p {
+    margin: 0.35rem 0 0.2rem;
+    line-height: 1.2;
+}
+
+.author {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.flag {
+    font-size: 0.85rem;
+}
+
+img.flag {
+    height: 0.8rem;
+    width: auto;
+    box-shadow: none;
+}
+
+.rating {
+    color: var(--accent);
+    font-size: 1.15rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.05rem;
+}
+
+.year {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.25rem;
+    vertical-align: top;
+    padding-left: 0.2rem;
+}
+
+/* FILTRES */
+
+form {
+    padding: 1rem;
+    margin: 0 auto 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    max-height: 250px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: var(--paper);
+    border: 1px solid #e2d8ca;
+    border-radius: 6px;
+}
+
+fieldset {
+    border: 0;
+    padding: 0.4rem;
+}
+
+fieldset legend {
+    display: none;
+}
+
+fieldset label {
+    padding: 0 0.5rem;
+    color: var(--muted);
+}
+
+select,
+input {
+    font: inherit;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid #d5c7b7;
+    border-radius: 4px;
+    background: white;
+    color: var(--text);
+}
+
+select option:disabled {
+    display: none;
+}
+
+input[value=Filtrar] {
+    margin: 0 0.5rem;
+    padding: 0.4rem 1.2rem;
+    background: var(--wood);
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[value=Filtrar]:hover {
+    background: var(--shelf-shadow);
+}
+
+.dim {
+    opacity: 0.45;
+}
+
+.closed {
+    max-height: 0;
+}
+
+/* ANIMACIÓ */
+
+@keyframes appear {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* TAULETS */
+
+@media (max-width: 768px) {
+    body {
+        padding: 1.2rem;
+    }
+
+    main {
+        grid-template-columns:
+            repeat(auto-fill, minmax(115px, 1fr));
+        column-gap: 0.8rem;
+        row-gap: 2rem;
+    }
+
+    img.cover {
+        height: 145px;
+    }
+}
+
+/* MÒBILS */
+
+@media (max-width: 425px) {
+    body {
+        padding: 0.8rem;
+    }
+
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+
+    main {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+        gap: 1.8rem 0.7rem;
+    }
+
+    article {
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+
+    img.cover {
+        height: 125px;
+        max-width: 100%;
+    }
+
+    article p {
+        display: block;
+        font-size: 0.8rem;
+    }
+
+    .author {
+        font-size: 0.75rem;
+    }
+
+    .rating {
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 0.5rem;
+    }
+
+    fieldset label {
+        display: block;
+        padding: 0.35rem;
+    }
+}
