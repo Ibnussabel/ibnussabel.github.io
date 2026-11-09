@@ -76,26 +76,6 @@ article:hover {
     z-index: 2;
 }
 
-/* PETITA BALDA INDIVIDUAL */
-
-article::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: -5px;
-    right: -5px;
-    height: 9px;
-    border-radius: 2px;
-    background: linear-gradient(
-        to bottom,
-        var(--wood-light),
-        var(--wood),
-        var(--shelf-shadow)
-    );
-    box-shadow:
-        0 3px 5px rgba(70, 45, 25, 0.18);
-}
-
 /* PORTADES */
 
 img.cover {

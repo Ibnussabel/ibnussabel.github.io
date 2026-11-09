@@ -261,7 +261,7 @@
 {"id": "40639996", "cover": "1529922763i", "name": "Una educación", "writer": "Tara Westover", "published": 2018, "language": "EN", "read": 2026, "rating": 5},
 {"id": "56919", "cover": "1744201561i", "name": "La tregua", "writer": "Mario Benedetti", "published": 1960, "language": "ES", "read": 2026, "rating": 5},
 {"id": "", "cover": "", "name": "Canciones para una serpiente", "writer": "Beatriz Peñas Blanco", "published": 2026, "language": "ES", "read": 2026, "rating": 4},
-{"id": "204079550", "cover": "1706031984i", "name": "Què mou els morts", "writer": "T. Kingfisher", "published": 2022, "language": "EN", "read": null, "rating": null},
+{"id": "204079550", "cover": "1706031984i", "name": "Què mou els morts", "writer": "T. Kingfisher", "published": 2022, "language": "EN", "read": 2026, "rating": 4},
 {"id": "255016642", "cover": "1783320278i", "name": "Cosamala", "writer": "Alana S. Portero", "published": 2026, "language": "ES", "read": null, "rating": null},
 {"id": "229201551", "cover": "1742126449i", "name": "Salitre y cenizas", "writer": "Carlos di Urarte", "published": 2025, "language": "ES", "read": null, "rating": null},
 {"id": "60677398", "cover": "1648035999i", "name": "Quienes se marchan de Omelas", "writer": "Ursula K. Le Guin", "published": 1973, "language": "EN", "read": null, "rating": null},
